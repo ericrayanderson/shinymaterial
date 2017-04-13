@@ -1,0 +1,19 @@
+Package: shinymaterial
+Type: Package
+Title: Implement Material Design in Shiny Applications
+Version: 0.1.0
+Authors@R: c(
+    person("Eric", "Anderson", role = c("aut", "cre"), email = "eric.ray.anderson@gmail.com"),
+    person("Alvin", "Wang", role = c("ctb", "cph"), comment = "Materialize CSS library"),
+    person("Alan", "Chang", role = c("ctb", "cph"), comment = "Materialize CSS library"),
+    person("Alex", "Mark", role = c("ctb", "cph"), comment = "Materialize CSS library"),
+    person("Kevin", "Louie", role = c("ctb", "cph"), comment = "Materialize CSS library")
+    )
+Maintainer: Eric Anderson <eric.ray.anderson@gmail.com>
+Description: Allows shiny developers to incorporate UI elements based on Google's Material design. This is accomplished by leveraging the library materialize css.
+URL: https://ericrayanderson.shinyapps.io/shinymaterial/
+License: GPL-3 | file LICENSE
+Imports: shiny (>= 0.7.0)
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.0.1

@@ -1,0 +1,9 @@
+body {
+    padding-left: 300px;
+}
+/* Side Nav is shown when window is 993px or wider */
+@media only screen and (max-width: 992px) {
+    body {
+        padding-left: 0px;
+    }
+}
