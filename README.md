@@ -2,7 +2,7 @@
 
 ## R package: Implements Material Design in Shiny Applications
 
-(https://ericrayanderson.shinyapps.io/shinymaterial/ "Homepage")
+[Homepage](https://ericrayanderson.shinyapps.io/shinymaterial/)
 
 Install CRAN version: `install.packages("shinymaterial")`
 
