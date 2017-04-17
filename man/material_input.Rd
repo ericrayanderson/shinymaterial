@@ -29,12 +29,15 @@ Build a shinymaterial input of any available type.
   }
   \item{
   \strong{checkbox}
+  \itemize{
+  \item{\code{initial_value} \emph{(Boolean. The initial value.)}}
+  }
   }
   \item{
   \strong{dropdown}
   \itemize{
   \item{\code{choices} \emph{(Named vector. The list of option names and underyling values.)}}
-  \item{\code{selected} \emph{(String. The initiali selected underyling value.)}}
+  \item{\code{selected} \emph{(String. The initial selected underyling value.)}}
   \item{\code{multiple} \emph{(Boolean. Can multiple items be selected?)}}
   }
   }
@@ -74,6 +77,7 @@ Build a shinymaterial input of any available type.
   \itemize{
   \item{\code{off_label} \emph{(String. The label for the 'off' portion of the switch.)}}
   \item{\code{on_label} \emph{(String. The label for the 'on' portion of the switch.)}}
+  \item{\code{initial_value} \emph{(Boolean. The initial value.)}}
   }
   }
   \item{

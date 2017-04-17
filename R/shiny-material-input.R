@@ -23,7 +23,7 @@
 #'   \strong{dropdown}
 #'   \itemize{
 #'   \item{\code{choices} \emph{(Named vector. The list of option names and underyling values.)}}
-#'   \item{\code{selected} \emph{(String. The initiali selected underyling value.)}}
+#'   \item{\code{selected} \emph{(String. The initial selected underyling value.)}}
 #'   \item{\code{multiple} \emph{(Boolean. Can multiple items be selected?)}}
 #'   }
 #'   }
