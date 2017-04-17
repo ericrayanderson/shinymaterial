@@ -10,10 +10,19 @@ Authors@R: c(
     person("Kevin", "Louie", role = c("ctb", "cph"), comment = "Materialize CSS library")
     )
 Maintainer: Eric Anderson <eric.ray.anderson@gmail.com>
-Description: Allows shiny developers to incorporate UI elements based on Google's Material design. This is accomplished by leveraging the library materialize css.
+Description: Allows shiny developers to incorporate UI elements based on Google's Material design. See <https://material.io/guidelines/> for more information.
 URL: https://ericrayanderson.shinyapps.io/shinymaterial/
 License: GPL-3 | file LICENSE
 Imports: shiny (>= 0.7.0)
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.0.1
+NeedsCompilation: no
+Packaged: 2017-04-14 19:58:37 UTC; ericanderson
+Author: Eric Anderson [aut, cre],
+  Alvin Wang [ctb, cph] (Materialize CSS library),
+  Alan Chang [ctb, cph] (Materialize CSS library),
+  Alex Mark [ctb, cph] (Materialize CSS library),
+  Kevin Louie [ctb, cph] (Materialize CSS library)
+Repository: CRAN
+Date/Publication: 2017-04-15 05:14:08 UTC
