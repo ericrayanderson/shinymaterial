@@ -1,8 +1,6 @@
-# shinymaterial
+[# shinymaterial](https://ericrayanderson.shinyapps.io/shinymaterial/)
 
 ## R package: Implements Material Design in Shiny Applications
-
-[Homepage](https://ericrayanderson.shinyapps.io/shinymaterial/)
 
 Install CRAN version: `install.packages("shinymaterial")`
 
