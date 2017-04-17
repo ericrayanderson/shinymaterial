@@ -18,7 +18,7 @@ material_page <- function(title, ...){
       ),
       # Source Materialize CSS
       shiny::includeCSS(
-        "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css",
+        "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css",
         media = "screen,projection"
       ),
       shiny::includeCSS(
@@ -52,7 +52,7 @@ material_page <- function(title, ...){
    # tags$head(tags$script("$.noConflict(true);")),
     # Source Materialize Javascript
     shiny::includeScript(
-      "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"
+      "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"
     )
   )
 }
