@@ -1,4 +1,4 @@
-[# shinymaterial](https://ericrayanderson.shinyapps.io/shinymaterial/)
+# [shinymaterial](https://ericrayanderson.shinyapps.io/shinymaterial/)
 
 ## R package: Implements Material Design in Shiny Applications
 
