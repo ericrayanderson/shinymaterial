@@ -1,7 +1,7 @@
-R package shinymaterial
+# shinymaterial
 
-Implement Material Design in Shiny Applications
+## R package: Implements Material Design in Shiny Applications
 
-Install CRAN version: install.packages('shinymaterial')
+Install CRAN version: `install.packages('shinymaterial')`
 
-Install Development version: devtools::install_github("ericrayanderson/shinymaterial")
+Install Development version: `devtools::install_github("ericrayanderson/shinymaterial")`
