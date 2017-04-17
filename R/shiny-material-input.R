@@ -15,6 +15,9 @@
 #'   }
 #'   \item{
 #'   \strong{checkbox}
+#'   \itemize{
+#'   \item{\code{initial_value} \emph{(Boolean. The initial value.)}}
+#'   }
 #'   }
 #'   \item{
 #'   \strong{dropdown}
@@ -60,6 +63,7 @@
 #'   \itemize{
 #'   \item{\code{off_label} \emph{(String. The label for the 'off' portion of the switch.)}}
 #'   \item{\code{on_label} \emph{(String. The label for the 'on' portion of the switch.)}}
+#'   \item{\code{initial_value} \emph{(Boolean. The initial value.)}}
 #'   }
 #'   }
 #'   \item{
