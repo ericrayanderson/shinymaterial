@@ -155,7 +155,7 @@
 #'   label = "Switch",
 #'   off_label = "Off",
 #'   on_label = "On",
-#'   intitial_value = TRUE
+#'   initial_value = TRUE
 #' )
 #'
 #' ##-- text-box --##
