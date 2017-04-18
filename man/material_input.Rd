@@ -99,7 +99,8 @@ material_input(
 material_input(
   type = "checkbox",
   input_id = "example_checkbox",
-  label = "Checkbox"
+  label = "Checkbox",
+  intitial_value = TRUE
 )
 
 ##-- dropdown --##
@@ -169,7 +170,8 @@ material_input(
   input_id = "example_switch",
   label = "Switch",
   off_label = "Off",
-  on_label = "On"
+  on_label = "On",
+  intitial_value = TRUE
 )
 
 ##-- text-box --##

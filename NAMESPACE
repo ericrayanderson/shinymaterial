@@ -1,9 +1,11 @@
-export(material_page)
-export(material_input)
 export(material_card)
 export(material_column)
+export(material_depth)
+export(material_input)
+export(material_page)
 export(material_parallax)
 export(material_row)
 export(material_side_nav)
 export(material_tabs)
 export(material_tab_content)
+

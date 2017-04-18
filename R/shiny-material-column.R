@@ -1,9 +1,9 @@
 #' Create a column to organize UI content
 #'
 #' UI content can be placed in columns to organize items on a page.
+#' @param ... The UI elements to place in the column
 #' @param width Integer. The width of the column. The value should be between 1 and 12
 #' @param offset Integer. The offset to the left of the column. The value should be between 0 and 11
-#' @param ... The UI elements to place in the column
 #' @examples
 #' material_column(
 #'   width = 4,
