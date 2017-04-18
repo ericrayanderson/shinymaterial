@@ -11,7 +11,7 @@ Authors@R: c(
     )
 Maintainer: Eric Anderson <eric.ray.anderson@gmail.com>
 Description: Allows shiny developers to incorporate UI elements based on Google's Material design. See <https://material.io/guidelines/> for more information.
-URL: https://ericrayanderson.shinyapps.io/shinymaterial/
+URL: https://ericrayanderson.github.io/shinymaterial/
 License: GPL-3 | file LICENSE
 Imports: shiny (>= 0.7.0)
 Encoding: UTF-8
