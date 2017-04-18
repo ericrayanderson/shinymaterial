@@ -100,7 +100,7 @@ material_input(
   type = "checkbox",
   input_id = "example_checkbox",
   label = "Checkbox",
-  intitial_value = TRUE
+  initial_value = TRUE
 )
 
 ##-- dropdown --##
