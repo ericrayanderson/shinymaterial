@@ -18,8 +18,7 @@ material_page <- function(title, ...){
       ),
       # Source Materialize CSS
       shiny::includeCSS(
-        system.file("materialize/css/materialize.min.css",
-                    package = "shinymaterial"),
+        "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css",
         media = "screen,projection"
       ),
       shiny::includeCSS(
@@ -48,8 +47,7 @@ material_page <- function(title, ...){
     ),
     # Source Materialize Javascript
     shiny::includeScript(
-      system.file("materialize/js/materialize.min.js",
-                  package = "shinymaterial")
+      "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"
     )
   )
 }

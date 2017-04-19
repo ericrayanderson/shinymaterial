@@ -20,7 +20,7 @@ material_modal <- function(modal_id, modal_button_text, modal_title, ...){
       shiny::tagList(
         shiny::tags$button(
           `data-target` = modal_id,
-          class = "waves-effect waves-light btn",
+          class = "waves-effect waves-light btn shiny-material-modal-trigger",
           modal_button_text
         ),
         shiny::tags$div(
