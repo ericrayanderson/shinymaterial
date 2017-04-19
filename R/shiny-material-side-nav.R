@@ -34,13 +34,13 @@ material_side_nav <- function(..., fixed = FALSE){
           ""
         )
       ),
-      shiny::tags$div(
+     # shiny::tags$div(
         class = "row",
-        shiny::tags$div(
-          class = "col s10 offset-s1",
+    ##    shiny::tags$div(
+    #      class = "col s10 offset-s1",
           ...
-        )
-      )
+       # )
+     # )
     ),
     shiny::includeScript(
       system.file(
