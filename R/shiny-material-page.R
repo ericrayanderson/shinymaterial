@@ -14,7 +14,7 @@ material_page <- function(title, ...){
     shiny::tags$head(
       # Fonts
       shiny::includeCSS(
-        "http://fonts.googleapis.com/icon?family=Material+Icons"
+        "https://fonts.googleapis.com/icon?family=Material+Icons"
       ),
       # Source Materialize CSS
       shiny::includeCSS(
