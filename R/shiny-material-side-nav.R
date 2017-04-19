@@ -9,7 +9,7 @@
 #'   shiny::tags$h1("Side-nav Content")
 #' )
 material_side_nav <- function(..., fixed = FALSE){
-
+  
   shiny::tagList(
     shiny::includeCSS(
       system.file(
@@ -34,13 +34,7 @@ material_side_nav <- function(..., fixed = FALSE){
           ""
         )
       ),
-     # shiny::tags$div(
-        class = "row",
-    ##    shiny::tags$div(
-    #      class = "col s10 offset-s1",
-          ...
-       # )
-     # )
+      ...
     ),
     shiny::includeScript(
       system.file(
