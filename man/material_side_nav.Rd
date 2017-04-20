@@ -4,12 +4,14 @@
 \alias{material_side_nav}
 \title{Create a side-nav that contains UI content}
 \usage{
-material_side_nav(..., fixed = FALSE)
+material_side_nav(..., fixed = FALSE, image_source = NULL)
 }
 \arguments{
 \item{...}{The UI elements to place in the side-nav}
 
 \item{fixed}{A boolean. Set to TRUE to keep side-nav open on large screens.}
+
+\item{image_source}{String. The background image file name. Place the image in a folder labeled 'www' at the same level as the application (server.R & ui.R)}
 }
 \description{
 UI content can be placed in side-nav.
@@ -17,6 +19,7 @@ UI content can be placed in side-nav.
 \examples{
 material_side_nav(
   fixed = FALSE,
+  image_source = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Red_brick_wall_texture.JPG/2560px-Red_brick_wall_texture.JPG",
   shiny::tags$h1("Side-nav Content")
 )
 }

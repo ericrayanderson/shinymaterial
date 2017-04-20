@@ -4,14 +4,19 @@
 \alias{material_modal}
 \title{Place UI content in a modal}
 \usage{
-material_modal(modal_id, modal_button_text, modal_title, ...)
+material_modal(modal_id, button_text, button_icon = "no_icon",
+  floating_button = FALSE, title, ...)
 }
 \arguments{
 \item{modal_id}{String. The ID for the modal. Must be unique per app}
 
-\item{modal_button_text}{String. The text displayed on the modal trigger button}
+\item{button_text}{String. The text displayed on the modal trigger button}
 
-\item{modal_title}{String. The title of the modal window}
+\item{button_icon}{String. The name of the icon. Visit \url{http://materializecss.com/icons.html} for a list of available icons.}
+
+\item{floating_button}{Boolean. Should the modal trigger button be a floating button?}
+
+\item{title}{String. The title of the modal window}
 
 \item{...}{The UI elements to place in the modal}
 }
@@ -21,8 +26,8 @@ Put any UI object inside of a modal. The modal will open when the button is pres
 \examples{
 material_modal(
   modal_id = "example_modal",
-  modal_button_text = "Modal",
-  modal_title = "Example Modal Title",
+  button_text = "Modal",
+  title = "Example Modal Title",
   shiny::tags$p("Modal Content")
 )
 }

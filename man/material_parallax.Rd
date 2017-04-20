@@ -14,6 +14,6 @@ Use this function to create a parallax effect in your application.
 }
 \examples{
 material_parallax(
-  image_source = "example_image.jpg"
+  image_source = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Freudenberg_sg_Switzerland.jpg/1920px-Freudenberg_sg_Switzerland.jpg"
 )
 }

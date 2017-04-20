@@ -28,7 +28,7 @@ material_floating_button <- function(input_id, label, icon = NULL) {
           class="fixed-action-btn",
           shiny::tags$button(
             class =
-              "btn-floating btn-large waves-effect waves-light shiny-material-floating-button",
+              "btn-floating btn-large waves-effect waves-light shiny-material-floating-button z-depth-3",
             style =
               "background-color:#F06C71",
             id = input_id,
