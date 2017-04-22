@@ -4,10 +4,12 @@
 \alias{material_tabs}
 \title{Place UI content within a tab}
 \usage{
-material_tabs(tabs)
+material_tabs(tabs, in_card = FALSE)
 }
 \arguments{
 \item{tabs}{Named Vector. The tab display names as well as the tab ids.}
+
+\item{in_card}{Boolean. Are the tabs within a card?}
 }
 \description{
 Use this function to create tabs in your application.
