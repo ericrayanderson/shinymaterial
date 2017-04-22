@@ -13,7 +13,7 @@
 material_side_nav <- function(..., fixed = FALSE, image_source = NULL){
   
   if(is.null(image_source)){
-    side_nav_content <- tagList(...)
+    side_nav_content <- shiny::tagList(...)
   } else {
     side_nav_content <- 
       shiny::tagList(

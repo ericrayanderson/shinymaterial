@@ -14,7 +14,7 @@
 #'   title = "Example Modal Title",
 #'   shiny::tags$p("Modal Content")
 #' )
-material_modal <- function(modal_id, button_text, button_icon = "no_icon", floating_button = FALSE, title, ...){
+material_modal <- function(modal_id, button_text, title, ..., floating_button = FALSE, button_icon = "no_icon"){
   
   if(button_icon != "no_icon"){
     icon_tag <-

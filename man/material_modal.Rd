@@ -4,21 +4,21 @@
 \alias{material_modal}
 \title{Place UI content in a modal}
 \usage{
-material_modal(modal_id, button_text, button_icon = "no_icon",
-  floating_button = FALSE, title, ...)
+material_modal(modal_id, button_text, title, ..., floating_button = FALSE,
+  button_icon = "no_icon")
 }
 \arguments{
 \item{modal_id}{String. The ID for the modal. Must be unique per app}
 
 \item{button_text}{String. The text displayed on the modal trigger button}
 
-\item{button_icon}{String. The name of the icon. Visit \url{http://materializecss.com/icons.html} for a list of available icons.}
-
-\item{floating_button}{Boolean. Should the modal trigger button be a floating button?}
-
 \item{title}{String. The title of the modal window}
 
 \item{...}{The UI elements to place in the modal}
+
+\item{floating_button}{Boolean. Should the modal trigger button be a floating button?}
+
+\item{button_icon}{String. The name of the icon. Visit \url{http://materializecss.com/icons.html} for a list of available icons.}
 }
 \description{
 Put any UI object inside of a modal. The modal will open when the button is pressed.
