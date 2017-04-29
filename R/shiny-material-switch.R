@@ -25,13 +25,13 @@ material_switch <- function(input_id, label, off_label, on_label, initial_value 
         shiny::tags$head(
           shiny::tags$style(
             paste0(
-              '#', input_id, '_switch.switch label input[type=checkbox]:checked+.lever:after {
-              background-color: ', color, '!important;
+              "#", input_id, "_switch.switch label input[type=checkbox]:checked+.lever:after {
+              background-color: ", color, "!important;
               }
-              #', input_id, '_switch.switch label input[type=checkbox]:checked+.lever {
-              background-color: ', color, '!important;
+              #", input_id, "_switch.switch label input[type=checkbox]:checked+.lever {
+              background-color: ", color, "!important;
               }
-              '
+              "
             )
           )
         )
