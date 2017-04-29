@@ -3,15 +3,25 @@
 #' UI content can be placed in cards to organize items on a page.
 #' @param title String. The title of the card
 #' @param ... The UI elements to place in the card
+#' @param depth Integer. The amount of depth of the card. The value should be between 0 and 5. Leave empty for the default depth.
 #' @examples
 #' material_card(
 #'   title = "Example Card",
-#'   shiny::tags$h1("Card Content")
+#'   depth = 5,
+#'   shiny::tags$h5("Card Content")
 #' )
-material_card <- function(title, ...){
-
+material_card <- function(title, ..., depth = NULL){
+  
   shiny::tags$div(
-    class = "card",
+    class = 
+      paste0(
+        "card",
+        ifelse(
+          is.null(depth),
+          "",
+          paste0(" z-depth-", depth)
+        )
+      ),
     shiny::tags$div(
       class = "card-content",
       shiny::tags$span(

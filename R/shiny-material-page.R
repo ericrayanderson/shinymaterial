@@ -2,13 +2,17 @@
 #'
 #' Build a shinymaterial page.
 #' @param title String. The title of the page.
-#' @param ... The UI elements to place in the page
+#' @param ... The UI elements to place in the page.
+#' @param nav_bar_color Color of the navigation bar. Leave blank for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
+#' @param background_color Page background color. Leave blank for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
 #' @examples
 #' material_page(
 #'   title = "Example Title",
+#'   nav_bar_color = "red lighten-2",
+#'   background_color = "blue lighten-4",
 #'   shiny::tags$h1("Page Content")
 #' )
-material_page <- function(title, ...){
+material_page <- function(title, ..., nav_bar_color = NULL, background_color = "grey lighten-4"){
   shiny::tags$html(
     # Head --------------------------------------------------------------------
     shiny::tags$head(
@@ -32,8 +36,14 @@ material_page <- function(title, ...){
     ),
     # Body --------------------------------------------------------------------
     shiny::tags$body(
-      class = "grey lighten-4",
+      class = background_color,
       shiny::tags$nav(
+        class = 
+          ifelse(
+            is.null(nav_bar_color),
+            "",
+            nav_bar_color
+          ),
         shiny::tags$div(
           class = "nav-wrapper",
           shiny::tags$div(

@@ -7,9 +7,9 @@
 material_tab_content(tab_id, ...)
 }
 \arguments{
-\item{tab_id}{String. The tab id to place the content in}
+\item{tab_id}{String. The tab id in which to place the UI content.}
 
-\item{...}{The UI elements to place in the tab}
+\item{...}{The UI elements to place in the tab.}
 }
 \description{
 Use this function to place UI content within a specific tab.

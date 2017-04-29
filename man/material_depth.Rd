@@ -7,12 +7,12 @@
 material_depth(..., depth = 4)
 }
 \arguments{
-\item{...}{The UI elements to place in the column}
+\item{...}{The UI elements to apply the depth.}
 
 \item{depth}{Integer. The amount of depth. The value should be between 0 and 5. A value of 0 can be used to remove depth from objects that have depth by default.}
 }
 \description{
-Give a UI element an illusion of depth by creating a shadow.
+Give a UI element the perception of depth by creating a shadow.
 }
 \examples{
 material_depth(

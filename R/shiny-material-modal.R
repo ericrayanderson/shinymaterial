@@ -1,22 +1,25 @@
 #' Place UI content in a modal
 #'
 #' Put any UI object inside of a modal. The modal will open when the button is pressed.
-#' @param modal_id String. The ID for the modal. Must be unique per app
-#' @param button_text String. The text displayed on the modal trigger button
+#' @param modal_id String. The ID for the modal. Must be unique per application.
+#' @param button_text String. The text displayed on the modal trigger button.
+#' @param title String. The title of the modal window.
+#' @param ... The UI elements to place in the modal
 #' @param button_icon String. The name of the icon. Visit \url{http://materializecss.com/icons.html} for a list of available icons.
 #' @param floating_button Boolean. Should the modal trigger button be a floating button?
-#' @param title String. The title of the modal window
-#' @param ... The UI elements to place in the modal
+#' @param button_depth Integer. The amount of depth of the button. The value should be between 0 and 5. Leave empty for the default depth.
+#' @param button_color String. The color of the button. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
 #' @examples
 #' material_modal(
 #'   modal_id = "example_modal",
 #'   button_text = "Modal",
 #'   title = "Example Modal Title",
+#'   button_color = "red lighten-3",
 #'   shiny::tags$p("Modal Content")
 #' )
-material_modal <- function(modal_id, button_text, title, ..., floating_button = FALSE, button_icon = "no_icon"){
+material_modal <- function(modal_id, button_text, title, ..., button_icon = NULL, floating_button = FALSE, button_depth = NULL, button_color = NULL){
   
-  if(button_icon != "no_icon"){
+  if(!is.null(button_icon)){
     icon_tag <-
       shiny::HTML(
         paste0(
@@ -28,7 +31,19 @@ material_modal <- function(modal_id, button_text, title, ..., floating_button = 
     icon_tag <- NULL
   }
   
-  button_class <- "waves-effect waves-light shiny-material-modal-trigger"
+  button_class <- 
+    paste0(
+      "waves-effect waves-light shiny-material-modal-trigger",
+      ifelse(is.null(button_color),
+             "",
+             paste0(" ",  button_color)
+      ),
+      ifelse(
+        is.null(button_depth),
+        "",
+        paste0(" z-depth-", button_depth)
+      )
+    )
   
   if(!floating_button){
     button_class <- 

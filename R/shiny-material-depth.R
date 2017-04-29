@@ -1,7 +1,7 @@
 #' Add depth to a UI element
 #'
-#' Give a UI element an illusion of depth by creating a shadow.
-#' @param ... The UI elements to place in the column
+#' Give a UI element the perception of depth by creating a shadow.
+#' @param ... The UI elements to apply the depth.
 #' @param depth Integer. The amount of depth. The value should be between 0 and 5. A value of 0 can be used to remove depth from objects that have depth by default.
 #' @examples
 #' material_depth(

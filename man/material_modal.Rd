@@ -4,21 +4,25 @@
 \alias{material_modal}
 \title{Place UI content in a modal}
 \usage{
-material_modal(modal_id, button_text, title, ..., floating_button = FALSE,
-  button_icon = "no_icon")
+material_modal(modal_id, button_text, title, ..., button_icon = NULL,
+  floating_button = FALSE, button_depth = NULL, button_color = NULL)
 }
 \arguments{
-\item{modal_id}{String. The ID for the modal. Must be unique per app}
+\item{modal_id}{String. The ID for the modal. Must be unique per application.}
 
-\item{button_text}{String. The text displayed on the modal trigger button}
+\item{button_text}{String. The text displayed on the modal trigger button.}
 
-\item{title}{String. The title of the modal window}
+\item{title}{String. The title of the modal window.}
 
 \item{...}{The UI elements to place in the modal}
 
+\item{button_icon}{String. The name of the icon. Visit \url{http://materializecss.com/icons.html} for a list of available icons.}
+
 \item{floating_button}{Boolean. Should the modal trigger button be a floating button?}
 
-\item{button_icon}{String. The name of the icon. Visit \url{http://materializecss.com/icons.html} for a list of available icons.}
+\item{button_depth}{Integer. The amount of depth of the button. The value should be between 0 and 5. Leave empty for the default depth.}
+
+\item{button_color}{String. The color of the button. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
 }
 \description{
 Put any UI object inside of a modal. The modal will open when the button is pressed.
@@ -28,6 +32,7 @@ material_modal(
   modal_id = "example_modal",
   button_text = "Modal",
   title = "Example Modal Title",
+  button_color = "red lighten-3",
   shiny::tags$p("Modal Content")
 )
 }

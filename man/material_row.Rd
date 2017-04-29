@@ -7,10 +7,10 @@
 material_row(...)
 }
 \arguments{
-\item{...}{The UI elements to place in the row}
+\item{...}{The UI elements to place in the row.}
 }
 \description{
-UI content can be placed in rows to organize items on a page.
+UI content can be placed in a row to organize items on a page.
 }
 \examples{
 material_row(

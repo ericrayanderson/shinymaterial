@@ -1,8 +1,8 @@
 #' Place UI content within a tab
 #'
 #' Use this function to place UI content within a specific tab.
-#' @param tab_id String. The tab id to place the content in
-#' @param ... The UI elements to place in the tab
+#' @param tab_id String. The tab id in which to place the UI content.
+#' @param ... The UI elements to place in the tab.
 #' @examples
 #' material_tab_content(
 #'   tab_id = "example_tab_1",

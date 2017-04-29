@@ -7,11 +7,11 @@
 material_column(..., width = 6, offset = 0)
 }
 \arguments{
-\item{...}{The UI elements to place in the column}
+\item{...}{The UI elements to place in the column.}
 
-\item{width}{Integer. The width of the column. The value should be between 1 and 12}
+\item{width}{Integer. The width of the column. The value should be between 1 and 12.}
 
-\item{offset}{Integer. The offset to the left of the column. The value should be between 0 and 11}
+\item{offset}{Integer. The offset to the left of the column. The value should be between 0 and 11.}
 }
 \description{
 UI content can be placed in columns to organize items on a page.

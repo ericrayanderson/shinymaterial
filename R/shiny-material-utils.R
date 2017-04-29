@@ -14,20 +14,6 @@ create_material_object <- function(js_file, material_tag_list){
   )
 }
 
-material_missing_argument_error_message <- function(argument, input_id, type, additional_text = ""){
-  stop(
-    call. = FALSE,
-    paste0(
-      "Required material_input argument is missing, with no default",
-        "\ninput_id: ", input_id,
-      "\ntype: ", type,
-      "\nmissing argument: ", argument,
-      additional_text,
-      "\n"
-    )
-  )
-}
-
 check_material_function_name <- function(type, function_type){
 
   function_name <-

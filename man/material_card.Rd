@@ -4,12 +4,14 @@
 \alias{material_card}
 \title{Create a card that will contain UI content}
 \usage{
-material_card(title, ...)
+material_card(title, ..., depth = NULL)
 }
 \arguments{
 \item{title}{String. The title of the card}
 
 \item{...}{The UI elements to place in the card}
+
+\item{depth}{Integer. The amount of depth of the card. The value should be between 0 and 5. Leave empty for the default depth.}
 }
 \description{
 UI content can be placed in cards to organize items on a page.
@@ -17,6 +19,7 @@ UI content can be placed in cards to organize items on a page.
 \examples{
 material_card(
   title = "Example Card",
-  shiny::tags$h1("Card Content")
+  depth = 5,
+  shiny::tags$h5("Card Content")
 )
 }
