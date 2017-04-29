@@ -23,3 +23,13 @@ material_number_box(input_id, label, min_value, max_value, initial_value,
 \description{
 Build a shinymaterial number box.
 }
+\examples{
+material_number_box(
+  input_id = "example_number_box",
+  label = "number box",
+  min_value = 5,
+  max_value = 15,
+  initial_value = 10,
+  color = "#ef5350"
+)
+}

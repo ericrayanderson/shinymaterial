@@ -16,3 +16,10 @@ material_password_box(input_id, label, color = NULL)
 \description{
 Build a shinymaterial password box.
 }
+\examples{
+material_password_box(
+  input_id = "example_password_box",
+  label = "password box",
+  color = "#ef5350"
+)
+}

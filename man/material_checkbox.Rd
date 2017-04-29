@@ -23,6 +23,6 @@ material_checkbox(
   input_id = "example_checkbox",
   label = "Checkbox",
   initial_value = TRUE,
-  color = "ef5350"
+  color = "#ef5350"
 )
 }

@@ -10,7 +10,7 @@
 #'   input_id = "example_checkbox",
 #'   label = "Checkbox",
 #'   initial_value = TRUE,
-#'   color = "ef5350"
+#'   color = "#ef5350"
 #' )
 material_checkbox <- function(input_id, label, initial_value = FALSE, color = NULL) {
   

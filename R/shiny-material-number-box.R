@@ -24,15 +24,15 @@ material_number_box <- function(input_id, label, min_value, max_value, initial_v
         shiny::tags$head(
           shiny::tags$style(
             paste0(
-              '
-              #', input_id, '_number_box.input-field input[type=number]:focus + label {
-              color: ', color, ';
+              "
+              #", input_id, "_number_box.input-field input[type=number]:focus + label {
+              color: ", color, ";
               }
-              #', input_id, '_number_box.input-field input[type=number]:focus {
-              border-bottom: 1px solid ', color, ';
-              box-shadow: 0 1px 0 0 ', color, ';
+              #", input_id, "_number_box.input-field input[type=number]:focus {
+              border-bottom: 1px solid ", color, ";
+              box-shadow: 0 1px 0 0 ", color, ";
               }
-              '
+              "
             )
           )
         )

@@ -16,3 +16,10 @@ material_text_box(input_id, label, color = NULL)
 \description{
 Build a shinymaterial text box.
 }
+\examples{
+material_text_box(
+  input_id = "example_text_box",
+  label = "text box",
+  color = "#ef5350"
+)
+}

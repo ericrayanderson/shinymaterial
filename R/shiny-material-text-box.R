@@ -18,15 +18,15 @@ material_text_box <- function(input_id, label, color = NULL){
         shiny::tags$head(
           shiny::tags$style(
             paste0(
-              '
-              #', input_id, '_text_box.input-field input[type=text]:focus + label {
-              color: ', color, ';
+              "
+              #", input_id, "_text_box.input-field input[type=text]:focus + label {
+              color: ", color, ";
               }
-              #', input_id, '_text_box.input-field input[type=text]:focus {
-              border-bottom: 1px solid ', color, ';
-              box-shadow: 0 1px 0 0 ', color, ';
+              #", input_id, "_text_box.input-field input[type=text]:focus {
+              border-bottom: 1px solid ", color, ";
+              box-shadow: 0 1px 0 0 ", color, ";
               }
-              '
+              "
             )
           )
         )

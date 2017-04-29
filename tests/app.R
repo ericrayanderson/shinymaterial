@@ -218,9 +218,9 @@ ui <-
         color = "red"
       ),
       material_password_box(
-        input_id = "password_box2",
-        label = "password_box2",
-        color = "blue"
+        input_id = "password_box",
+        label = "password_box_red",
+        color = "#ef5350"
       ),
       material_floating_button(
         input_id = "example_floating_button",
@@ -438,4 +438,4 @@ server <- function(input, output) {
 }
 
 # Run the application
-#shinyApp(ui = ui, server = server)
+shinyApp(ui = ui, server = server)
