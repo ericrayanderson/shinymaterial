@@ -16,7 +16,7 @@
 #'   initial_value = TRUE,
 #'   color = "#ef5350"
 #' )
-material_switch <- function(input_id, label, off_label, on_label, initial_value = FALSE, color = NULL){
+material_switch <- function(input_id, label, off_label = "", on_label = "", initial_value = FALSE, color = NULL){
   
   if(!is.null(color)){
     
