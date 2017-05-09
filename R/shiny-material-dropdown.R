@@ -62,7 +62,7 @@ material_dropdown <- function(input_id, label, choices = NULL, selected = NULL, 
       shiny::HTML(
         paste0(
           "<option",
-          " value=", choices[i],
+          " value=", gsub(pattern = " ", replacement = "_shinymaterialdropdownspace_", x = choices[i], fixed = TRUE),
           ifelse(
             i %in% selected_index,
             " selected",
