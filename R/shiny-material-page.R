@@ -12,7 +12,7 @@
 #'   background_color = "blue lighten-4",
 #'   shiny::tags$h1("Page Content")
 #' )
-material_page <- function(title, ..., nav_bar_color = NULL, background_color = "grey lighten-4"){
+material_page <- function(..., title, nav_bar_color = NULL, background_color = "grey lighten-4"){
   shiny::tags$html(
     # Head --------------------------------------------------------------------
     shiny::tags$head(
