@@ -6,7 +6,7 @@ $(document).ready(function () {
             return $(scope).find(".shiny-material-radio-button");
         },
         getValue: function (el) {
-            return $(el).find('input:checked').attr('id');
+            return $(el).find('input:checked').attr('id').replace("_shinymaterialradioempty_", "");
         },
         subscribe: function (el, callback) {
             $(el).on("change.shiny-material-radio-button", function (e) {

@@ -60,10 +60,10 @@ material_radio_button <- function(input_id, label, choices, color = NULL) {
               '', 
               paste0('shinymaterial-radio-button-', input_id)
             ),
-          id = choices[i]
+          id = ifelse(choices[i] != "", choices[i], "_shinymaterialradioempty_")
         ),
         shiny::tags$label(
-          `for` = choices[i],
+          `for` = ifelse(choices[i] != "", choices[i], "_shinymaterialradioempty_"),
           ifelse(
             has_names,
             names(choices[i]),
