@@ -63,6 +63,10 @@ material_page <- function(..., title = "", nav_bar_color = NULL, background_colo
     # Source Materialize Javascript
     shiny::includeScript(
       "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"
+    ),
+    shiny::includeScript(
+      system.file("js/shiny-material-page.js",
+                  package = "shinymaterial")
     )
   )
 }

@@ -2,3 +2,7 @@
 .shiny-material-switch{
      margin-top: 14px
  }
+
+select[name$=_length] {
+    display: block !important;
+}
