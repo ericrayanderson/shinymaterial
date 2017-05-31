@@ -1,8 +1,8 @@
 #' Create a shinymaterial page
 #'
 #' Build a shinymaterial page.
-#' @param title String. The title of the page.
 #' @param ... The UI elements to place in the page.
+#' @param title String. The title of the page.
 #' @param nav_bar_color Color of the navigation bar. Leave blank for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
 #' @param background_color Page background color. Leave blank for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
 #' @examples

@@ -4,13 +4,13 @@
 \alias{material_page}
 \title{Create a shinymaterial page}
 \usage{
-material_page(title, ..., nav_bar_color = NULL,
+material_page(..., title = "", nav_bar_color = NULL,
   background_color = "grey lighten-4")
 }
 \arguments{
-\item{title}{String. The title of the page.}
-
 \item{...}{The UI elements to place in the page.}
+
+\item{title}{String. The title of the page.}
 
 \item{nav_bar_color}{Color of the navigation bar. Leave blank for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
 
