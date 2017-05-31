@@ -53,7 +53,12 @@ material_page <- function(..., title = "", nav_bar_color = NULL, background_colo
           )
         )
       ),
-      ...
+      material_row(
+        material_column(
+          width = 12,
+          ...
+        )
+      )
     ),
     # Source Materialize Javascript
     shiny::includeScript(
