@@ -74,12 +74,7 @@ material_side_nav <- function(..., fixed = FALSE, image_source = NULL, backgroun
           ""
         )
       ),
-      material_row(
-        material_column(
-          width = 12,
-          side_nav_content
-        )
-      )
+      side_nav_content
     ),
     shiny::includeScript(
       system.file(
