@@ -1,22 +1,30 @@
 $(document).ready(function () {
+  
+  function initShinyMaterialDatePicker(callback) {
+        $('.datepicker').pickadate({});
+        callback();
+    }
 
-    var shinyMaterialCheckbox = new Shiny.InputBinding();
-    $.extend(shinyMaterialCheckbox, {
+    initShinyMaterialDatePicker(function () {
+      
+    var shinyMaterialDatePicker = new Shiny.InputBinding();
+    $.extend(shinyMaterialDatePicker, {
         find: function (scope) {
-            return $(scope).find(".shiny-material-checkbox");
+            return $(scope).find(".shiny-material-date-picker");
         },
         getValue: function (el) {
             return $(el).val();
         },
         subscribe: function (el, callback) {
-            $(el).on("change.shiny-material-checkbox", function (e) {
+            $(el).on("change.shiny-material-date-picker", function (e) {
                 callback();
             });
         },
         unsubscribe: function (el) {
-            $(el).off(".shiny-material-checkbox");
+            $(el).off(".shiny-material-date-picker");
         }
     });
 
-    Shiny.inputBindings.register(shinyMaterialCheckbox);
+    Shiny.inputBindings.register(shinyMaterialDatePicker);
+    });
 });
