@@ -4,19 +4,15 @@
 \alias{material_date_picker}
 \title{Create a shinymaterial date picker}
 \usage{
-material_date_picker(input_id, label)
+material_date_picker(input_id, label, color = NULL)
 }
 \arguments{
 \item{input_id}{String. The input identifier used to access the value.}
 
 \item{label}{String. The date picker label.}
+
+\item{color}{String. The date picker color. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
 }
 \description{
 Build a shinymaterial date picker.
-}
-\examples{
-material_date_picker(
-  input_id = "example_date_picker",
-  label = "Date Picker"
-)
 }

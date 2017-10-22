@@ -316,7 +316,8 @@ ui <-
       # date picker -------------------------------------------------------------
       material_date_picker(
         input_id = "example_date_picker",
-        label = "Date picker"
+        label = "Date picker",
+        color = 'purple'
       )
     )
   )
