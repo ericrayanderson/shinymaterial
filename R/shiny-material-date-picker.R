@@ -19,26 +19,26 @@ material_date_picker <- function(input_id, label, color = NULL) {
           shiny::tags$style(
             paste0(
               '
-            #', input_id, '_root .picker__date-display {
+              #', input_id, '_root .picker__date-display {
               background-color: ', color, ';
-            }
+              }
 
- #', input_id, '_root .picker__close, .picker__today {
+              #', input_id, '_root .picker__close, .picker__today {
               color: ', color, ';
- }
- #', input_id, '_root .picker, .picker--opened, picker__day--infocus, .picker__day--selected:hover, picker__day--highlighted, .picker--focused {
-  background-color: ', color, ';
- }
+              }
+              #', input_id, '_root .picker, .picker--opened, picker__day--infocus, .picker__day--selected:hover, picker__day--highlighted, .picker--focused {
+              background-color: ', color, ';
+              }
 
- #', input_id, '_root .picker__day--today {
-  color: ', color, ';
- }
+              #', input_id, '_root .picker__day--today {
+              color: ', color, ';
+              }
 
- #', input_id, '_root .picker__day--selected {
-   background-color: ', color, ';
-    color: #fff;
-  }
-'
+              #', input_id, '_root .picker__day--selected {
+              background-color: ', color, ';
+              color: #fff;
+              }
+              '
             )
           )
         )
