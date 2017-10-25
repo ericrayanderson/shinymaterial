@@ -31,8 +31,8 @@ material_side_nav_tabs <- function(side_nav_tabs, color = NULL){
             ),
           href = "javascript:void(0)",
           onclick = paste0("$('.shiny-material-side-nav-tab-content').hide();",
-                           "$('#", side_nav_tabs[[i]],
-                           "').show();"),
+                           "$('#", side_nav_tabs[[i]], "').css('visibility', 'visible');",
+                           "$('#", side_nav_tabs[[i]], "').show();"),
           names(side_nav_tabs)[[i]]
         )
       )

@@ -17,15 +17,20 @@ ui <- material_page(
   # Define tab content
   material_side_nav_tab_content(
     side_nav_tab_id = "example_side_nav_tab_1",
-    tags$h1("First Tab Content")
+    tags$h1("First Tab Content"),
+    material_slider("sliderVal", label = 'slider', min_value = 1, max_value = 10, initial_value = 5)
   ),
   material_side_nav_tab_content(
     side_nav_tab_id = "example_side_nav_tab_2",
-    tags$h1("Second Tab Content")
+    tags$h1("Second Tab Content"),
+    plotOutput('testplot')
   )
 )
 
 server <- function(input, output) {
+  output$testplot <- renderPlot({
+    plot(1:input$sliderVal)
+  })
   
 }
 shinyApp(ui = ui, server = server)
