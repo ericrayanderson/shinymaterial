@@ -2,7 +2,7 @@
 #'
 #' Use this function to create side-nav tabs in your application.
 #' @param tabs Named vector. The tab display names and corresponding side-nav tab ids.
-#' @param color String. The accent color of the tabs. Leave blank for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors. \emph{Tab color requires using word forms of colors (e.g. 'deep-purple'). Also, lighten or darken effects do not work on tab colors.}
+#' @param color String. The accent color of the side-nav tab wave animation. Leave blank for the default color. Visit \url{http://materializecss.com/waves.html} for a list of available colors. \emph{Side-nav tab color requires using word forms of colors (e.g. 'purple').
 #' @examples
 #' material_side_nav_tabs(
 #'   side_nav_tabs = c(
@@ -23,11 +23,11 @@ material_side_nav_tabs <- function(side_nav_tabs, color = NULL){
         shiny::tags$a(
           class = 
             paste0(
-              "waves-effect waves-",
+              "waves-effect ",
               ifelse(
                 is.null(color),
-                "teal",
-                paste0(color)
+                "",
+                paste0("waves-", color)
               )
             ),
           href = "javascript:void(0)",
@@ -36,6 +36,7 @@ material_side_nav_tabs <- function(side_nav_tabs, color = NULL){
                            "$('#", side_nav_tabs[[i]], "').css('visibility', 'visible');",
                            "$('#", side_nav_tabs[[i]], "').show();",
                            "$('#", paste0(side_nav_tabs[[i]], "_tab_id"), "').addClass('active');"),
+          style = "font-weight: 500; font-size: 13px",
           names(side_nav_tabs)[[i]]
         )
       )
