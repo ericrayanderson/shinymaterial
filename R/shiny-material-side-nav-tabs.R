@@ -18,36 +18,30 @@ material_side_nav_tabs <- function(side_nav_tabs, color = NULL){
   for(i in 1:length(side_nav_tabs)){
     material_side_nav_tabs[[i]] <-
       shiny::tags$li(
-        class = "shiny-material-side-nav-tab",
+        class = "bold shiny-material-side-nav-tab",
+        id = paste0(side_nav_tabs[[i]], "_tab_id"),
         shiny::tags$a(
           class = 
             paste0(
-              "waves-effect ",
+              "waves-effect waves-",
               ifelse(
                 is.null(color),
-                "",
-                paste0(" ", color, "-text")
+                "teal",
+                paste0(color)
               )
             ),
           href = "javascript:void(0)",
           onclick = paste0("$('.shiny-material-side-nav-tab-content').hide();",
+                           "$('.shiny-material-side-nav-tab').removeClass('active');",
                            "$('#", side_nav_tabs[[i]], "').css('visibility', 'visible');",
-                           "$('#", side_nav_tabs[[i]], "').show();"),
+                           "$('#", side_nav_tabs[[i]], "').show();",
+                           "$('#", paste0(side_nav_tabs[[i]], "_tab_id"), "').addClass('active');"),
           names(side_nav_tabs)[[i]]
         )
       )
   }
   
-  if(!is.null(color)){
-    material_tabs[[length(tabs) + 1]] <-
-      shiny::tags$div(
-        class = paste0("indicator ", color)
-      )
-  }
-  
   shiny::tagList(
-    shiny::tags$ul(
-      material_side_nav_tabs
-    )
+    material_side_nav_tabs
   )
 }
