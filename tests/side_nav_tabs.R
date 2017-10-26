@@ -13,31 +13,26 @@ ui <- material_page(
         "Example Side-Nav Tab 2" = "example_side_nav_tab_2",
         "Example Side-Nav Tab 3" = "example_side_nav_tab_3"
       ),
-      icons = c("cloud", "none", "cloud")
+      icons = c("insert_chart", "cast", "none")
     )
   ),
-  # Define tab content
+  # Define side-nav tab content
   material_side_nav_tab_content(
     side_nav_tab_id = "example_side_nav_tab_1",
-    tags$h1("First Tab Content"),
-    material_slider("sliderVal", label = 'slider', min_value = 1, max_value = 10, initial_value = 5)
-  ),
-  material_side_nav_tab_content(
-    side_nav_tab_id = "example_side_nav_tab_3",
-    tags$h1("Third Tab Content")
+    tags$h1("First Side-Nav Tab Content")
   ),
   material_side_nav_tab_content(
     side_nav_tab_id = "example_side_nav_tab_2",
-    tags$h1("Second Tab Content"),
-    plotOutput('testplot')
+    tags$h1("Second Side-Nav Tab Content")
+  ),
+  material_side_nav_tab_content(
+    side_nav_tab_id = "example_side_nav_tab_3",
+    tags$h1("Third Side-Nav Tab Content")
   )
 )
 
 
 server <- function(input, output) {
-  output$testplot <- renderPlot({
-    plot(1:input$sliderVal)
-  })
   
 }
 shinyApp(ui = ui, server = server)
