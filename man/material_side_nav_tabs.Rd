@@ -4,10 +4,11 @@
 \alias{material_side_nav_tabs}
 \title{Place UI content within a side-nav tab}
 \usage{
-material_side_nav_tabs(side_nav_tabs, color = NULL)
+material_side_nav_tabs(side_nav_tabs, icons = NULL, color = NULL)
 }
 \arguments{
-\item{side_nav_tabs}{Named vector. The side-nav tab display names and corresponding side-nav tab ids.}
+\item{side_nav_tabs}{Named vector. The side-nav tab display names and corresponding side-nav tab ids.
+#' @param icons String vector. The names of the icons. Leave blank for no icons, or use "none". The length of the vector must match the length of sie_nav_tabs. Visit \url{http://materializecss.com/icons.html} for a list of available icons.}
 
 \item{color}{String. The accent color of the side-nav tab wave animation. Leave blank for the default color. Visit \url{http://materializecss.com/waves.html} for a list of available colors. \emph{Side-nav tab color requires using word forms of colors (e.g. "purple").}}
 }
@@ -20,6 +21,7 @@ material_side_nav_tabs(
     "Example Side-Nav Tab 1" = "example_side_nav_tab_1",
     "Example Side-Nav Tab 2" = "example_side_nav_tab_2"
   ),
+  icons = c("cloud", "none"),
   color = "teal"
 )
 }

@@ -2,6 +2,7 @@
 #'
 #' Use this function to create side-nav tabs in your application.
 #' @param side_nav_tabs Named vector. The side-nav tab display names and corresponding side-nav tab ids.
+#' #' @param icons String vector. The names of the icons. Leave blank for no icons, or use "none". The length of the vector must match the length of sie_nav_tabs. Visit \url{http://materializecss.com/icons.html} for a list of available icons.
 #' @param color String. The accent color of the side-nav tab wave animation. Leave blank for the default color. Visit \url{http://materializecss.com/waves.html} for a list of available colors. \emph{Side-nav tab color requires using word forms of colors (e.g. "purple").}
 #' @examples
 #' material_side_nav_tabs(
@@ -9,16 +10,42 @@
 #'     "Example Side-Nav Tab 1" = "example_side_nav_tab_1",
 #'     "Example Side-Nav Tab 2" = "example_side_nav_tab_2"
 #'   ),
+#'   icons = c("cloud", "none"),
 #'   color = "teal"
 #' )
-material_side_nav_tabs <- function(side_nav_tabs, color = NULL){
+material_side_nav_tabs <- function(side_nav_tabs, icons = NULL, color = NULL){
+  
+  if(!is.null(icons)){
+    
+    side_nav_tabs_length <- length(side_nav_tabs)
+    icons_length <- length(icons)
+    
+    if(side_nav_tabs_length != icons_length){
+      stop(paste0("Length side_nav_tabs (",
+                  side_nav_tabs_length,
+                  ") not equal to length icons (", icons_length, ")."))
+    }
+  }
   
   material_side_nav_tabs <- shiny::tagList()
   
   for(i in 1:length(side_nav_tabs)){
+    
+    icon_tag.i <- NULL
+    
+    if(icons[[i]] != ""){
+      icon_tag.i <-
+        shiny::HTML(
+          paste0(
+            '<i class="material-icons">',
+            icons[[i]],
+            '</i>')
+        )
+    }
+    
     material_side_nav_tabs[[i]] <-
       shiny::tags$li(
-        class = "bold shiny-material-side-nav-tab",
+        class = "shiny-material-side-nav-tab",
         id = paste0(side_nav_tabs[[i]], "_tab_id"),
         shiny::tags$a(
           class = 
@@ -36,8 +63,8 @@ material_side_nav_tabs <- function(side_nav_tabs, color = NULL){
                            "$('#", side_nav_tabs[[i]], "').css('visibility', 'visible');",
                            "$('#", side_nav_tabs[[i]], "').show();",
                            "$('#", paste0(side_nav_tabs[[i]], "_tab_id"), "').addClass('active');"),
-          style = "font-weight: 500; font-size: 13px",
-          names(side_nav_tabs)[[i]]
+          # style = "font-size: 14px; font-weight: 600",
+          icon_tag.i, names(side_nav_tabs)[[i]]
         )
       )
   }

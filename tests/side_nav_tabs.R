@@ -12,7 +12,8 @@ ui <- material_page(
         "Example Side-Nav Tab 1" = "example_side_nav_tab_1",
         "Example Side-Nav Tab 2" = "example_side_nav_tab_2",
         "Example Side-Nav Tab 3" = "example_side_nav_tab_3"
-      )
+      ),
+      icons = c("cloud", "none", "cloud")
     )
   ),
   # Define tab content
