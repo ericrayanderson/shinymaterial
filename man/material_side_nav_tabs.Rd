@@ -4,7 +4,8 @@
 \alias{material_side_nav_tabs}
 \title{Place UI content within a side-nav tab}
 \usage{
-material_side_nav_tabs(side_nav_tabs, icons = NULL, color = NULL)
+material_side_nav_tabs(side_nav_tabs, icons = NULL, color = NULL,
+  font_color = NULL)
 }
 \arguments{
 \item{side_nav_tabs}{Named vector. The side-nav tab display names and corresponding side-nav tab ids.}
@@ -12,6 +13,8 @@ material_side_nav_tabs(side_nav_tabs, icons = NULL, color = NULL)
 \item{icons}{String vector. The names of the icons. Leave blank for no icons, or use "none". The length of the vector must match the length of side_nav_tabs. Visit \url{http://materializecss.com/icons.html} for a list of available icons.}
 
 \item{color}{String. The accent color of the side-nav tab wave animation. Leave blank for the default color. Visit \url{http://materializecss.com/waves.html} for a list of available colors. \emph{Side-nav tab color requires using word forms of colors (e.g. "purple").}}
+
+\item{font_color}{String. The side-nav tabs font color. Leave blank for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors. \emph{Side-nav tab color requires using word forms of colors (e.g. "deep-purple"). Also, lighten or darken effects do not work on side-nav tab colors.}}
 }
 \description{
 Use this function to create side-nav tabs in your application.

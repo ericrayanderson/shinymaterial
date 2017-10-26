@@ -5,7 +5,7 @@
 \title{Create a shinymaterial page}
 \usage{
 material_page(..., title = "", nav_bar_color = NULL,
-  background_color = "grey lighten-4")
+  background_color = "grey lighten-4", font_color = NULL)
 }
 \arguments{
 \item{...}{The UI elements to place in the page.}
@@ -15,6 +15,8 @@ material_page(..., title = "", nav_bar_color = NULL,
 \item{nav_bar_color}{Color of the navigation bar. Leave blank for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
 
 \item{background_color}{Page background color. Leave blank for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
+
+\item{font_color}{String. The title font color. Leave blank for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors. \emph{Title color requires using word forms of colors (e.g. "deep-purple"). Also, lighten or darken effects do not work on title colors.}}
 }
 \description{
 Build a shinymaterial page.

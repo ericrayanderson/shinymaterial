@@ -3,7 +3,7 @@ library(shinymaterial)
 
 # Wrap shinymaterial apps in material_page
 ui <- material_page(
-  title = "Basic Page + Side-Nav Tabs",
+  title = "Basic Page + Side-Nav Tabs", font_color = "deep-purple",
   # Place side-nav in the beginning of the UI
   material_side_nav(
     fixed = TRUE,
@@ -13,7 +13,8 @@ ui <- material_page(
         "Example Side-Nav Tab 2" = "example_side_nav_tab_2",
         "Example Side-Nav Tab 3" = "example_side_nav_tab_3"
       ),
-      icons = c("insert_chart", "cast", "none")
+      icons = c("insert_chart", "cast", "none"),
+      font_color = "blue"
     )
   ),
   # Define side-nav tab content

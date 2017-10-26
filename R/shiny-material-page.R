@@ -5,6 +5,7 @@
 #' @param title String. The title of the page.
 #' @param nav_bar_color Color of the navigation bar. Leave blank for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
 #' @param background_color Page background color. Leave blank for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
+#' @param font_color String. The title font color. Leave blank for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors. \emph{Title color requires using word forms of colors (e.g. "deep-purple"). Also, lighten or darken effects do not work on title colors.}
 #' @examples
 #' material_page(
 #'   title = "Example Title",
@@ -12,7 +13,7 @@
 #'   background_color = "blue lighten-4",
 #'   shiny::tags$h1("Page Content")
 #' )
-material_page <- function(..., title = "", nav_bar_color = NULL, background_color = "grey lighten-4"){
+material_page <- function(..., title = "", nav_bar_color = NULL, background_color = "grey lighten-4", font_color = NULL){
   shiny::tags$html(
     # Head --------------------------------------------------------------------
     shiny::tags$head(
@@ -48,7 +49,14 @@ material_page <- function(..., title = "", nav_bar_color = NULL, background_colo
           class = "nav-wrapper",
           shiny::tags$div(
             href = "javascript:void(0)",
-            class = "brand-logo",
+            class = paste0(
+              "brand-logo ",
+              ifelse(
+                is.null(font_color),
+                "",
+                paste0(" ", font_color, "-text")
+              )
+            ),
             shiny::HTML(paste0("&nbsp;", title))
           )
         )
