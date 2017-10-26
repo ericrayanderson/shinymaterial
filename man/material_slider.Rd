@@ -18,7 +18,7 @@ material_slider(input_id, label, min_value, max_value, initial_value,
 
 \item{initial_value}{Number. The initial value of the slider.}
 
-\item{color}{String. The slider color. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors. \emph{This input requires using color hex codes, rather than the word form. E.g., '#ef5350', rather than 'red lighten-1'.}}
+\item{color}{String. The slider color. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors. \emph{This input requires using color hex codes, rather than the word form. E.g., "#ef5350", rather than "red lighten-1".}}
 }
 \description{
 Build a shinymaterial slider.

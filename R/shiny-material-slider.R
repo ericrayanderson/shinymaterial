@@ -6,7 +6,7 @@
 #' @param min_value Number. The minimum value on the slider.
 #' @param max_value Number. The maximum value on the slider.
 #' @param initial_value Number. The initial value of the slider.
-#' @param color String. The slider color. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors. \emph{This input requires using color hex codes, rather than the word form. E.g., '#ef5350', rather than 'red lighten-1'.}
+#' @param color String. The slider color. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors. \emph{This input requires using color hex codes, rather than the word form. E.g., "#ef5350", rather than "red lighten-1".}
 #' @examples
 #' material_slider(
 #'   input_id = "example_slider",

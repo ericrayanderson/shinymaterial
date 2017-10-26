@@ -1,15 +1,15 @@
 #' Place UI content within a side-nav tab
 #'
 #' Use this function to create side-nav tabs in your application.
-#' @param tabs Named vector. The tab display names and corresponding side-nav tab ids.
-#' @param color String. The accent color of the side-nav tab wave animation. Leave blank for the default color. Visit \url{http://materializecss.com/waves.html} for a list of available colors. \emph{Side-nav tab color requires using word forms of colors (e.g. 'purple').
+#' @param side_nav_tabs Named vector. The side-nav tab display names and corresponding side-nav tab ids.
+#' @param color String. The accent color of the side-nav tab wave animation. Leave blank for the default color. Visit \url{http://materializecss.com/waves.html} for a list of available colors. \emph{Side-nav tab color requires using word forms of colors (e.g. "purple").}
 #' @examples
 #' material_side_nav_tabs(
 #'   side_nav_tabs = c(
 #'     "Example Side-Nav Tab 1" = "example_side_nav_tab_1",
 #'     "Example Side-Nav Tab 2" = "example_side_nav_tab_2"
 #'   ),
-#'   color = "deep-purple"
+#'   color = "teal"
 #' )
 material_side_nav_tabs <- function(side_nav_tabs, color = NULL){
   

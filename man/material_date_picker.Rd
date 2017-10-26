@@ -16,3 +16,9 @@ material_date_picker(input_id, label, color = NULL)
 \description{
 Build a shinymaterial date picker.
 }
+\examples{
+material_date_picker(
+  input_id = "example_date_picker",
+  label = "Date Picker"
+)
+}

@@ -11,7 +11,7 @@ material_password_box(input_id, label, color = NULL)
 
 \item{label}{String. The password box label.}
 
-\item{color}{String. The accent color of the password box. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors. \emph{This input requires using color hex codes, rather than the word form. E.g., '#ef5350', rather than 'red lighten-1'.}}
+\item{color}{String. The accent color of the password box. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors. \emph{This input requires using color hex codes, rather than the word form. E.g., "#ef5350", rather than "red lighten-1".}}
 }
 \description{
 Build a shinymaterial password box.

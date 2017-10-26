@@ -4,7 +4,7 @@
 #' @param input_id String. The input identifier used to access the value.
 #' @param label String. The radio button label.
 #' @param choices Named vector. The option names and underyling values.
-#' @param color String. The color of the radio buttons. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors. \emph{This input requires using color hex codes, rather than the word form. E.g., '#ef5350', rather than 'red lighten-1'.}
+#' @param color String. The color of the radio buttons. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors. \emph{This input requires using color hex codes, rather than the word form. E.g., "#ef5350", rather than "red lighten-1".}
 #' @examples
 #' material_radio_button(
 #'   input_id = "example_radio_button",

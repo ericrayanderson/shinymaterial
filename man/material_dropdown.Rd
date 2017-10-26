@@ -18,7 +18,7 @@ material_dropdown(input_id, label, choices = NULL, selected = NULL,
 
 \item{multiple}{Boolean. Can multiple items be selected?}
 
-\item{color}{String. The color of the dropdown choices. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors. \emph{This input requires using color hex codes, rather than the word form. E.g., '#ef5350', rather than 'red lighten-1'.}}
+\item{color}{String. The color of the dropdown choices. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors. \emph{This input requires using color hex codes, rather than the word form. E.g., "#ef5350", rather than "red lighten-1".}}
 }
 \description{
 Build a shinymaterial dropdown.
