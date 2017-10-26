@@ -13,7 +13,7 @@ $(document).ready(function () {
         .attr('id');
 
     if (first_side_nav_tab_content_id != first_side_nav_tab_content_found) {
-        alert("SHINYMATERIAL ERROR [side-nav tabs]\n\nTab content code must be arranged in the same order as the tabs.\n\nFirst tab found (" + first_side_nav_tab_id.replace("_tab_id", "") + ") does not match first tab content found (" + first_side_nav_tab_content_found + ").\n\nPlease rearrange the UI code.")
+        alert("SHINYMATERIAL ERROR [side-nav tabs]\n\nTab content code for the first tab must be located prior to tab content code for all other tabs.\n\nFirst tab found (" + first_side_nav_tab_id.replace("_tab_id", "") + ") does not match first tab content found (" + first_side_nav_tab_content_found + ").\n\nPlease rearrange the UI code.")
 
         $("body").empty();
     } else {
