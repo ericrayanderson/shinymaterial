@@ -7,8 +7,9 @@
 material_side_nav_tabs(side_nav_tabs, icons = NULL, color = NULL)
 }
 \arguments{
-\item{side_nav_tabs}{Named vector. The side-nav tab display names and corresponding side-nav tab ids.
-#' @param icons String vector. The names of the icons. Leave blank for no icons, or use "none". The length of the vector must match the length of sie_nav_tabs. Visit \url{http://materializecss.com/icons.html} for a list of available icons.}
+\item{side_nav_tabs}{Named vector. The side-nav tab display names and corresponding side-nav tab ids.}
+
+\item{icons}{String vector. The names of the icons. Leave blank for no icons, or use "none". The length of the vector must match the length of side_nav_tabs. Visit \url{http://materializecss.com/icons.html} for a list of available icons.}
 
 \item{color}{String. The accent color of the side-nav tab wave animation. Leave blank for the default color. Visit \url{http://materializecss.com/waves.html} for a list of available colors. \emph{Side-nav tab color requires using word forms of colors (e.g. "purple").}}
 }
