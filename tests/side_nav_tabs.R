@@ -17,7 +17,7 @@ ui <- material_page(
   ),
   # Define tab content
   material_side_nav_tab_content(
-    side_nav_tab_id = "example_side_nav_tab_2",
+    side_nav_tab_id = "example_side_nav_tab_1",
     tags$h1("First Tab Content"),
     material_slider("sliderVal", label = 'slider', min_value = 1, max_value = 10, initial_value = 5)
   ),
@@ -26,7 +26,7 @@ ui <- material_page(
     tags$h1("Third Tab Content")
   ),
   material_side_nav_tab_content(
-    side_nav_tab_id = "example_side_nav_tab_1",
+    side_nav_tab_id = "example_side_nav_tab_2",
     tags$h1("Second Tab Content"),
     plotOutput('testplot')
   )
