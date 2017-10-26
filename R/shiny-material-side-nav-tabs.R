@@ -33,14 +33,16 @@ material_side_nav_tabs <- function(side_nav_tabs, icons = NULL, color = NULL){
     
     icon_tag.i <- NULL
     
-    if(icons[[i]] != ""){
-      icon_tag.i <-
-        shiny::HTML(
-          paste0(
-            '<i class="material-icons">',
-            icons[[i]],
-            '</i>')
-        )
+    if(!is.null(icons)){
+      if(icons[[i]] != ""){
+        icon_tag.i <-
+          shiny::HTML(
+            paste0(
+              '<i class="material-icons">',
+              icons[[i]],
+              '</i>')
+          )
+      }
     }
     
     material_side_nav_tabs[[i]] <-
