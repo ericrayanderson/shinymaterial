@@ -23,7 +23,8 @@ material_page <- function(..., title = "", nav_bar_color = NULL, background_colo
       ),
       # Source Materialize CSS
       shiny::includeCSS(
-        "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css",
+        system.file("libs/materialize/0.99.0/css/materialize.min.css",
+                    package = "shinymaterial"),
         media = "screen,projection"
       ),
       shiny::includeCSS(
@@ -65,7 +66,8 @@ material_page <- function(..., title = "", nav_bar_color = NULL, background_colo
     ),
     # Source Materialize Javascript
     shiny::includeScript(
-      "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"
+      system.file("libs/materialize/0.99.0/js/materialize.min.js",
+                  package = "shinymaterial")
     ),
     shiny::includeScript(
       system.file("js/shiny-material-page.js",
