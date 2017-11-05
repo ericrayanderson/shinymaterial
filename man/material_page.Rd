@@ -12,11 +12,11 @@ material_page(..., title = "", nav_bar_color = NULL,
 
 \item{title}{String. The title of the page.}
 
-\item{nav_bar_color}{Color of the navigation bar. Leave blank for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
+\item{nav_bar_color}{Color of the navigation bar. Leave blank for the default color.}
 
-\item{background_color}{Page background color. Leave blank for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
+\item{background_color}{Page background color. Leave blank for the default color.}
 
-\item{font_color}{String. The title font color. Leave blank for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors. \emph{Title color requires using word forms of colors (e.g. "deep-purple"). Also, lighten or darken effects do not work on title colors.}}
+\item{font_color}{String. The title font color. Leave blank for the default color. \emph{Title color requires using word forms of colors (e.g. "deep-purple"). Also, lighten or darken effects do not work on title colors.}}
 }
 \description{
 Build a shinymaterial page.
@@ -28,4 +28,7 @@ material_page(
   background_color = "blue lighten-4",
   shiny::tags$h1("Page Content")
 )
+}
+\seealso{
+\code{\link{material_color}} for a list of available colors.
 }

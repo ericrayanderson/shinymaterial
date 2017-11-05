@@ -1,6 +1,7 @@
 export(material_button)
 export(material_card)
 export(material_checkbox)
+export(material_color)
 export(material_column)
 export(material_date_picker)
 export(material_depth)

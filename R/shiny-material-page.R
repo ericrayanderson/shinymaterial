@@ -3,9 +3,10 @@
 #' Build a shinymaterial page.
 #' @param ... The UI elements to place in the page.
 #' @param title String. The title of the page.
-#' @param nav_bar_color Color of the navigation bar. Leave blank for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
-#' @param background_color Page background color. Leave blank for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
-#' @param font_color String. The title font color. Leave blank for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors. \emph{Title color requires using word forms of colors (e.g. "deep-purple"). Also, lighten or darken effects do not work on title colors.}
+#' @param nav_bar_color Color of the navigation bar. Leave blank for the default color. 
+#' @param background_color Page background color. Leave blank for the default color. 
+#' @param font_color String. The title font color. Leave blank for the default color. \emph{Title color requires using word forms of colors (e.g. "deep-purple"). Also, lighten or darken effects do not work on title colors.}
+#' @seealso \code{\link{material_color}} for a list of available colors.
 #' @examples
 #' material_page(
 #'   title = "Example Title",
