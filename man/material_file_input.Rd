@@ -4,25 +4,66 @@
 \alias{material_file_input}
 \title{Create a shinymaterial file input}
 \usage{
-material_file_input(input_id, label = "File", color = NULL)
+material_file_input(input_id, label = "File", multiple = FALSE,
+  accept = NULL, placeholder = "No file selected")
 }
 \arguments{
 \item{input_id}{String. The input identifier used to access the value.}
 
-\item{label}{String. The button text.}
+\item{label}{String. The file input button text.}
 
-\item{color}{String. The color of the button. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
+\item{multiple}{Whether the user should be allowed to select and upload multiple files at once. \bold{Does not work on older browsers, including Internet Explorer 9 and earlier.}}
 
-\item{icon}{String. The name of the icon. Leave empty for no icon. Visit \url{http://materializecss.com/icons.html} for a list of available icons.}
+\item{accept}{A character vector of MIME types; gives the browser a hint of what kind of files the server is expecting.}
 
-\item{depth}{Integer. The amount of depth of the file input button. The value should be between 0 and 5. Leave empty for the default depth.}
+\item{placeholder}{The text to show before a file has been uploaded.}
 }
 \description{
 Build a shinymaterial file input.
 }
 \examples{
-material_file_input(
-  input_id = "example_file_input",
-  label = "File"
-)
+if (interactive()) {
+  
+  ui <- 
+  material_page(
+    material_row(
+      material_column(
+        width = 12,
+        material_file_input(
+          input_id = "file_1", 
+          label = "file",
+          accept = c(
+            "text/csv",
+            "text/comma-separated-values,text/plain",
+            ".csv")
+        )
+      )
+    ),
+    material_row(
+      material_column(
+        width = 12,
+        tableOutput("contents")
+      )
+    )
+  )
+  
+  server <- function(input, output) {
+    output$contents <- renderTable({
+      # input$file_1 will be NULL initially. After the user selects
+      # and uploads a file, it will be a data frame with 'name',
+      # 'size', 'type', and 'datapath' columns. The 'datapath'
+      # column will contain the local filenames where the data can
+      # be found.
+      in_file <- input$file_1
+      
+      if (is.null(in_file))
+        return(NULL)
+      
+      read.csv(in_file$datapath)
+    })
+  }
+  
+  shinyApp(ui, server)
+  
+}
 }
