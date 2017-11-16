@@ -318,6 +318,11 @@ ui <-
         input_id = "example_date_picker",
         label = "Date picker",
         color = 'purple'
+      ),
+      # file input --------------------------------------------------------------
+      material_file_input(
+        input_id = "example_file_input",
+        label = "File"
       )
     )
   )
@@ -446,6 +451,18 @@ server <- function(input, output) {
   observeEvent(input$example_date_picker, {
     message(input$example_date_picker)
   })
+  
+    observeEvent(input$example_file_input, {
+      inFile <- input$example_file_input
+      message(Sys.time())
+      message(inFile)
+     # if (is.null(inFile))
+      #  return(NULL)
+     save(inFile, file = "infile.Rdata")
+     # message(inFile)
+      #x <- read.csv(input$example_file_input)
+      #message(head(x))
+    })
 }
 
 # Run the application
