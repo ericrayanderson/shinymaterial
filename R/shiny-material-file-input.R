@@ -64,4 +64,29 @@ material_file_input <- function(input_id,
     buttonLabel = label,
     placeholder = placeholder
   )
+  # create_material_object(
+  #   js_file =
+  #     "shiny-material-file-input.js",
+  #   material_tag_list =
+  #     shiny::tagList(
+  #       shiny::tags$div(
+  #         class = "file-field input-field",
+  #         shiny::tags$div(
+  #           class = "btn",
+  #           shiny::tags$span(label),
+  #           shiny::tags$input(
+  #             id = input_id, 
+  #             class = "shiny-material-file-input",
+  #             type = "file"
+  #           )
+  #         ),
+  #         shiny::tags$div(
+  #           class = "file-path-wrapper",
+  #           shiny::tags$input(
+  #             class = "file-path validate", type="text"
+  #           )
+  #         )
+  #       )
+  #     )
+  # )
 }

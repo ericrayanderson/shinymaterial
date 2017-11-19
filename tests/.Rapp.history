@@ -1,0 +1,4 @@
+load("/Users/ericanderson/Documents/packages/shinymaterial/tests/infile.Rdata")
+infile
+ls()
+inFile
