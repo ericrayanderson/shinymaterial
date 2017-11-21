@@ -322,6 +322,11 @@ ui <-
       # file input --------------------------------------------------------------
       material_file_input(
         input_id = "example_file_input",
+        label = "File",
+        color = "#2196f3"
+      ),
+      material_file_input(
+        input_id = "example_file_input2",
         label = "File"
       )
     )
