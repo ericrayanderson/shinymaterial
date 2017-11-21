@@ -6,13 +6,19 @@ $(document).ready(function () {
             return $(scope).find(".shiny-material-file-input");
         },
         getValue: function (el) {
+            return_file
+
+            function () {
+                return read.result;
+            }
             var file = el.files[0];
             if (file) {
                 read = new FileReader();
                 read.readAsDataURL(file);
-                read.onloadend = function () {
+                read.onloadend = function (callback) {
                     console.log(read.result);
-                    return read.result;
+                    //return read.result;
+                    return_file();
                 }
             }
         },

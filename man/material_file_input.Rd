@@ -4,8 +4,7 @@
 \alias{material_file_input}
 \title{Create a shinymaterial file input}
 \usage{
-material_file_input(input_id, label = "File", multiple = FALSE,
-  accept = NULL, placeholder = "No file selected")
+material_file_input(input_id, label = "File")
 }
 \arguments{
 \item{input_id}{String. The input identifier used to access the value.}
