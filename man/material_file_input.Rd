@@ -10,12 +10,6 @@ material_file_input(input_id, label = "File")
 \item{input_id}{String. The input identifier used to access the value.}
 
 \item{label}{String. The file input button text.}
-
-\item{multiple}{Whether the user should be allowed to select and upload multiple files at once. \bold{Does not work on older browsers, including Internet Explorer 9 and earlier.}}
-
-\item{accept}{A character vector of MIME types; gives the browser a hint of what kind of files the server is expecting.}
-
-\item{placeholder}{The text to show before a file has been uploaded.}
 }
 \description{
 Build a shinymaterial file input.
@@ -30,11 +24,7 @@ if (interactive()) {
         width = 12,
         material_file_input(
           input_id = "file_1", 
-          label = "file",
-          accept = c(
-            "text/csv",
-            "text/comma-separated-values,text/plain",
-            ".csv")
+          label = "file"
         )
       )
     ),

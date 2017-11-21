@@ -3,9 +3,6 @@
 #' Build a shinymaterial file input.
 #' @param input_id String. The input identifier used to access the value.
 #' @param label String. The file input button text.
-#' @param multiple Whether the user should be allowed to select and upload multiple files at once. \bold{Does not work on older browsers, including Internet Explorer 9 and earlier.}
-#' @param accept A character vector of MIME types; gives the browser a hint of what kind of files the server is expecting.
-#' @param placeholder The text to show before a file has been uploaded.
 #' @examples
 #' if (interactive()) {
 #'   
@@ -16,11 +13,7 @@
 #'         width = 12,
 #'         material_file_input(
 #'           input_id = "file_1", 
-#'           label = "file",
-#'           accept = c(
-#'             "text/csv",
-#'             "text/comma-separated-values,text/plain",
-#'             ".csv")
+#'           label = "file"
 #'         )
 #'       )
 #'     ),
