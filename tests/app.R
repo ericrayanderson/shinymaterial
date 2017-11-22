@@ -338,7 +338,9 @@ ui <-
                       label = "update dropdown"),
       material_dropdown(input_id = "update_dropdown_test",
                         label = "test",
-                        choices = c("a", "ok")),
+                        choices = c(
+                         "a" = "a", 
+                         "ok" = "ok")),
       plotOutput('testDropdownPlot')
     )
   )
@@ -469,6 +471,9 @@ server <- function(input, output, session) {
   })
   
   observeEvent(input$update_text_test_button, {
+    
+    message(paste(names(session), collapse  = " - "))
+    
     update_material_text_box(session,
                              input_id = "update_text_test",
                              value = "ok")
