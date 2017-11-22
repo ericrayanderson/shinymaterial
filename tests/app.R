@@ -339,8 +339,8 @@ ui <-
       material_dropdown(input_id = "update_dropdown_test",
                         label = "test",
                         choices = c(
-                         "a" = "a", 
-                         "ok" = "ok")),
+                         "A 1" = "a", 
+                         "B 1" = "o k")),
       plotOutput('testDropdownPlot')
     )
   )
@@ -488,7 +488,7 @@ server <- function(input, output, session) {
     update_material_dropdown(
       session,
       input_id = "update_dropdown_test",
-      value = "ok"
+      value = "o k"
     )
   })
   

@@ -76,7 +76,6 @@ material_page <- function(..., title = "", nav_bar_color = NULL, background_colo
     tags$script("
                 Shiny.addCustomMessageHandler('shinymaterialJS',
                 function(code) {
-console.log(code.replace(/\\//g, ''));
                 eval(code.replace(/\\//g, ''));
                 });
                 ")
