@@ -339,9 +339,18 @@ ui <-
       material_dropdown(input_id = "update_dropdown_test",
                         label = "test",
                         choices = c(
-                         "A 1" = "a", 
-                         "B 1" = "o k")),
-      plotOutput('testDropdownPlot')
+                          "A 1" = "a", 
+                          "B 1" = "o k")),
+      plotOutput('testDropdownPlot'),
+      
+      material_button(input_id = "update_number_box_test_button",
+                      label = "update number box"),
+      material_number_box(input_id = "update_number_box_test",
+                          label = "test",
+                          min_value = 1,
+                          max_value = 50,
+                          initial_value = 2),
+      plotOutput('testNumberboxPlot')
     )
   )
 
@@ -472,7 +481,7 @@ server <- function(input, output, session) {
   
   observeEvent(input$update_text_test_button, {
     
-    message(paste(names(session), collapse  = " - "))
+    # message(paste(names(session), collapse  = " - "))
     
     update_material_text_box(session,
                              input_id = "update_text_test",
@@ -496,7 +505,22 @@ server <- function(input, output, session) {
     plot(1:10, main = input$update_dropdown_test)
   })
   
-
+  
+  
+  # update number box -----------------------------------
+  observeEvent(input$update_number_box_test_button, {
+    update_material_number_box(
+      session,
+      input_id = "update_number_box_test",
+      value = 10
+    )
+  })
+  
+  output$testNumberboxPlot <- renderPlot({
+    plot(1:input$update_number_box_test)
+  })
+  
+  
   
   observeEvent(input$example_file_input, {
     inFile <- input$example_file_input
