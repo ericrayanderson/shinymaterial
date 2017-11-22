@@ -356,7 +356,14 @@ ui <-
                       label = "update password"),
       material_password_box(input_id = "update_password_test",
                         label = "text"),
-      plotOutput('testPasswordPlot')
+      plotOutput('testPasswordPlot'),
+      
+      
+      material_button(input_id = "update_switch_test_button",
+                      label = "update switch"),
+      material_switch(input_id = "update_switch_test",
+                            label = "text", initial_value = FALSE),
+      plotOutput('testSwitchPlot')
     )
   )
 
@@ -539,6 +546,18 @@ server <- function(input, output, session) {
   })
   
   
+  # Update switch ---------------------------------
+  observeEvent(input$update_switch_test_button, {
+    
+    update_material_switch(session,
+                             input_id = "update_switch_test",
+                             value = TRUE)
+    
+  })
+  
+  output$testSwitchPlot <- renderPlot({
+    plot(1:10, main = ifelse(input$update_switch_test, "YES", "NO"))
+  })
   
   observeEvent(input$example_file_input, {
     inFile <- input$example_file_input
