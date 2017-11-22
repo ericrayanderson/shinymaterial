@@ -479,7 +479,7 @@ server <- function(input, output, session) {
     plot(1:10, main = input$update_text_test)
   })
   
-  observeEvent(input$ update_dropdown_test_button, {
+  observeEvent(input$update_dropdown_test_button, {
     update_material_dropdown(
       session,
       input_id = "update_dropdown_test",

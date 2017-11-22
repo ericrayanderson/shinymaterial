@@ -15,8 +15,10 @@ update_material_dropdown <- function(session, input_id, value = NULL){
     return(NULL)
   }
   
+  valueShow <- gsub(pattern = " ", replacement = "_shinymaterialdropdownspace_", x = value, fixed = TRUE)
+  
   js_code <- paste0(
-    "$('#update_dropdown_test').find('option[value=", paste0("DOUBLEQUOTE", value, "DOUBLEQUOTE"), "]').prop('selected', true);$(", paste0("'#", input_id, "'"), ").material_select();Shiny.onInputChange('", input_id, "', '", value, "');"
+    "$('#update_dropdown_test').find('option[value=", paste0("DOUBLEQUOTE", valueShow, "DOUBLEQUOTE"), "]').prop('selected', true);$(", paste0("'#", input_id, "'"), ").material_select();Shiny.onInputChange('", input_id, "', '", value, "');"
   )
   
   js_code <- gsub(pattern = "DOUBLEQUOTE", replacement = '"', x = js_code)
