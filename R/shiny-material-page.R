@@ -73,11 +73,12 @@ material_page <- function(..., title = "", nav_bar_color = NULL, background_colo
       system.file("js/shiny-material-page.js",
                   package = "shinymaterial")
     ),
-    tags$script('
-                Shiny.addCustomMessageHandler("shinymaterialJS",
+    tags$script("
+                Shiny.addCustomMessageHandler('shinymaterialJS',
                 function(code) {
-                eval(code);
+console.log(code.replace(/\\//g, ''));
+                eval(code.replace(/\\//g, ''));
                 });
-                ')
+                ")
   )
 }

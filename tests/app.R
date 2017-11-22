@@ -333,7 +333,13 @@ ui <-
                       label = "update text"),
       material_text_box(input_id = "update_text_test",
                         label = "text"),
-      plotOutput('testPlot')
+      plotOutput('testPlot'),
+      material_button(input_id = "update_dropdown_test_button",
+                      label = "update dropdown"),
+      material_dropdown(input_id = "update_dropdown_test",
+                        label = "test",
+                        choices = c("a", "ok")),
+      plotOutput('testDropdownPlot')
     )
   )
 
@@ -466,11 +472,26 @@ server <- function(input, output, session) {
     update_material_text_box(session,
                              input_id = "update_text_test",
                              value = "ok")
+    
   })
   
   output$testPlot <- renderPlot({
     plot(1:10, main = input$update_text_test)
   })
+  
+  observeEvent(input$ update_dropdown_test_button, {
+    update_material_dropdown(
+      session,
+      input_id = "update_dropdown_test",
+      value = "ok"
+    )
+  })
+  
+  output$testDropdownPlot <- renderPlot({
+    plot(1:10, main = input$update_dropdown_test)
+  })
+  
+
   
   observeEvent(input$example_file_input, {
     inFile <- input$example_file_input
