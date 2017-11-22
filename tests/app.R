@@ -350,7 +350,13 @@ ui <-
                           min_value = 1,
                           max_value = 50,
                           initial_value = 2),
-      plotOutput('testNumberboxPlot')
+      plotOutput('testNumberboxPlot'),
+      
+      material_button(input_id = "update_password_test_button",
+                      label = "update password"),
+      material_password_box(input_id = "update_password_test",
+                        label = "text"),
+      plotOutput('testPasswordPlot')
     )
   )
 
@@ -481,8 +487,6 @@ server <- function(input, output, session) {
   
   observeEvent(input$update_text_test_button, {
     
-    # message(paste(names(session), collapse  = " - "))
-    
     update_material_text_box(session,
                              input_id = "update_text_test",
                              value = "ok")
@@ -518,6 +522,20 @@ server <- function(input, output, session) {
   
   output$testNumberboxPlot <- renderPlot({
     plot(1:input$update_number_box_test)
+  })
+  
+  
+  # Update password box ---------------------------------
+  observeEvent(input$update_password_test_button, {
+    
+    update_material_text_box(session,
+                             input_id = "update_password_test",
+                             value = "ok")
+    
+  })
+  
+  output$testPasswordPlot <- renderPlot({
+    plot(1:10, main = input$update_password_test)
   })
   
   
