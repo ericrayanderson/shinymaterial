@@ -2,7 +2,7 @@
 % Please edit documentation in R/update-shiny-material-text-box.R
 \name{update_material_text_box}
 \alias{update_material_text_box}
-\title{Change the value of a material_text_box input on the client}
+\title{Change the value of a material_text_box on the client}
 \usage{
 update_material_text_box(session, input_id, value = NULL)
 }
@@ -14,7 +14,7 @@ update_material_text_box(session, input_id, value = NULL)
 \item{value}{The value to set for the material_text_box.}
 }
 \description{
-Change the value of a material_text_box input on the client.
+Change the value of a material_text_box on the client.
 }
 \examples{
 update_material_text_box(
