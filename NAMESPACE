@@ -23,4 +23,5 @@ export(material_switch)
 export(material_tab_content)
 export(material_tabs)
 export(material_text_box)
+export(update_material_text_box)
 

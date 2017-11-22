@@ -72,6 +72,12 @@ material_page <- function(..., title = "", nav_bar_color = NULL, background_colo
     shiny::includeScript(
       system.file("js/shiny-material-page.js",
                   package = "shinymaterial")
-    )
+    ),
+    tags$script('
+                Shiny.addCustomMessageHandler("shinymaterialJS",
+                function(code) {
+                eval(code);
+                });
+                ')
   )
 }

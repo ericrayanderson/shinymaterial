@@ -328,7 +328,12 @@ ui <-
       material_file_input(
         input_id = "example_file_input2",
         label = "File"
-      )
+      ),
+      material_button(input_id = "update_text_test_button",
+                      label = "update text"),
+      material_text_box(input_id = "update_text_test",
+                        label = "text"),
+      plotOutput('testPlot')
     )
   )
 
@@ -336,7 +341,7 @@ ui <-
 
 
 
-server <- function(input, output) {
+server <- function(input, output, session) {
   #button
   observeEvent(input$input_button1, {
     message(input$input_button1)
@@ -457,20 +462,30 @@ server <- function(input, output) {
     message(input$example_date_picker)
   })
   
-    observeEvent(input$example_file_input, {
+  observeEvent(input$update_text_test_button, {
+    update_material_text_box(session,
+                             input_id = "update_text_test",
+                             value = "ok")
+  })
+  
+  output$testPlot <- renderPlot({
+    plot(1:10, main = input$update_text_test)
+  })
+  
+  observeEvent(input$example_file_input, {
     inFile <- input$example_file_input
     #  message(Sys.time())
-      # message(paste(input$example_file_input, collapse = ' - '))
-     if (is.null(inFile))
-       return(NULL)
-     #  req(input$example_file_input)
-     #  x <- input$example_file_input
-     # save(x, file = "infile.Rdata")
-     # message(inFile)
-     #  message(input$example_file_input)
-     x <- read.csv(inFile$datapath)
-     message(head(x))
-    })
+    # message(paste(input$example_file_input, collapse = ' - '))
+    if (is.null(inFile))
+      return(NULL)
+    #  req(input$example_file_input)
+    #  x <- input$example_file_input
+    # save(x, file = "infile.Rdata")
+    # message(inFile)
+    #  message(input$example_file_input)
+    x <- read.csv(inFile$datapath)
+    message(head(x))
+  })
 }
 
 # Run the application
