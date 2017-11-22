@@ -5,7 +5,8 @@
 \title{Create a shinymaterial page}
 \usage{
 material_page(..., title = "", nav_bar_color = NULL,
-  background_color = "grey lighten-4", font_color = NULL)
+  background_color = "grey lighten-4", font_color = NULL,
+  include_fonts = FALSE)
 }
 \arguments{
 \item{...}{The UI elements to place in the page.}
@@ -17,6 +18,8 @@ material_page(..., title = "", nav_bar_color = NULL,
 \item{background_color}{Page background color. Leave blank for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
 
 \item{font_color}{String. The title font color. Leave blank for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors. \emph{Title color requires using word forms of colors (e.g. "deep-purple"). Also, lighten or darken effects do not work on title colors.}}
+
+\item{include_fonts}{Boolean. Should the material font files be included? (This will place the font sources in a directory 'www', at the same location as the app code.)}
 }
 \description{
 Build a shinymaterial page.
