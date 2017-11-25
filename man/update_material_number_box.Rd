@@ -17,9 +17,11 @@ update_material_number_box(session, input_id, value = NULL)
 Change the value of a material_number_box on the client.
 }
 \examples{
+\dontrun{
 update_material_number_box(
   session,
   input_id = "example_number_box",
   value = 3
 )
+}
 }

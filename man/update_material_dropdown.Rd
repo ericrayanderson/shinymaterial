@@ -17,9 +17,11 @@ update_material_dropdown(session, input_id, value = NULL)
 Change the value of a material_dropdown on the client.
 }
 \examples{
+\dontrun{
 update_material_dropdown(
   session,
   input_id = "example_dropdown",
   value = "New Text"
 )
+}
 }

@@ -17,9 +17,11 @@ update_material_switch(session, input_id, value = NULL)
 Change the value of a material_switch on the client.
 }
 \examples{
+\dontrun{
 update_material_switch(
   session,
   input_id = "example_switch",
   value = TRUE
 )
+}
 }

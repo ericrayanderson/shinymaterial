@@ -17,9 +17,11 @@ update_material_password_box(session, input_id, value = NULL)
 Change the value of a material_password_box on the client.
 }
 \examples{
+\dontrun{
 update_material_password_box(
   session,
   input_id = "example_password_box",
   value = "New Password"
 )
+}
 }

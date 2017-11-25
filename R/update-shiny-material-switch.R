@@ -5,11 +5,13 @@
 #' @param input_id The input_id of the material_switch.
 #' @param value Boolean. The value to set for the material_switch.
 #' @examples
+#' \dontrun{
 #' update_material_switch(
 #'   session,
 #'   input_id = "example_switch",
 #'   value = TRUE
 #' )
+#' }
 update_material_switch <- function(session, input_id, value = NULL){
   if(is.null(value)) {
     return(NULL)

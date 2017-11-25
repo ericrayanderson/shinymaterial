@@ -5,11 +5,13 @@
 #' @param input_id The input_id of the material_dropdown.
 #' @param value The value to set for the material_dropdown.
 #' @examples
+#' \dontrun{
 #' update_material_dropdown(
 #'   session,
 #'   input_id = "example_dropdown",
 #'   value = "New Text"
 #' )
+#' }
 update_material_dropdown <- function(session, input_id, value = NULL){
   if(is.null(value)) {
     return(NULL)

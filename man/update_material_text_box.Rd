@@ -17,9 +17,11 @@ update_material_text_box(session, input_id, value = NULL)
 Change the value of a material_text_box on the client.
 }
 \examples{
+\dontrun{
 update_material_text_box(
   session,
   input_id = "example_text_box",
   value = "New Text"
 )
+}
 }
