@@ -99,7 +99,7 @@ material_page <- function(..., title = "", nav_bar_color = NULL, background_colo
     shiny::tags$script("
                        Shiny.addCustomMessageHandler('shinymaterialJS',
                        function(code) {
-                       eval(code.replace(/\\//g, ''));
+                       eval(code.split('\\\\').join('').trim());
                        });
                        ")
   )
