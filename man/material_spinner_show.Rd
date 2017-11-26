@@ -21,7 +21,7 @@ if(interactive()){
   library(shinymaterial)
   
   ui <- material_page(
-    title = "Basic Page",
+    title = "Spinner Example",
     numericInput(inputId = "n", label = "", value = 10),
    plotOutput("n_plot")
  )
