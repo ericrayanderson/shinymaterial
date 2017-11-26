@@ -12,7 +12,7 @@
 #'   ui <- material_page(
 #'     title = "Spinner Example",
 #'     numericInput(inputId = "n", label = "", value = 10),
-#'    plotOutput("n_plot")
+#'     plotOutput("n_plot")
 #'  )
 #'   
 #'   server <- function(input, output, session) {
