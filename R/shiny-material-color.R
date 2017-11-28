@@ -1,13 +1,16 @@
-material_color_class <- function(...) {
-    x <- c(...)
-    names(x) <- c("hex", "base", "modifier", "amt", "classes")
+material_color_class <- function(hex, base, modifier, amt, classes) {
+    x <- c(hex=hex, base=base, modifier=modifier, amt=amt, classes=classes)
     class(x) <- c("material_color", "character")
     x
 }
 
+`$.material_color` <- function(x, i) {
+  x[i]
+}
+
 #' Available material colors
 #'
-#' A data frame of colors from the material pallete.
+#' \code{material_color} - A data frame of colors from the material pallete.
 #'
 #' @seealso \url{http://materializecss.com/color.html}
 #'
@@ -20,8 +23,7 @@ material_color_class <- function(...) {
 #' )
 
 
-material_color <- data.frame(
-    stringsAsFactors=FALSE,
+material_color <- structure( list(
 	red_lighten5=material_color_class("#ffebee","red","lighten", "5", "red lighten-5"),
 	red_lighten4=material_color_class("#ffcdd2","red","lighten", "4", "red lighten-4"),
 	red_lighten3=material_color_class("#ef9a9a","red","lighten", "3", "red lighten-3"),
@@ -278,5 +280,60 @@ material_color <- data.frame(
 	blue_grey_darken4=material_color_class("#263238","blue-grey","darken", "4", "blue-grey darken-4"),
 	black=material_color_class("#000000","black","", "", "black"),
 	white=material_color_class("#ffffff","white","", "", "white")
+),
+row.names=c("hex", "base", "modifier", "amt", "classes"),
+class="data.frame"
 )
+
+#' \code{build_color} - look up a material color by base, modifier and amt
+#' @param base base color
+#' @param modifier color modifier
+#' @param amt 1-5 as character if modifier is not ""
+#' @rdname material_color
+build_color <- local({
+  
+  f <- function(base, modifier, amt) {
+    base <- match.arg(base)
+    modifier <- match.arg(modifier)
+    amt <- match.arg(amt)
+    material_color[, 
+                   material_color["base",,drop=TRUE] %in% base & 
+                   material_color["modifier",,drop=TRUE] %in% modifier & 
+                   material_color["amt",,drop=TRUE] %in% amt 
+    ]
+    
+  }
+
+  for(i in names(formals(f)))
+    formals(f)[[i]] <- sort(unlist(unique(material_color[i,,drop=TRUE]), use.names = FALSE))
+  
+  f
+})
+
+modify_color <- function(up, down){
+  force(up)
+  force(down)
+  function(color, amt) {
+    if(amt > 1) color <- Recall(color, amt - 1)
+    if(color$modifier == "") {
+      build_color(color$base, up, "1")
+    } else if (color$modifier == down && color$amt == "1") {
+      build_color(color$base, "", "")
+    } else if (color$modifier == down) {
+      build_color(color$base, down, as.character(as.numeric(color$amt) - 1L))
+    } else if (color$modifier == up) {
+      build_color(color$base, up, as.character(pmin(5L, as.numeric(color$amt) + 1L)))
+    } else{
+      warning("should be impossible")
+      color
+    }
+  }
+}
+
+#' \code{darken} and \code{lighten} - adjust colors dynamically
+#' @rdname material_color
+darken <- modify_color("darken", "lighten")
+
+#' @rdname material_color
+lighten <- modify_color("lighten", "darken")
 

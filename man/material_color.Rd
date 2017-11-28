@@ -3,20 +3,44 @@
 \docType{data}
 \name{material_color}
 \alias{material_color}
+\alias{build_color}
+\alias{darken}
+\alias{lighten}
 \title{Available material colors}
-\format{An object of class \code{list} of length 254.}
+\format{An object of class \code{data.frame} with 5 rows and 256 columns.}
 \usage{
 material_color
+
+build_color(base = c("amber", "black", "blue", "blue-grey", "brown", "cyan",
+  "deep-orange", "deep-purple", "green", "grey", "indigo", "light-blue",
+  "light-green", "lime", "orange", "pink", "purple", "red", "teal", "white",
+  "yellow"), modifier = c("", "accent", "darken", "lighten"), amt = c("",
+  "1", "2", "3", "4", "5"))
+
+darken(color, amt)
+
+lighten(color, amt)
+}
+\arguments{
+\item{base}{base color}
+
+\item{modifier}{color modifier}
+
+\item{amt}{1-5 as character if modifier is not ""}
 }
 \description{
-A list of colors from the material pallete.
+\code{material_color} - A data frame of colors from the material pallete.
+
+\code{build_color} - look up a material color by base, modifier and amt
+
+\code{darken} and \code{lighten} - adjust colors dynamically
 }
 \examples{
 material_checkbox(
   input_id = "example_checkbox",
   label = "Checkbox",
   initial_value = TRUE,
-  color = material_color$red_accent_1
+  color = material_color$red_accent_1$classes
 )
 }
 \seealso{
