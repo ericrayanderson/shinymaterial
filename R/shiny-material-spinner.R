@@ -22,31 +22,31 @@
 #'       #--- Show the spinner ---#
 #'       material_spinner_show(session, "n_plot")
 #'       
-#'       Sys.sleep(time = 3)
-#'       plot(1:input$n)
+#'       #--- Simulate calculation step ---#
+#'       Sys.sleep(time = 5)
 #'       
 #'       #--- Hide the spinner ---#
 #'       material_spinner_hide(session, "n_plot")
 #'       
+#'       plot(1:input$n)
 #'     })
 #'     
 #'   }
 #'   shinyApp(ui = ui, server = server)
 #' }
 material_spinner_show <- function(session, output_id){
-  session$sendCustomMessage(
-    type = "shinymaterialJS",
-    paste0(
-      "$('#", output_id, "').hide();"
-    )
-  )
   
   js_code <- 
     paste0(
-      "$('#", output_id, "').after('<div class = DOUBLEQUOTErowDOUBLEQUOTE><div class = DOUBLEQUOTEcol s12 centerDOUBLEQUOTE><div id = DOUBLEQUOTE", paste0(output_id, '-shiny-material-spinnerDOUBLEQUOTE'), " class=DOUBLEQUOTEpreloader-wrapper big activeDOUBLEQUOTE><div class=DOUBLEQUOTEspinner-layer spinner-blueDOUBLEQUOTE><div class=DOUBLEQUOTEcircle-clipper leftDOUBLEQUOTE><div class=DOUBLEQUOTEcircleDOUBLEQUOTE></div></div><div class=DOUBLEQUOTEgap-patchDOUBLEQUOTE><div class=DOUBLEQUOTEcircleDOUBLEQUOTE></div></div><div class=DOUBLEQUOTEcircle-clipper rightDOUBLEQUOTE><div class=DOUBLEQUOTEcircleDOUBLEQUOTE></div></div></div><div class=DOUBLEQUOTEspinner-layer spinner-redDOUBLEQUOTE><div class=DOUBLEQUOTEcircle-clipper leftDOUBLEQUOTE><div class=DOUBLEQUOTEcircleDOUBLEQUOTE></div></div><div class=DOUBLEQUOTEgap-patchDOUBLEQUOTE><div class=DOUBLEQUOTEcircleDOUBLEQUOTE></div></div><div class=DOUBLEQUOTEcircle-clipper rightDOUBLEQUOTE><div class=DOUBLEQUOTEcircleDOUBLEQUOTE></div></div></div><div class=DOUBLEQUOTEspinner-layer spinner-yellowDOUBLEQUOTE><div class=DOUBLEQUOTEcircle-clipper leftDOUBLEQUOTE><div class=DOUBLEQUOTEcircleDOUBLEQUOTE></div></div><div class=DOUBLEQUOTEgap-patchDOUBLEQUOTE><div class=DOUBLEQUOTEcircleDOUBLEQUOTE></div></div><div class=DOUBLEQUOTEcircle-clipper rightDOUBLEQUOTE><div class=DOUBLEQUOTEcircleDOUBLEQUOTE></div></div></div><div class=DOUBLEQUOTEspinner-layer spinner-greenDOUBLEQUOTE><div class=DOUBLEQUOTEcircle-clipper leftDOUBLEQUOTE><div class=DOUBLEQUOTEcircleDOUBLEQUOTE></div></div><div class=DOUBLEQUOTEgap-patchDOUBLEQUOTE><div class=DOUBLEQUOTEcircleDOUBLEQUOTE></div></div><div class=DOUBLEQUOTEcircle-clipper rightDOUBLEQUOTE><div class=DOUBLEQUOTEcircleDOUBLEQUOTE></div></div></div></div></div></div>')"
+      "$('#", output_id, "').fadeTo(0, 0, function(){ var $thisPlot = $('#", output_id, "'); var plotOffset = $thisPlot.offset(); var width = $thisPlot.width(); var height = $thisPlot.height(); $('<div id = DOUBLEQUOTE", paste0(output_id, '-shiny-material-spinnerDOUBLEQUOTE'), " class=DOUBLEQUOTEpreloader-wrapper big activeDOUBLEQUOTE><div class=DOUBLEQUOTEspinner-layer spinner-blueDOUBLEQUOTE><div class=DOUBLEQUOTEcircle-clipper leftDOUBLEQUOTE><div class=DOUBLEQUOTEcircleDOUBLEQUOTE></div></div><div class=DOUBLEQUOTEgap-patchDOUBLEQUOTE><div class=DOUBLEQUOTEcircleDOUBLEQUOTE></div></div><div class=DOUBLEQUOTEcircle-clipper rightDOUBLEQUOTE><div class=DOUBLEQUOTEcircleDOUBLEQUOTE></div></div></div><div class=DOUBLEQUOTEspinner-layer spinner-redDOUBLEQUOTE><div class=DOUBLEQUOTEcircle-clipper leftDOUBLEQUOTE><div class=DOUBLEQUOTEcircleDOUBLEQUOTE></div></div><div class=DOUBLEQUOTEgap-patchDOUBLEQUOTE><div class=DOUBLEQUOTEcircleDOUBLEQUOTE></div></div><div class=DOUBLEQUOTEcircle-clipper rightDOUBLEQUOTE><div class=DOUBLEQUOTEcircleDOUBLEQUOTE></div></div></div><div class=DOUBLEQUOTEspinner-layer spinner-yellowDOUBLEQUOTE><div class=DOUBLEQUOTEcircle-clipper leftDOUBLEQUOTE><div class=DOUBLEQUOTEcircleDOUBLEQUOTE></div></div><div class=DOUBLEQUOTEgap-patchDOUBLEQUOTE><div class=DOUBLEQUOTEcircleDOUBLEQUOTE></div></div><div class=DOUBLEQUOTEcircle-clipper rightDOUBLEQUOTE><div class=DOUBLEQUOTEcircleDOUBLEQUOTE></div></div></div><div class=DOUBLEQUOTEspinner-layer spinner-greenDOUBLEQUOTE><div class=DOUBLEQUOTEcircle-clipper leftDOUBLEQUOTE><div class=DOUBLEQUOTEcircleDOUBLEQUOTE></div></div><div class=DOUBLEQUOTEgap-patchDOUBLEQUOTE><div class=DOUBLEQUOTEcircleDOUBLEQUOTE></div></div><div class=DOUBLEQUOTEcircle-clipper rightDOUBLEQUOTE><div class=DOUBLEQUOTEcircleDOUBLEQUOTE></div></div></div></div>').offset({top: (plotOffset.top + height / 2) - 50, left: (plotOffset.left + width / 2) - 20}).css('position', 'absolute').appendTo('body')})"
     )
   js_code <- gsub(pattern = "DOUBLEQUOTE", replacement = '"', x = js_code)
   
+  
+  # session$sendCustomMessage(
+  #   type = "shinymaterialJS",
+  #   paste0("console.log(", js_code, ")")
+  # )
   
   session$sendCustomMessage(
     type = "shinymaterialJS",
@@ -67,7 +67,7 @@ material_spinner_hide <- function(session, output_id){
   session$sendCustomMessage(
     type = "shinymaterialJS",
     paste0(
-      "$('#", output_id, "').show();"
+      "$('#", output_id, "').fadeTo(0, 1)"
     )
   )
 }
