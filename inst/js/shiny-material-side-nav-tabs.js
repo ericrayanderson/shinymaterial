@@ -18,6 +18,7 @@ $(document).ready(function () {
         $("body").empty();
     } else {
         $('#' + first_side_nav_tab_content_id).css('visibility', 'visible');
-        $('#' + first_side_nav_tab_id).children('a').trigger('click');
+        setTimeout(function(){ $('#' + first_side_nav_tab_id).children('a').trigger('click'); }, 1);
+        
     }
 })
