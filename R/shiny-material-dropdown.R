@@ -89,8 +89,8 @@ material_dropdown <- function(input_id, label, choices = NULL, selected = NULL, 
           shiny::HTML(
             paste0(
               "<select", ifelse(multiple == TRUE, " multiple", ""),
-              " id=", input_id,
-              " class='shiny-material-dropdown'",
+              " id='", input_id,
+              "' class='shiny-material-dropdown'",
               ">"
             )
           ),
