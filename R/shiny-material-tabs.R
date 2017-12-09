@@ -21,10 +21,17 @@ material_tabs <- function(tabs, color = NULL){
         class = "tab",
         shiny::tags$a(
           class = 
-            ifelse(
-              is.null(color),
-              "",
-              paste0(" ", color, "-text")
+            paste0(
+              # ifelse(
+              #   i == 1,
+              #   "active",
+              #   ""
+              # ),
+              ifelse(
+                is.null(color),
+                "",
+                paste0(" ", color, "-text")
+              )
             ),
           href = paste0("#", tabs[[i]]),
           names(tabs)[[i]]

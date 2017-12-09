@@ -29,6 +29,7 @@ export(material_text_box)
 export(update_material_dropdown)
 export(update_material_number_box)
 export(update_material_password_box)
+export(update_material_radio_button)
 export(update_material_switch)
 export(update_material_text_box)
 

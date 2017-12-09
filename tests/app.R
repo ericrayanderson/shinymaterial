@@ -364,7 +364,13 @@ if(interactive()){
                         label = "update switch"),
         material_switch(input_id = "update_switch_test",
                         label = "text", initial_value = FALSE),
-        plotOutput('testSwitchPlot')
+        plotOutput('testSwitchPlot'),
+        
+        material_button(input_id = "update_radio_button_test_button",
+                        label = "update radio button"),
+        material_radio_button(input_id = "update_radio_button_test",
+                              label = "text",choices = c("Adf" =  "a", "Bdf" = "b")),
+        plotOutput('testRadioButtonPlot')
       )
     )
   
@@ -559,6 +565,20 @@ if(interactive()){
     output$testSwitchPlot <- renderPlot({
       plot(1:10, main = ifelse(input$update_switch_test, "YES", "NO"))
     })
+    
+    # Update radiobutton ---------------------------------
+    observeEvent(input$update_radio_button_test_button, {
+      
+      update_material_radio_button(session,
+                                   input_id = "update_radio_button_test",
+                                   value = "b")
+      
+    })
+    
+    output$testRadioButtonPlot <- renderPlot({
+      plot(1:10, main = input$update_radio_button_test)
+    })
+    
     
     observeEvent(input$example_file_input, {
       inFile <- input$example_file_input
