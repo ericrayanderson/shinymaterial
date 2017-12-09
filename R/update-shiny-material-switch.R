@@ -22,7 +22,7 @@ update_material_switch <- function(session, input_id, value = NULL){
   session$sendCustomMessage(
     type = "shinymaterialJS",
     paste0(
-        "$('#", input_id, "')", checked_code, ";Shiny.onInputChange('", input_id, "', '", value, "');"
+        "$('#", input_id, "')", checked_code, ";Shiny.onInputChange('", input_id, "', $('#", input_id, "').prop('checked'));"
     )
   )
 }

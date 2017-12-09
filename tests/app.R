@@ -370,7 +370,23 @@ if(interactive()){
                         label = "update radio button"),
         material_radio_button(input_id = "update_radio_button_test",
                               label = "text",choices = c("Adf" =  "a", "Bdf" = "b")),
-        plotOutput('testRadioButtonPlot')
+        plotOutput('testRadioButtonPlot'),
+        
+        material_button(input_id = "update_slider_test_button",
+                        label = "update slider"),
+        material_slider(input_id = "update_slider_test",
+                              label = "slider",
+                              min_value = 5,
+                        max_value = 20,
+                        initial_value = 8),
+        plotOutput('testSliderPlot'),
+        
+        material_button(input_id = "update_checkbox_test_button",
+                        label = "update checkbox"),
+        material_checkbox(input_id = "update_checkbox_test",
+                        label = "checkbox",
+                        initial_value = FALSE),
+        plotOutput('testCheckboxPlot')
       )
     )
   
@@ -563,6 +579,7 @@ if(interactive()){
     })
     
     output$testSwitchPlot <- renderPlot({
+      message(typeof(input$update_switch_test))
       plot(1:10, main = ifelse(input$update_switch_test, "YES", "NO"))
     })
     
@@ -577,6 +594,33 @@ if(interactive()){
     
     output$testRadioButtonPlot <- renderPlot({
       plot(1:10, main = input$update_radio_button_test)
+    })
+    
+    # Update slider ---------------------------------
+    observeEvent(input$update_slider_test_button, {
+      
+      update_material_slider(session,
+                                   input_id = "update_slider_test",
+                                   value = 15)
+      
+    })
+    
+    output$testSliderPlot <- renderPlot({
+      plot(1:input$update_slider_test)
+    })
+    
+    # Update checkbox ---------------------------------
+    observeEvent(input$update_checkbox_test_button, {
+      
+      update_material_checkbox(session,
+                             input_id = "update_checkbox_test",
+                             value = TRUE)
+      
+    })
+    
+    output$testCheckboxPlot <- renderPlot({
+      # message(typeof(input$update_checkbox_test))
+      plot(1:10, main = ifelse(input$update_checkbox_test, "True Value", "False Value"))
     })
     
     
