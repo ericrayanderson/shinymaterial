@@ -386,7 +386,13 @@ if(interactive()){
         material_checkbox(input_id = "update_checkbox_test",
                         label = "checkbox",
                         initial_value = FALSE),
-        plotOutput('testCheckboxPlot')
+        plotOutput('testCheckboxPlot'),
+        
+        material_button(input_id = "update_date_picker_test_button",
+                        label = "update date_picker"),
+        material_date_picker(input_id = "update_date_picker_test",
+                          label = "date_picker"),
+        plotOutput('testDatePickerPlot')
       )
     )
   
@@ -621,6 +627,23 @@ if(interactive()){
     output$testCheckboxPlot <- renderPlot({
       # message(typeof(input$update_checkbox_test))
       plot(1:10, main = ifelse(input$update_checkbox_test, "True Value", "False Value"))
+    })
+    
+    
+    
+    # Update date picker ---------------------------------
+    observeEvent(input$update_date_picker_test_button, {
+
+      update_material_date_picker(session,
+                               input_id = "update_date_picker_test",
+                               value = "10 April, 2012")
+
+    })
+    
+    output$testDatePickerPlot <- renderPlot({
+      message(input$update_date_picker_test)
+      # message(typeof(input$update_checkbox_test))
+      plot(1:10, main = input$update_date_picker_test)
     })
     
     
