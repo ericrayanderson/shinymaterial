@@ -17,9 +17,9 @@
 material_page <- function(..., title = "", nav_bar_color = NULL, background_color = "grey lighten-4", font_color = NULL, include_fonts = FALSE){
   
   if(include_fonts){
-
+    
     dir_recursion <- c("www", "www/fonts", "www/fonts/roboto")
-
+    
     for(dir.i in dir_recursion){
       if(!dir.exists(dir.i)){
         if(dir.i == "www/fonts/roboto"){
@@ -33,15 +33,19 @@ material_page <- function(..., title = "", nav_bar_color = NULL, background_colo
         dir.create(dir.i)
       }
     }
-
-    font_files <- list.files(system.file("www/fonts/roboto",
-                                         package = "shinymaterial"))
-
+    
+    font_files <- list.files(
+      system.file("www/fonts/roboto",
+                  package = "shinymaterial")
+    )
+    
     for(font_file.i in font_files){
-      file.copy(from = system.file(paste0("www/fonts/roboto/", font_file.i),
-                                   package = "shinymaterial"),
-                to = paste0("www/fonts/roboto/", font_file.i),
-                overwrite = TRUE)
+      file.copy(
+        from = system.file(paste0("www/fonts/roboto/", font_file.i),
+                           package = "shinymaterial"),
+        to = paste0("www/fonts/roboto/", font_file.i),
+        overwrite = TRUE
+      )
     }
   }
   
@@ -107,7 +111,7 @@ material_page <- function(..., title = "", nav_bar_color = NULL, background_colo
     shiny::tags$script("
                        Shiny.addCustomMessageHandler('shinymaterialJS',
                        function(code) {
-//console.log(code.split('\\\\').join('').trim());
+                       //console.log(code.split('\\\\').join('').trim());
                        eval(code.split('\\\\').join('').trim());
                        });
                        ")
