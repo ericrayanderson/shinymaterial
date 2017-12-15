@@ -33,16 +33,16 @@ if(interactive()){
           )
         )
       )
-
+      
     })
     
     observe({
-       message(input$s1)
+      message(input$s1)
       message(input$s2)
     })
-
     
-   
+    
+    
   }
   shinyApp(ui = ui, server = server)
 }
