@@ -1,5 +1,5 @@
 
-# [shinymaterial](https://ericrayanderson.github.io/shinymaterial/)
+# shinymaterial
 #### R package: Implements Material Design in Shiny Applications
 [Package Website](https://ericrayanderson.github.io/shinymaterial/)
 -----------------------------------------------------------------------
