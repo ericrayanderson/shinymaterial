@@ -41,8 +41,6 @@ if(interactive()){
       message(input$s2)
     })
     
-    
-    
   }
   shinyApp(ui = ui, server = server)
 }

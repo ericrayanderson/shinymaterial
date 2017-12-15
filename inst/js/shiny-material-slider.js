@@ -16,7 +16,8 @@ $(document).ready(function () {
                     return Number(classValue);
                 }
             } else {
-                return $(el).find('input').val();
+                 var inputValue = $(el).find('input').val();
+                 return Number(inputValue);
             }
         },
         subscribe: function (el, callback) {
