@@ -1,21 +1,21 @@
 create_material_object <- function(js_file, material_tag_list){
   shiny::tagList(
     shiny::singleton(
-      shiny::tags$head(
-        shiny::includeScript(
-          system.file(
-            file.path("js", js_file),
-            package = "shinymaterial"
-          )
+      # shiny::tags$head(
+      shiny::includeScript(
+        system.file(
+          file.path("js", js_file),
+          package = "shinymaterial"
         )
       )
+      # )
     ),
     material_tag_list
   )
 }
 
 check_material_function_name <- function(type, function_type){
-
+  
   function_name <-
     paste0(
       "material_",
@@ -26,7 +26,7 @@ check_material_function_name <- function(type, function_type){
         fixed = TRUE
       )
     )
-
+  
   if(exists(function_name)){
     return(function_name)
   } else {
