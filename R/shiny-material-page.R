@@ -16,6 +16,8 @@
 #' )
 material_page <- function(..., title = "", nav_bar_color = NULL, background_color = "grey lighten-4", font_color = NULL, include_fonts = FALSE){
   
+  material_version <- "0.99.0"
+  
   if(include_fonts){
     
     dir_recursion <- c("www", "www/fonts", "www/fonts/roboto")
@@ -35,13 +37,13 @@ material_page <- function(..., title = "", nav_bar_color = NULL, background_colo
     }
     
     font_files <- list.files(
-      system.file("www/fonts/roboto",
+      system.file(paste0("materialize/", material_version, "/fonts/roboto"),
                   package = "shinymaterial")
     )
     
     for(font_file.i in font_files){
       file.copy(
-        from = system.file(paste0("www/fonts/roboto/", font_file.i),
+        from = system.file(paste0("materialize/", material_version, "/fonts/roboto/", font_file.i),
                            package = "shinymaterial"),
         to = paste0("www/fonts/roboto/", font_file.i),
         overwrite = TRUE
@@ -58,7 +60,7 @@ material_page <- function(..., title = "", nav_bar_color = NULL, background_colo
       ),
       # Source Materialize CSS
       shiny::includeCSS(
-        system.file("materialize/0.99.0/css/materialize.min.css",
+        system.file(paste0("materialize/", material_version, "/css/materialize.min.css"),
                     package = "shinymaterial"),
         media = "screen,projection"
       ),
@@ -101,7 +103,7 @@ material_page <- function(..., title = "", nav_bar_color = NULL, background_colo
     ),
     # Source Materialize Javascript
     shiny::includeScript(
-      system.file("materialize/0.99.0/js/materialize.min.js",
+      system.file(paste0("materialize/", material_version, "/js/materialize.min.js"),
                   package = "shinymaterial")
     ),
     shiny::includeScript(
