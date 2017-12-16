@@ -15,7 +15,7 @@ material_page(..., title = "", nav_bar_fixed = FALSE,
 
 \item{nav_bar_fixed}{Boolean. Should the nav bar remain fixed on the screen?}
 
-\item{nav_bar_color}{Color of the navigation bar. Leave blank for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
+\item{nav_bar_color}{Color of the nav bar. Leave blank for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
 
 \item{background_color}{Page background color. Leave blank for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
 
