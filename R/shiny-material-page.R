@@ -3,6 +3,7 @@
 #' Build a shinymaterial page.
 #' @param ... The UI elements to place in the page.
 #' @param title String. The title of the page.
+#' @param nav_bar_fixed Boolean. Should the nav bar remain fixed on the screen?
 #' @param nav_bar_color Color of the navigation bar. Leave blank for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
 #' @param background_color Page background color. Leave blank for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
 #' @param font_color String. The title font color. Leave blank for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors. \emph{Title color requires using word forms of colors (e.g. "deep-purple"). Also, lighten or darken effects do not work on title colors.}
@@ -10,11 +11,12 @@
 #' @examples
 #' material_page(
 #'   title = "Example Title",
+#'   nav_bar_fixed = TRUE,
 #'   nav_bar_color = "red lighten-2",
 #'   background_color = "blue lighten-4",
 #'   shiny::tags$h1("Page Content")
 #' )
-material_page <- function(..., title = "", nav_bar_color = NULL, background_color = "grey lighten-4", font_color = NULL, include_fonts = FALSE){
+material_page <- function(..., title = "", nav_bar_fixed = FALSE, nav_bar_color = NULL, background_color = "grey lighten-4", font_color = NULL, include_fonts = FALSE){
   
   materialize_version <- "0.99.0"
   
@@ -51,6 +53,37 @@ material_page <- function(..., title = "", nav_bar_color = NULL, background_colo
     }
   }
   
+  material_nav_bar <- shiny::tags$nav(
+    class = 
+      ifelse(
+        is.null(nav_bar_color),
+        "",
+        nav_bar_color
+      ),
+    shiny::tags$div(
+      class = "nav-wrapper",
+      shiny::tags$div(
+        href = "javascript:void(0)",
+        class = paste0(
+          "brand-logo ",
+          ifelse(
+            is.null(font_color),
+            "",
+            paste0(" ", font_color, "-text")
+          )
+        ),
+        shiny::HTML(paste0("&nbsp;", title))
+      )
+    )
+  )
+  
+  if(nav_bar_fixed){
+    material_nav_bar <- shiny::tags$div(
+      class = "navbar-fixed",
+      material_nav_bar
+    )
+  }
+  
   shiny::tags$html(
     # Head --------------------------------------------------------------------
     shiny::tags$head(
@@ -76,29 +109,7 @@ material_page <- function(..., title = "", nav_bar_color = NULL, background_colo
     # Body --------------------------------------------------------------------
     shiny::tags$body(
       class = background_color,
-      shiny::tags$nav(
-        class = 
-          ifelse(
-            is.null(nav_bar_color),
-            "",
-            nav_bar_color
-          ),
-        shiny::tags$div(
-          class = "nav-wrapper",
-          shiny::tags$div(
-            href = "javascript:void(0)",
-            class = paste0(
-              "brand-logo ",
-              ifelse(
-                is.null(font_color),
-                "",
-                paste0(" ", font_color, "-text")
-              )
-            ),
-            shiny::HTML(paste0("&nbsp;", title))
-          )
-        )
-      ),
+      material_nav_bar,
       ...
     ),
     # Source Materialize Javascript

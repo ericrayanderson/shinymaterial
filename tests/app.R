@@ -4,7 +4,7 @@ if(interactive()){
   
   ui <-
     material_page(
-      title = "Testing",
+      title = "Testing", nav_bar_fixed = TRUE,
       nav_bar_color = 'red lighten-3',
       background_color = "white",
       material_side_nav(
