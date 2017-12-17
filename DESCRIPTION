@@ -1,7 +1,7 @@
 Package: shinymaterial
 Type: Package
 Title: Implement Material Design in Shiny Applications
-Version: 0.4.9000
+Version: 0.5.0
 Authors@R: c(
     person("Eric", "Anderson", role = c("aut", "cre"), email = "eric.ray.anderson@gmail.com"),
     person("Alvin", "Wang", role = c("ctb", "cph"), comment = "Materialize CSS library"),
