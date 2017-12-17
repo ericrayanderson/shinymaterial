@@ -24,9 +24,9 @@ server <- function(input, output, session) {
     }
     update_material_dropdown(session,
                              "test",
-                             value = "choice_3",
-                             choices = c("Choice 3" = "choice_3",
-                                         "Choice 4" = "choice_4"))
+                             value = "choice 3",
+                             choices = c("Choice 3" = "choice 3",
+                                         "Choice 4" = "choice 4"))
   })
   
   

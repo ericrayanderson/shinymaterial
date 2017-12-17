@@ -15,7 +15,7 @@
 #' }
 update_material_dropdown <- function(session, input_id, value = NULL, choices = NULL){
   if(is.null(value)) {
-    message("Must include 'value' with update_material_dropdown")
+    message("ERROR: Must include 'value' with update_material_dropdown")
     return(NULL)
   }
   
@@ -24,7 +24,7 @@ update_material_dropdown <- function(session, input_id, value = NULL, choices = 
   if(!is.null(choices)){
     
     if(!(value %in% choices)) {
-      message("value ", value, " not found in choices")
+      message("ERROR: value '", value, "' not found in choices")
       return(NULL)
     }
     
