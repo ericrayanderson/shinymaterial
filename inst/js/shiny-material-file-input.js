@@ -12,12 +12,10 @@ $(document).ready(function () {
                 if (file) {
                     read = new FileReader();
                     read.readAsDataURL(file);
-                    //read.onloadend = function () {}
                 }
 
                 return read.result;
             }
-            
         },
         subscribe: function (el, callback) {
             $(el).on("change.shiny-material-file-input", function (e) {
