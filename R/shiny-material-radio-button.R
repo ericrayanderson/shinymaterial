@@ -4,7 +4,6 @@
 #' @param input_id String. The input identifier used to access the value.
 #' @param label String. The radio button label.
 #' @param choices Named vector. The option names and underyling values.
-#' @param value Character. The radio button to initially select.
 #' @param color String. The color of the radio buttons. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors. \emph{This input requires using color hex codes, rather than the word form. E.g., "#ef5350", rather than "red lighten-1".}
 #' @examples
 #' material_radio_button(
@@ -15,22 +14,9 @@
 #'     "Pie" = "p",
 #'     "Brownie" = "b"
 #'   ),
-#'   value = "p",
 #'   color = "#ef5350"
 #' )
-material_radio_button <- function(input_id, label, choices, value = NULL, color = NULL) {
-  
-  
-  if(is.null(value)){
-    value <- choices[1]
-  }
-  
-  if(!(value %in% choices)) {
-    message("ERROR: value '", value, "' not found in choices")
-    return(NULL)
-  }
-  
-  
+material_radio_button <- function(input_id, label, choices, color = NULL) {
   
   if(!is.null(color)){
     
@@ -63,35 +49,19 @@ material_radio_button <- function(input_id, label, choices, value = NULL, color 
   has_names <- !is.null(names(choices))
   
   for(i in 1:length(choices)){
-    
     material_radio_choices[[i]] <-
       shiny::tags$p(
-        shiny::HTML(
-          paste0(
-            "<input type='radio' name ='",
-            input_id,
-            "' class='",
+        shiny::tags$input(
+          type = "radio",
+          name = input_id,
+          class = 
             ifelse(
               is.null(color),
               '', 
-              paste0("shinymaterial-radio-button-", input_id)
+              paste0('shinymaterial-radio-button-', input_id)
             ),
-            "' id='", ifelse(choices[i] != "", choices[i], "_shinymaterialradioempty_"),
-            ifelse(choices[i] == value, " checked ", ""),
-            "'/>"
-          )
+          id = ifelse(choices[i] != "", choices[i], "_shinymaterialradioempty_")
         ),
-        # shiny::tags$input(
-        #   type = "radio",
-        #   name = input_id,
-        #   class = 
-        #     ifelse(
-        #       is.null(color),
-        #       '', 
-        #       paste0('shinymaterial-radio-button-', input_id)
-        #     ),
-        #   id = ifelse(choices[i] != "", choices[i], "_shinymaterialradioempty_")
-        # ),
         shiny::tags$label(
           `for` = ifelse(choices[i] != "", choices[i], "_shinymaterialradioempty_"),
           ifelse(
