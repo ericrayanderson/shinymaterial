@@ -17,6 +17,11 @@ update_material_radio_button <- function(session, input_id, value = NULL){
     return(NULL)
   }
   
+  # if(!(value %in% choices)) {
+  #   message("ERROR: value '", value, "' not found in choices")
+  #   return(NULL)
+  # }
+  
   js_code <- paste0(
     "$(", paste0("'#", input_id, "'"), ").find( DOUBLEQUOTEinput[id='", value, "']:radioDOUBLEQUOTE ).prop('checked', true); Shiny.onInputChange('", input_id, "', '", value, "');"
   )

@@ -242,7 +242,7 @@ if(interactive()){
         ),
         material_radio_button(
           input_id = "example_radio_button1",
-          label = "Radio Button",
+          label = "Radio Button VALUE",
           choices = c(
             "Cake" = "c1",
             "Pie" = "p1",
@@ -369,7 +369,7 @@ if(interactive()){
         material_button(input_id = "update_radio_button_test_button",
                         label = "update radio button"),
         material_radio_button(input_id = "update_radio_button_test",
-                              label = "text",choices = c("Adf" =  "a", "Bdf" = "b")),
+                              label = "text",choices = c("Adf" =  "a_update", "Bdf" = "b_update")),
         plotOutput('testRadioButtonPlot'),
         
         material_button(input_id = "update_slider_test_button",
@@ -594,7 +594,7 @@ if(interactive()){
       
       update_material_radio_button(session,
                                    input_id = "update_radio_button_test",
-                                   value = "b")
+                                   value = "b_update")
       
     })
     
