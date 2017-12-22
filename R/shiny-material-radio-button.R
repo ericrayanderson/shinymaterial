@@ -63,6 +63,7 @@ material_radio_button <- function(input_id, label, choices, value = NULL, color 
   has_names <- !is.null(names(choices))
   
   for(i in 1:length(choices)){
+    
     material_radio_choices[[i]] <-
       shiny::tags$p(
         shiny::HTML(
@@ -76,6 +77,7 @@ material_radio_button <- function(input_id, label, choices, value = NULL, color 
               paste0("shinymaterial-radio-button-", input_id)
             ),
             "' id='", ifelse(choices[i] != "", choices[i], "_shinymaterialradioempty_"),
+            ifelse(choices[i] == value, " checked ", ""),
             "'/>"
           )
         ),
