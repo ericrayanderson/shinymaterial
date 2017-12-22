@@ -4,7 +4,7 @@
 \alias{material_radio_button}
 \title{Create a shinymaterial radio button}
 \usage{
-material_radio_button(input_id, label, choices, color = NULL)
+material_radio_button(input_id, label, choices, value = NULL, color = NULL)
 }
 \arguments{
 \item{input_id}{String. The input identifier used to access the value.}
@@ -14,6 +14,8 @@ material_radio_button(input_id, label, choices, color = NULL)
 \item{choices}{Named vector. The option names and underyling values.}
 
 \item{color}{String. The color of the radio buttons. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors. \emph{This input requires using color hex codes, rather than the word form. E.g., "#ef5350", rather than "red lighten-1".}}
+
+\item{Value}{Character. The radio button to initially select.}
 }
 \description{
 Build a shinymaterial radio button.
@@ -27,6 +29,7 @@ material_radio_button(
     "Pie" = "p",
     "Brownie" = "b"
   ),
+  value = "p",
   color = "#ef5350"
 )
 }

@@ -20,14 +20,16 @@ if(interactive()){
     })
     
     observeEvent(input$go, {
-      if(input$go == 0){
-        return(NULL)
-      }
-      update_material_dropdown(session,
-                               "test",
-                               value = "choice 3",
-                               choices = c("Choice 3" = "choice 3",
-                                           "Choice 4" = "choice 4"))
+      # if(input$go == 0){
+      #   return(NULL)
+      # }
+      update_material_dropdown(
+        session,
+        "test",
+        value = "choice 3",
+        choices = c("Choice 3" = "choice 3",
+                    "Choice 4" = "choice 4")
+      )
     })
     
     
