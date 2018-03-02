@@ -14,7 +14,7 @@ material_side_nav_tab_content <- function(side_nav_tab_id, ...){
     shiny::tags$div(
       class = "col s12 shiny-material-side-nav-tab-content",
       id = side_nav_tab_id,
-      style = "visibility:hidden",
+      style = "display:none",
       ...
     ),
     shiny::singleton(
