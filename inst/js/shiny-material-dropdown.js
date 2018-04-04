@@ -12,7 +12,11 @@ $(document).ready(function () {
                 return $(scope).find("select.shiny-material-dropdown");
             },
             getValue: function (el) {
+              if(typeof($(el).val()) == "string"){
                 return $(el).val().replace(new RegExp("_shinymaterialdropdownspace_", 'g'), " ");
+              } else {
+                return $(el).val();
+              }
             },
             subscribe: function (el, callback) {
                 $(el).on("change.shiny-material-dropdown", function (e) {
