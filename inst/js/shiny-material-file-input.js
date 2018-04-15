@@ -13,7 +13,7 @@ $(document).ready(function () {
                     read.readAsDataURL(file);
                 }
                 return read.result;
-            }
+             }
         },
         subscribe: function (el, callback) {
             $(el).on("change.shiny-material-file-input", function (e) {
