@@ -307,7 +307,7 @@ if(interactive()){
           label = "Drop down",
           choices = c(
             "Chicken" = "c2",
-            "Steak" = "s2",
+            "Ste ak" = "s 2",
             "Fish" = "f2"
           ),
           selected = c("c2"),

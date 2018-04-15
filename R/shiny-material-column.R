@@ -12,7 +12,7 @@
 material_column <- function(..., width = 6, offset = 0){
 
   shiny::tags$div(
-    class = paste0("col s", width, " offset-s", offset),
+    class = paste0("col s12 m", width, " offset-s0 offset-m", offset),
     ...
   )
 }
