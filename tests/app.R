@@ -672,7 +672,8 @@ if(interactive()){
       #  req(input$example_file_input)
       #  x <- input$example_file_input
       # save(x, file = "infile.Rdata")
-      # message(inFile)
+      message(paste0("length inFile ", length(inFile)))
+      message(paste0("names inFile ", names(inFile)))
       #  message(input$example_file_input)
       x <- read.csv(inFile$datapath)
       message(head(x))
