@@ -310,8 +310,20 @@ if(interactive()){
             "Steak" = "s2",
             "Fish" = "f2"
           ),
-          selected = c("c"),
+          selected = c("c2"),
           multiple = FALSE,
+          color = "#ef5350"
+        ),
+        material_dropdown(
+          input_id = "input_example_dropdown_mult",
+          label = "Drop down",
+          choices = c(
+            "Chick en" = "c 2",
+            "Ste ak" = "s 2",
+            "Fi sh" = "f 2"
+          ),
+          selected = c("c 2"),
+          multiple = TRUE,
           color = "#ef5350"
         ),
         # date picker -------------------------------------------------------------
@@ -513,6 +525,10 @@ if(interactive()){
     
     observeEvent(input$input_example_dropdown1, {
       message(input$input_example_dropdown1)
+    })
+    
+    observeEvent(input$input_example_dropdown_mult, {
+      message(input$input_example_dropdown_mult)
     })
     observeEvent(input$example_dropdown1, {
       message(input$example_dropdown1)
