@@ -9,6 +9,7 @@
 #' @param floating_button Boolean. Should the modal trigger button be a floating button?
 #' @param button_depth Integer. The amount of depth of the button. The value should be between 0 and 5. Leave empty for the default depth.
 #' @param button_color String. The color of the button. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
+#' @param close_button_label String. The label of the modal close button.
 #' @examples
 #' material_modal(
 #'   modal_id = "example_modal",
@@ -17,7 +18,7 @@
 #'   button_color = "red lighten-3",
 #'   shiny::tags$p("Modal Content")
 #' )
-material_modal <- function(modal_id, button_text, title, ..., button_icon = NULL, floating_button = FALSE, button_depth = NULL, button_color = NULL){
+material_modal <- function(modal_id, button_text, title, ..., button_icon = NULL, floating_button = FALSE, button_depth = NULL, button_color = NULL, close_button_label = "Close"){
   
   if(!is.null(button_icon)){
     icon_tag <-
@@ -101,7 +102,7 @@ material_modal <- function(modal_id, button_text, title, ..., button_icon = NULL
             shiny::tags$a(
               href = "javascript:void(0)",
               class = "modal-action modal-close waves-effect waves-green btn-flat",
-              "Close"
+              close_button_label
             )
           )
         )

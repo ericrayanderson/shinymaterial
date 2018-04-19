@@ -20,7 +20,8 @@ if(interactive()){
           title = "Example Modal Title",
           button_color = "red lighten-4",
           button_depth = 5,
-          shiny::tags$p("Modal Content")
+          shiny::tags$p("Modal Content"),
+          close_button_label = "Close2"
         ),
         
         material_tabs(
