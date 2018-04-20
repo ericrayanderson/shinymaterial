@@ -84,7 +84,6 @@ material_side_nav_tabs <- function(side_nav_tabs, icons = NULL, color = NULL, fo
   
   shiny::tagList(
     shiny::tags$div(id = "side_nav_tabs_click_info"),
-    material_side_nav_tabs,
-    shiny::tags$script("$('#side_nav_tabs_click_info').trigger('click');")
+    material_side_nav_tabs
   )
 }
