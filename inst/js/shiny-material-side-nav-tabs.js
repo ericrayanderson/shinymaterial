@@ -17,6 +17,32 @@ $(document).ready(function () {
 
         $("body").empty();
     } else {
+        
+      $(document).on('shiny:sessioninitialized', function() {  
+        
+        function get_side_nav_tabs_info() {
+          
+        var side_nav_tabs_info = [];
+          
+            for (var i = 0; i < $('.shiny-material-side-nav-tab').length; i++) { 
+              
+              side_nav_tabs_info.push({
+              id: $('.shiny-material-side-nav-tab')[i].id.slice(0, -7),
+              active: $('.shiny-material-side-nav-tab').eq(i).hasClass("active")
+              });
+              
+            }
+            
+            Shiny.onInputChange("side_nav_tab_info", JSON.stringify(side_nav_tabs_info));
+        }
+        
+        get_side_nav_tabs_info();
+        
+       $("#side_nav_tabs_click_info").click(function() {
+           get_side_nav_tabs_info();
+       });
+      });
+
         $('#' + first_side_nav_tab_id).children('a').trigger('click');
     }
 })
