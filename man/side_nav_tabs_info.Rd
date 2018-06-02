@@ -10,7 +10,7 @@ side_nav_tabs_info(input = NULL)
 \item{input}{The input object in the shiny session.}
 }
 \description{
-Query information about the side-nav tabs.
+Query information about the side-nav tabs (e.g. which tab is active).
 }
 \examples{
 side_nav_tabs_info(input)
