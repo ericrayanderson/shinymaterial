@@ -10,6 +10,7 @@
 #' @param button_depth Integer. The amount of depth of the button. The value should be between 0 and 5. Leave empty for the default depth.
 #' @param button_color String. The color of the button. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
 #' @param close_button_label String. The label of the modal close button.
+#' @param display_button Boolean. Should the button be displayed in the app? (If FALSE, open_material_modal() may be used to open the modal).
 #' @examples
 #' material_modal(
 #'   modal_id = "example_modal",
@@ -18,7 +19,7 @@
 #'   button_color = "red lighten-3",
 #'   shiny::tags$p("Modal Content")
 #' )
-material_modal <- function(modal_id, button_text, title, ..., button_icon = NULL, floating_button = FALSE, button_depth = NULL, button_color = NULL, close_button_label = "Close"){
+material_modal <- function(modal_id, button_text, title, ..., button_icon = NULL, floating_button = FALSE, button_depth = NULL, button_color = NULL, close_button_label = "Close", display_button = TRUE){
   
   if(!is.null(button_icon)){
     icon_tag <-
@@ -74,12 +75,18 @@ material_modal <- function(modal_id, button_text, title, ..., button_icon = NULL
             ),
           shiny::tags$button(
             `data-target` = modal_id,
+            display = ifelse(display_button, "inline-block", "none"),
             class = button_class,
             style = 
-              ifelse(
-                floating_button,
-                "background-color:#F06C71",
-                ""
+              paste0(
+                ifelse(
+                  floating_button,
+                  "background-color:#F06C71;",
+                  ""
+                ),
+                ifelse(display_button,
+                       "",
+                       " display:none;")
               ),
             icon_tag,
             ifelse(

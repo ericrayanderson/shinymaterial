@@ -23,7 +23,16 @@ if(interactive()){
           shiny::tags$p("Modal Content"),
           close_button_label = "Close2"
         ),
-        
+        material_modal(
+          modal_id = "example_modal2",
+          button_text = "Modal2",
+          title = "Example Modal Title",
+          button_color = "red lighten-4",
+          button_depth = 5,
+          shiny::tags$p("Modal Content"),
+          close_button_label = "Close2", display_button = FALSE
+        ),
+        material_button(input_id = "open_modal2", label = "testmodal"),
         material_tabs(
           tabs = c(
             "Example Tab 1" = "example_tab_1",
@@ -414,6 +423,12 @@ if(interactive()){
   
   
   server <- function(input, output, session) {
+    observeEvent(input$open_modal2, {
+      message('this happened')
+      if(input$open_modal2 > 0){
+      open_material_modal(session, "example_modal2")
+      }
+    })
     #button
     observeEvent(input$input_button1, {
       message(input$input_button1)

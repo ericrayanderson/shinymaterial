@@ -6,7 +6,7 @@
 \usage{
 material_modal(modal_id, button_text, title, ..., button_icon = NULL,
   floating_button = FALSE, button_depth = NULL, button_color = NULL,
-  close_button_label = "Close")
+  close_button_label = "Close", display_button = TRUE)
 }
 \arguments{
 \item{modal_id}{String. The ID for the modal. Must be unique per application.}
@@ -26,6 +26,8 @@ material_modal(modal_id, button_text, title, ..., button_icon = NULL,
 \item{button_color}{String. The color of the button. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
 
 \item{close_button_label}{String. The label of the modal close button.}
+
+\item{display_button}{Boolean. Should the button be displayed in the app? (If FALSE, open_material_modal() may be used to open the modal).}
 }
 \description{
 Put any UI object inside of a modal. The modal will open when the button is pressed.
