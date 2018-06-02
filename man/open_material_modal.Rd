@@ -15,5 +15,7 @@ open_material_modal(session, modal_id)
 Open a material modal programmatically (server side).
 }
 \examples{
+\dontrun{
 open_material_modal(session, "example_modal")
+}
 }

@@ -13,5 +13,7 @@ side_nav_tabs_info(input = NULL)
 Query information about the side-nav tabs (e.g. which tab is active).
 }
 \examples{
+\dontrun{
 side_nav_tabs_info(input)
+}
 }
