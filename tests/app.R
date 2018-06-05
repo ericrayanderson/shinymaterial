@@ -1,7 +1,7 @@
 if(interactive()){
   library(shiny)
   library(shinymaterial)
-  
+
   ui <-
     material_page(
       title = "Testing", nav_bar_fixed = TRUE,
@@ -13,7 +13,7 @@ if(interactive()){
       ),
       tags$div(
         class = "container",
-        
+
         material_modal(
           modal_id = "example_modal",
           button_text = "Modal",
@@ -50,7 +50,8 @@ if(interactive()){
         material_card(
           title = "Example Card",
           shiny::tags$h1("Card Content"),
-          depth = 5
+          depth = 5,
+          color = "blue"
         ),
         # Button ------------------------------------------------------------------
         material_input(
@@ -62,7 +63,7 @@ if(interactive()){
           input_id = "button1",
           label = "Button"
         ),
-        
+
         material_input(
           type = "button",
           input_id = "input_button2",
@@ -140,7 +141,7 @@ if(interactive()){
         # material_floating_button(
         #   input_id = "floating_button1"
         # )
-        # 
+        #
         # material_input(
         #   type = "floating_button",
         #   input_id = "input_floating_button2",
@@ -170,7 +171,7 @@ if(interactive()){
           max_value = 15,
           initial_value = 10
         ),
-        
+
         material_input(
           type = "number_box",
           input_id = "input_number_box2",
@@ -188,7 +189,7 @@ if(interactive()){
           initial_value = 10,
           color = "#bbdefb"
         ),
-        
+
         # Text box ------------------------------------------------------------------
         material_input(
           type = "text_box",
@@ -199,7 +200,7 @@ if(interactive()){
           input_id = "text_box1",
           label = "text_box1"
         ),
-        
+
         material_input(
           type = "text_box",
           input_id = "input_text_box2",
@@ -221,7 +222,7 @@ if(interactive()){
           input_id = "password_box1",
           label = "password_box1"
         ),
-        
+
         material_input(
           type = "password_box",
           input_id = "input_password_box2",
@@ -311,7 +312,7 @@ if(interactive()){
           selected = c("c"),
           multiple = FALSE
         ),
-        
+
         material_dropdown(
           input_id = "example_dropdown1",
           label = "Drop down",
@@ -362,10 +363,10 @@ if(interactive()){
         material_dropdown(input_id = "update_dropdown_test",
                           label = "test",
                           choices = c(
-                            "A 1" = "a", 
+                            "A 1" = "a",
                             "B 1" = "o k")),
         plotOutput('testDropdownPlot'),
-        
+
         material_button(input_id = "update_number_box_test_button",
                         label = "update number box"),
         material_number_box(input_id = "update_number_box_test",
@@ -374,26 +375,26 @@ if(interactive()){
                             max_value = 50,
                             initial_value = 2),
         plotOutput('testNumberboxPlot'),
-        
+
         material_button(input_id = "update_password_test_button",
                         label = "update password"),
         material_password_box(input_id = "update_password_test",
                               label = "text"),
         plotOutput('testPasswordPlot'),
-        
-        
+
+
         material_button(input_id = "update_switch_test_button",
                         label = "update switch"),
         material_switch(input_id = "update_switch_test",
                         label = "text", initial_value = FALSE),
         plotOutput('testSwitchPlot'),
-        
+
         material_button(input_id = "update_radio_button_test_button",
                         label = "update radio button"),
         material_radio_button(input_id = "update_radio_button_test",
                               label = "text",choices = c("Adf" =  "a_update", "Bdf" = "b_update")),
         plotOutput('testRadioButtonPlot'),
-        
+
         material_button(input_id = "update_slider_test_button",
                         label = "update slider"),
         material_slider(input_id = "update_slider_test",
@@ -402,14 +403,14 @@ if(interactive()){
                         max_value = 20,
                         initial_value = 8),
         plotOutput('testSliderPlot'),
-        
+
         material_button(input_id = "update_checkbox_test_button",
                         label = "update checkbox"),
         material_checkbox(input_id = "update_checkbox_test",
                         label = "checkbox",
                         initial_value = FALSE),
         plotOutput('testCheckboxPlot'),
-        
+
         material_button(input_id = "update_date_picker_test_button",
                         label = "update date_picker"),
         material_date_picker(input_id = "update_date_picker_test",
@@ -417,11 +418,11 @@ if(interactive()){
         plotOutput('testDatePickerPlot')
       )
     )
-  
-  
-  
-  
-  
+
+
+
+
+
   server <- function(input, output, session) {
     observeEvent(input$open_modal2, {
       message('this happened')
@@ -472,7 +473,7 @@ if(interactive()){
     observeEvent(input$floating_button2, {
       message(input$floating_button2)
     })
-    
+
     # Number box
     observeEvent(input$input_number_box1, {
       message(input$input_number_box1)
@@ -516,7 +517,7 @@ if(interactive()){
     observeEvent(input$password_box2, {
       message(input$password_box2)
     })
-    
+
     # slider
     observeEvent(input$input_example_slider1, {
       message(input$input_example_slider1)
@@ -524,7 +525,7 @@ if(interactive()){
     observeEvent(input$example_slider1, {
       message(input$example_slider1)
     })
-    
+
     #input_radio_button
     observeEvent(input$input_example_radio_button1, {
       message(input$input_example_radio_button1)
@@ -538,11 +539,11 @@ if(interactive()){
     observeEvent(input$example_radio_button2, {
       message(input$example_radio_button2)
     })
-    
+
     observeEvent(input$input_example_dropdown1, {
       message(input$input_example_dropdown1)
     })
-    
+
     observeEvent(input$input_example_dropdown_mult, {
       message(input$input_example_dropdown_mult)
     })
@@ -552,19 +553,19 @@ if(interactive()){
     observeEvent(input$example_date_picker, {
       message(input$example_date_picker)
     })
-    
+
     observeEvent(input$update_text_test_button, {
-      
+
       update_material_text_box(session,
                                input_id = "update_text_test",
                                value = "ok")
-      
+
     })
-    
+
     output$testPlot <- renderPlot({
       plot(1:10, main = input$update_text_test)
     })
-    
+
     observeEvent(input$update_dropdown_test_button, {
       update_material_dropdown(
         session,
@@ -572,13 +573,13 @@ if(interactive()){
         value = "o k"
       )
     })
-    
+
     output$testDropdownPlot <- renderPlot({
       plot(1:10, main = input$update_dropdown_test)
     })
-    
-    
-    
+
+
+
     # update number box -----------------------------------
     observeEvent(input$update_number_box_test_button, {
       update_material_number_box(
@@ -587,82 +588,82 @@ if(interactive()){
         value = 10
       )
     })
-    
+
     output$testNumberboxPlot <- renderPlot({
       plot(1:input$update_number_box_test)
     })
-    
-    
+
+
     # Update password box ---------------------------------
     observeEvent(input$update_password_test_button, {
-      
+
       update_material_text_box(session,
                                input_id = "update_password_test",
                                value = "ok")
-      
+
     })
-    
+
     output$testPasswordPlot <- renderPlot({
       plot(1:10, main = input$update_password_test)
     })
-    
-    
+
+
     # Update switch ---------------------------------
     observeEvent(input$update_switch_test_button, {
-      
+
       update_material_switch(session,
                              input_id = "update_switch_test",
                              value = TRUE)
-      
+
     })
-    
+
     output$testSwitchPlot <- renderPlot({
       message(typeof(input$update_switch_test))
       plot(1:10, main = ifelse(input$update_switch_test, "YES", "NO"))
     })
-    
+
     # Update radiobutton ---------------------------------
     observeEvent(input$update_radio_button_test_button, {
-      
+
       update_material_radio_button(session,
                                    input_id = "update_radio_button_test",
                                    value = "b_update")
-      
+
     })
-    
+
     output$testRadioButtonPlot <- renderPlot({
       plot(1:10, main = input$update_radio_button_test)
     })
-    
+
     # Update slider ---------------------------------
     observeEvent(input$update_slider_test_button, {
-      
+
       update_material_slider(session,
                                    input_id = "update_slider_test",
                                    value = 15)
-      
+
     })
-    
+
     output$testSliderPlot <- renderPlot({
       plot(1:input$update_slider_test)
     })
-    
+
     # Update checkbox ---------------------------------
     observeEvent(input$update_checkbox_test_button, {
-      
+
       update_material_checkbox(session,
                              input_id = "update_checkbox_test",
                              value = TRUE)
-      
+
     })
-    
+
     output$testCheckboxPlot <- renderPlot({
       # message(typeof(input$update_checkbox_test))
       plot(1:10, main = ifelse(input$update_checkbox_test, "True Value", "False Value"))
     })
-    
-    
-    
+
+
+
     # Update date picker ---------------------------------
     observeEvent(input$update_date_picker_test_button, {
 
@@ -671,14 +672,14 @@ if(interactive()){
                                value = "10 April, 2012")
 
     })
-    
+
     output$testDatePickerPlot <- renderPlot({
       message(input$update_date_picker_test)
       # message(typeof(input$update_checkbox_test))
       plot(1:10, main = input$update_date_picker_test)
     })
-    
-    
+
+
     observeEvent(input$example_file_input, {
       inFile <- input$example_file_input
       #  message(Sys.time())
@@ -695,7 +696,7 @@ if(interactive()){
       message(head(x))
     })
   }
-  
+
   # Run the application
   shinyApp(ui = ui, server = server)
 }

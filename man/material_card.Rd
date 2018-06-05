@@ -4,7 +4,7 @@
 \alias{material_card}
 \title{Create a card that will contain UI content}
 \usage{
-material_card(title, ..., depth = NULL)
+material_card(title, ..., depth = NULL, color = NULL)
 }
 \arguments{
 \item{title}{String. The title of the card}
@@ -12,6 +12,8 @@ material_card(title, ..., depth = NULL)
 \item{...}{The UI elements to place in the card}
 
 \item{depth}{Integer. The amount of depth of the card. The value should be between 0 and 5. Leave empty for the default depth.}
+
+\item{color}{String. The color of the card background. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
 }
 \description{
 UI content can be placed in cards to organize items on a page.
