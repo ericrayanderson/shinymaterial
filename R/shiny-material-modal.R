@@ -19,13 +19,13 @@
 #'   button_color = "red lighten-3",
 #'   shiny::tags$p("Modal Content")
 #' )
-material_modal <- function(modal_id, button_text, title, ..., button_icon = NULL, floating_button = FALSE, button_depth = NULL, button_color = NULL, close_button_label = "Close", display_button = TRUE){
+material_modal <- function(modal_id, title, ..., button_text = "", button_icon = NULL, floating_button = FALSE, button_depth = NULL, button_color = NULL, close_button_label = "Close", display_button = TRUE){
   
   if(!is.null(button_icon)){
     icon_tag <-
       shiny::HTML(
         paste0(
-          '<i class="material-icons left">',
+          '<i class="material-icons ', if (button_text != "") "left" ,'">',
           button_icon,
           '</i>')
       )
