@@ -14,6 +14,9 @@ $(document).ready(function () {
             getValue: function (el) {
               var ans;
               ans = $(el).val();
+              if(ans === null){
+                return ans;
+              }
               if(typeof(ans) == "string"){
                 return ans.replace(new RegExp("_shinymaterialdropdownspace_", 'g'), " ");
               } else if(typeof(ans) == "object"){
