@@ -19,9 +19,13 @@ update_material_dropdown <- function(session, input_id, value = NULL, choices = 
     return(NULL)
   }
   
-
   
   if(!is.null(choices)){
+    
+    if ( is.null(names(choices)) ){
+      names(choices) <- choices
+    }
+    
     
     if(!(value %in% choices)) {
       message("ERROR: value '", value, "' not found in choices")
