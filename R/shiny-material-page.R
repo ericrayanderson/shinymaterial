@@ -52,6 +52,19 @@ material_page <- function(..., title = "", nav_bar_fixed = FALSE, nav_bar_color 
         overwrite = TRUE
       )
     }
+    
+    other_font_files <- list.files(
+      system.file("fonts", package = "shinymaterial")
+    )
+    
+    for (font_file.i in other_font_files) {
+      file.copy(
+        from = system.file(paste0("fonts/", font_file.i),
+                           package = "shinymaterial"),
+        to = "www/fonts/",
+        overwrite = TRUE, recursive = TRUE
+      )
+    }
   }
   
   material_nav_bar <- shiny::tags$nav(
@@ -94,7 +107,9 @@ material_page <- function(..., title = "", nav_bar_fixed = FALSE, nav_bar_color 
     shiny::tags$head(
       # Fonts
       shiny::includeCSS(
-        "https://fonts.googleapis.com/icon?family=Material+Icons"
+        # "https://fonts.googleapis.com/icon?family=Material+Icons"
+        system.file("css/shiny-material-icons.css",
+                    package = "shinymaterial")
       ),
       # Source Materialize CSS
       shiny::includeCSS(
