@@ -11,7 +11,7 @@
 #'   depth = 5,
 #'   shiny::tags$h5("Card Content")
 #' )
-material_card <- function(title, ..., depth = NULL, color = NULL){
+material_card <- function(title, ..., depth = NULL, color = NULL, size=c("small", "medium", "large")){
 
   shiny::tags$div(
     class =
@@ -25,7 +25,8 @@ material_card <- function(title, ..., depth = NULL, color = NULL){
         ifelse(
           is.null(color),
           "",
-          color)
+          color),
+        size[1]
       ),
     shiny::tags$div(
       class = "card-content",
