@@ -95,9 +95,11 @@ if(interactive()){
               onclick = "window.open('http://google.com', '_blank')"
             )
           ),
-          shiny::tags$p(
-            "Vertical size set to large action area is produced by paste(shiny::tagList). Title is styled"
-          )
+         shiny::tags$ul( class = "collection",
+                         tags$li( class = "collection-item left-align", "Vertical size set to large action area is produced by paste(shiny::tagList). Title is styled. table and text are inside div of class 'collection' "),
+                         tags$li(class = "collection-item", tableOutput("table_in_card"))
+         )
+          
         ))
         
           )), # end of card flow container
@@ -744,6 +746,9 @@ if(interactive()){
       x <- read.csv(inFile$datapath)
       message(head(x))
     })
+    
+    # table in card
+    output$table_in_card<-renderTable({iris[1:4,1:2]})
   }
 
   # Run the application
