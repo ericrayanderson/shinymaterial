@@ -47,12 +47,61 @@ if(interactive()){
           ),
           color = "deep-purple"
         ),
-        material_card(
+        # cards -------------------------------------------
+       
+        # flow container for cards
+        
+        div(  class = "container cards-container",   style = "margin-top:20px;",
+              tags$h3 ("Card Examples"),
+              
+          material_row( rowClass = "center-cols center-align",
+        
+         # card with background color
+         
+         material_column(width = 4, # column wraper to control the width
+         
+         material_card(
           title = "Example Card",
           shiny::tags$h1("Card Content"),
           depth = 5,
           color = "blue"
-        ),
+        )),
+        
+        # card with size and actions  via Verbatim HTML Input
+        
+        material_column(width = 4, # column wraper to control the width
+
+        material_card("Medium Card",
+                      size="medium",
+                      depth = 3,
+                      titleClass = 'teal white-text',
+                      cardAction = ' <a href="https://materializecss.com/cards.html">Card Design</a>
+                                   <a href="https://shiny.rstudio.com/articles/tag-glossary.html">Shiny Tags</a> ',
+                      shiny::tags$p("Vertical size set to medium. action is produced by verbatim HTML code ")
+        )),
+
+        material_column(width = 4, # column wraper to control the width
+        material_card(
+         "Large Card",
+          size =  "large",
+          depth = 3,
+          titleClass = "indigo white-text",
+          cardAction = paste(
+            shiny::actionButton(
+              inputId = 'button1',
+              class = "red lighten-1",
+              label = "Open App",
+              icon = icon("th"),
+              onclick = "window.open('http://google.com', '_blank')"
+            )
+          ),
+          shiny::tags$p(
+            "Vertical size set to large action area is produced by paste(shiny::tagList). Title is styled"
+          )
+        ))
+        
+          )), # end of card flow container
+        
         # Button ------------------------------------------------------------------
         material_input(
           type = "button",
