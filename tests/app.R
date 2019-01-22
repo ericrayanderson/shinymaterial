@@ -1,6 +1,6 @@
 if(interactive()){
   library(shiny)
-  # library(shinymaterial)
+  library(shinymaterial)
   
   ui <-
     material_page(
