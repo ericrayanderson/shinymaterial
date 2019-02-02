@@ -15,18 +15,18 @@
 material_card <- function(title, ..., depth = NULL, color = NULL, divider = FALSE){
   
   shiny::tags$div(
-    class = 
+    class =
       paste(
         "card",
         ifelse(
           is.null(depth),
           "",
-          paste0(" z-depth-", depth),
-          ifelse(
-            is.null(color),
-            "",
-            color)
-        )
+          paste0("z-depth-", depth)
+        ),
+        ifelse(
+          is.null(color),
+          "",
+          color)
       ),
     shiny::tags$div(
       class = "card-content",
