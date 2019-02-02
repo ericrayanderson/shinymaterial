@@ -16,7 +16,7 @@
 #'   initial_value = 10,
 #'   color = "#ef5350"
 #' )
-material_number_box <- function(input_id, label, min_value, max_value, initial_value, color = NULL){
+material_number_box <- function(input_id, label, min_value, max_value, step_size = 1, initial_value, color = NULL){
   if(!is.null(color)){
     
     number_box_style <-
@@ -55,7 +55,8 @@ material_number_box <- function(input_id, label, min_value, max_value, initial_v
             type = "number",
             value = initial_value,
             min = min_value,
-            max = max_value
+            max = max_value,
+            step = step_size
           ),
           shiny::tags$label(
             `for` = input_id,
