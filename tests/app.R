@@ -48,10 +48,21 @@ if(interactive()){
           color = "deep-purple"
         ),
         material_card(
-          title = "Example Card",
+          title = "Example Card div",
+          shiny::tags$h1("Card Content"),
+          depth = 5, divider = TRUE
+        ),
+        material_card(
+          title = "Example Card no div",
           shiny::tags$h1("Card Content"),
           depth = 5
-        ),
+        
+      ),
+      material_card(
+        title = "Example Card blue div",
+        shiny::tags$h1("Card Content"),
+        depth = 5, color = "blue", divider = TRUE
+      ),
         # Button ------------------------------------------------------------------
         material_input(
           type = "button",
