@@ -14,13 +14,13 @@
 #'   depth = 5,
 #'   color = "blue lighten-2"
 #' )
-material_button <- function(input_id, label = "", icon = NULL, depth = NULL, color = NULL) {
+material_button <- function(input_id, label, icon = NULL, depth = NULL, color = NULL) {
   
   if(!is.null(icon)){
     icon_tag <-
       shiny::HTML(
         paste0(
-          '<i class="material-icons ', if (label != "") "left", '">',
+          '<i class="material-icons left">',
           icon,
           '</i>')
       )
