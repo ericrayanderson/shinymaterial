@@ -4,8 +4,8 @@
 \alias{material_number_box}
 \title{Create a shinymaterial number box}
 \usage{
-material_number_box(input_id, label, min_value, max_value, initial_value,
-  color = NULL)
+material_number_box(input_id, label, min_value, max_value, step_size = 1,
+  initial_value, color = NULL)
 }
 \arguments{
 \item{input_id}{String. The input identifier used to access the value.}
@@ -15,6 +15,8 @@ material_number_box(input_id, label, min_value, max_value, initial_value,
 \item{min_value}{Number. The minimum allowable value.}
 
 \item{max_value}{Number. The maximum allowable value.}
+
+\item{step_size}{Number. The step size of the arrow clicks.}
 
 \item{initial_value}{Number. The initial value.}
 
@@ -30,6 +32,7 @@ material_number_box(
   min_value = 5,
   max_value = 15,
   initial_value = 10,
+  step_size = 2,
   color = "#ef5350"
 )
 }

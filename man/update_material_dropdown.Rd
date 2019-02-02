@@ -4,7 +4,8 @@
 \alias{update_material_dropdown}
 \title{Change the value of a material_dropdown on the client}
 \usage{
-update_material_dropdown(session, input_id, value = NULL, choices = NULL)
+update_material_dropdown(session, input_id, value = NULL,
+  choices = NULL)
 }
 \arguments{
 \item{session}{The session object passed to function given to shinyServer.}

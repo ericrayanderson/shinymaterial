@@ -4,8 +4,8 @@
 \alias{material_slider}
 \title{Create a shinymaterial slider}
 \usage{
-material_slider(input_id, label, min_value, max_value, initial_value,
-  color = NULL)
+material_slider(input_id, label, min_value, max_value, step_size = 1,
+  initial_value, color = NULL)
 }
 \arguments{
 \item{input_id}{String. The input identifier used to access the value.}
@@ -15,6 +15,8 @@ material_slider(input_id, label, min_value, max_value, initial_value,
 \item{min_value}{Number. The minimum value on the slider.}
 
 \item{max_value}{Number. The maximum value on the slider.}
+
+\item{step_size}{Number. The size of step in the slider.}
 
 \item{initial_value}{Number. The initial value of the slider.}
 
@@ -30,6 +32,7 @@ material_slider(
   min_value = 5,
   max_value = 15,
   initial_value = 10,
+  step_size = 3,
   color = "#ef5350"
 )
 }
