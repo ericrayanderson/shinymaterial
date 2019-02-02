@@ -6,6 +6,7 @@
 #' @param min_value Number. The minimum allowable value.
 #' @param max_value Number. The maximum allowable value.
 #' @param initial_value Number. The initial value.
+#' @param step_size Number. The step size of the arrow clicks.
 #' @param color String. The accent color of the number box. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors. \emph{This input requires using color hex codes, rather than the word form. E.g., "#ef5350", rather than "red lighten-1".}
 #' @examples
 #' material_number_box(
@@ -14,6 +15,7 @@
 #'   min_value = 5,
 #'   max_value = 15,
 #'   initial_value = 10,
+#'   step_size = 2,
 #'   color = "#ef5350"
 #' )
 material_number_box <- function(input_id, label, min_value, max_value, step_size = 1, initial_value, color = NULL){

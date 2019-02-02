@@ -5,6 +5,7 @@
 #' @param label String. The slider label.
 #' @param min_value Number. The minimum value on the slider.
 #' @param max_value Number. The maximum value on the slider.
+#' @param step_size Number. The size of step in the slider.
 #' @param initial_value Number. The initial value of the slider.
 #' @param color String. The slider color. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors. \emph{This input requires using color hex codes, rather than the word form. E.g., "#ef5350", rather than "red lighten-1".}
 #' @examples
@@ -14,6 +15,7 @@
 #'   min_value = 5,
 #'   max_value = 15,
 #'   initial_value = 10,
+#'   step_size = 3,
 #'   color = "#ef5350"
 #' )
 material_slider <- function(input_id, label, min_value, max_value, step_size = 1, initial_value, color = NULL){
