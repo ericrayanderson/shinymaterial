@@ -7,6 +7,7 @@ if(interactive()){
       title = "Testing", nav_bar_fixed = TRUE,
       nav_bar_color = 'red lighten-3',
       background_color = "white",
+      include_icons = TRUE,
       material_side_nav(
         tags$h4("stuff"),
         background_color = "blue lighten-4"
