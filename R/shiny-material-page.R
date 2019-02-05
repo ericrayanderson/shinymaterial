@@ -20,6 +20,7 @@
 material_page <- function(..., title = "", nav_bar_fixed = FALSE, nav_bar_color = NULL, background_color = "grey lighten-4", font_color = NULL, include_fonts = FALSE, include_nav_bar = TRUE){
   
   materialize_version <- "0.99.0"
+  materialicons_version <- "v42"
   
   if(include_fonts){
     
@@ -43,7 +44,7 @@ material_page <- function(..., title = "", nav_bar_fixed = FALSE, nav_bar_color 
       system.file(paste0("materialize/", materialize_version, "/fonts/roboto"),
                   package = "shinymaterial")
     )
-    
+
     for(font_file.i in font_files){
       file.copy(
         from = system.file(paste0("materialize/", materialize_version, "/fonts/roboto/", font_file.i),
@@ -52,6 +53,27 @@ material_page <- function(..., title = "", nav_bar_fixed = FALSE, nav_bar_color 
         overwrite = TRUE
       )
     }
+  }
+  
+  
+  icons_files <- list.files(
+    system.file(file.path("icons", "materialicons", materialicons_version),
+                package = "shinymaterial"),
+    full.names = TRUE
+  )
+  
+  
+  if (!dir.exists("www/icons/materialicons/")) {
+    message("[shinymaterial] Creating directory: www/icons/materialicons/")
+    dir.create("www/icons/materialicons/", recursive = TRUE)
+  }
+  
+  for (icon_file.i in icons_files) {
+    file.copy(
+      from = icon_file.i,
+      to = "www/icons/materialicons/",
+      overwrite = TRUE, recursive = TRUE
+    )
   }
   
   material_nav_bar <- shiny::tags$nav(
@@ -94,7 +116,8 @@ material_page <- function(..., title = "", nav_bar_fixed = FALSE, nav_bar_color 
     shiny::tags$head(
       # Fonts
       shiny::includeCSS(
-        "https://fonts.googleapis.com/icon?family=Material+Icons"
+        # "https://fonts.googleapis.com/icon?family=Material+Icons"
+        system.file("css/shiny-material-icons.css", package = "shinymaterial")
       ),
       # Source Materialize CSS
       shiny::includeCSS(
