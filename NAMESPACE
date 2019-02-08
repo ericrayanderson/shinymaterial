@@ -1,5 +1,6 @@
 importFrom("utils", "capture.output")
 export(open_material_modal)
+export(close_material_modal)
 export(material_button)
 export(material_card)
 export(material_checkbox)
