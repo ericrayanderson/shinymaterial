@@ -20,6 +20,4 @@ $(document).ready(function () {
 
     Shiny.inputBindings.register(shinyMaterialRadioButton);
 
-    $(".shiny-material-radio-button").find("input:first").trigger("click");
-
 });
