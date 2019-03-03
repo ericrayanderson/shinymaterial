@@ -6,7 +6,8 @@
 \usage{
 material_page(..., title = "", nav_bar_fixed = FALSE,
   nav_bar_color = NULL, background_color = "grey lighten-4",
-  font_color = NULL, include_fonts = FALSE, include_nav_bar = TRUE)
+  font_color = NULL, include_fonts = FALSE, include_nav_bar = TRUE,
+  include_icons = FALSE)
 }
 \arguments{
 \item{...}{The UI elements to place in the page.}
@@ -24,6 +25,8 @@ material_page(..., title = "", nav_bar_fixed = FALSE,
 \item{include_fonts}{Boolean. Should the material font files be included? (This will place the font sources in a directory 'www', at the same location as the app code.)}
 
 \item{include_nav_bar}{Boolean. Should the material nav bar be included?}
+
+\item{include_icons}{Boolean. Should the material icon files be included? (This will place the font sources in a directory 'www', at the same location as the app code.)}
 }
 \description{
 Build a shinymaterial page.

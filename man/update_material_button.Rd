@@ -24,7 +24,7 @@ Allow to disable the button and then enable.
 }
 \examples{
 \dontrun{
-update_material_text_box(
+update_material_button(
   session,
   input_id = "example_button",
   value = "New Text",
