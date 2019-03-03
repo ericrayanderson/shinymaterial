@@ -370,6 +370,14 @@ if(interactive()){
           input_id = "example_file_input2",
           label = "File"
         ),
+      
+        material_switch(input_id = "update_button_test_switch", 
+                        label = "update_button_test_switch", 
+                        off_label = "No", on_label = "Yes", 
+                        initial_value = TRUE),
+        material_button(input_id = "update_button_test",
+                        label = "test", icon = "cloud"),
+        br(),
         material_button(input_id = "update_text_test_button",
                         label = "update text"),
         material_text_box(input_id = "update_text_test",
@@ -577,7 +585,12 @@ if(interactive()){
     observeEvent(input$example_date_picker, {
       message(input$example_date_picker)
     })
-    
+    observe({
+      if (input$update_button_test_switch)
+        update_material_button(session, "update_button_test", "Active", "cloud", FALSE)
+      else
+        update_material_button(session, "update_button_test", "Non Active", "close", TRUE)
+    })
     observeEvent(input$update_text_test_button, {
       
       update_material_text_box(session,
