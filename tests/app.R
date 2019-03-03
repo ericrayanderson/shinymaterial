@@ -418,7 +418,7 @@ if(interactive()){
         material_button(input_id = "update_radio_button_test_button",
                         label = "update radio button"),
         material_radio_button(input_id = "update_radio_button_test",
-                              label = "text",choices = c("Adf" =  "a_update", "Bdf" = "b_update")),
+                              label = "text",choices = c("Adf" =  "a_update", "Bdf" = "b_update"), with_gap = TRUE),
         plotOutput('testRadioButtonPlot'),
         
         material_button(input_id = "update_slider_test_button",
