@@ -4,7 +4,7 @@
 #' @param ... The collapsible item elements
 #' @param depth Integer. The amount of depth of the card. The value should be between 0 and 5. Leave empty for the default depth.
 #' @param color String. The color of the card background. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
-#' @param type String. By Default : "accordion". Can also use c("expandable", "popout"). Expandable only available with materialize 1.0.0.
+#' @param type String. By Default : "accordion". Can also use "popout".
 #' @examples
 #' material_collapsible(
 #'   type = "popout",

@@ -13,7 +13,7 @@ material_collapsible(..., depth = NULL, color = NULL, type = NULL)
 
 \item{color}{String. The color of the card background. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
 
-\item{type}{String. By Default : "accordion". Can also use c("expandable", "popout"). Expandable only available with materialize 1.0.0.}
+\item{type}{String. By Default : "accordion". Can also use "popout".}
 }
 \description{
 Collapsible items must be placed in collapsible.

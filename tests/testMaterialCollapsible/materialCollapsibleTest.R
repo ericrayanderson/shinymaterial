@@ -25,7 +25,8 @@ ui <- material_page(
   tags$h5("Only work with Materialize 1.0.0 - But we will change one day ;-)"),
   material_collapsible(
     type = "expandable",
-    material_collapsible_item(label = "First", icon = "filter_drama"),
+    material_collapsible_item(label = "First", icon = "filter_drama",
+                              material_button("test2", label = "test")),
     material_collapsible_item(label = "Second", icon = "place"),
     material_collapsible_item(label = "Third", icon = "whatshot")
   ),
@@ -33,13 +34,22 @@ ui <- material_page(
   tags$h4("Popout"),
   material_collapsible(
     type = "popout",
-    material_collapsible_item(label = "First", icon = "filter_drama"),
+    material_collapsible_item(label = "First", icon = "filter_drama",
+                              material_button("test", label = "test")),
     material_collapsible_item(label = "Second", icon = "place"),
     material_collapsible_item(label = "Third", icon = "whatshot")
-  )
+  ),
+  material_button("test3", label = "test")
 )
 
-server <- function(input, output) {}
+server <- function(input, output) {
+  observeEvent(input$test2,{
+    message("ok")
+  })
+  observeEvent(input$test3,{
+    message("ok2")
+  })
+}
 
 shinyApp(ui = ui, server = server)
 
