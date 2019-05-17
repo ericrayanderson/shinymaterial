@@ -20,7 +20,7 @@
 #' }
 update_material_button <- function (session, input_id, label = NULL, icon = NULL, enable = TRUE) {
   
-  js_code <- paste0("$('#", input_id, "').prop( 'disabled', ", tolower(enable), " )")
+  js_code <- paste0("$('#", input_id, "').prop( 'disabled', ", tolower(!enable), " )")
   session$sendCustomMessage(type = "shinymaterialJS", js_code)
   
   if (!is.null(label)){
