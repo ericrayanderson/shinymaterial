@@ -5,4 +5,5 @@
 ===================================================================
 Install CRAN version:        `install.packages("shinymaterial")`
 
-Install Development version: `devtools::install_github("ericrayanderson/shinymaterial")`
+### Development Version Using Materalize 1.0.0:
+Install Development version: `devtools::install_github("ericrayanderson/shinymaterial", ref = "v1.0.0")`
