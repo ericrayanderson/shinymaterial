@@ -19,7 +19,7 @@ update_material_password_box <- function(session, input_id, value = NULL){
   session$sendCustomMessage(
     type = "shinymaterialJS",
     paste0(
-        "$('#", input_id, "').val('", value, "');Shiny.onInputChange('", input_id, "', '", value, "');Materialize.updateTextFields()"
+        "$('#", input_id, "').val('", value, "');Shiny.onInputChange('", input_id, "', '", value, "');M.updateTextFields()"
     )
   )
 }

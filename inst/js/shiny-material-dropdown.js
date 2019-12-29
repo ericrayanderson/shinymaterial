@@ -1,6 +1,6 @@
 $(document).ready(function () {
     function initShinyMaterialDropdown(callback) {
-        $('.shiny-material-dropdown').material_select();
+        $('.shiny-material-dropdown').formSelect();
         callback();
     }
 

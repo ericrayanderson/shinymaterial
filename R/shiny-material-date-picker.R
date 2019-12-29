@@ -63,7 +63,7 @@ material_date_picker <- function(input_id, label, color = NULL) {
           label
         ),
         shiny::tags$input(
-          type = "date", 
+          type = "text", 
           class = "datepicker shiny-material-date-picker",
           id = input_id
         ),

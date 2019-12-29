@@ -1,7 +1,7 @@
 $(document).ready(function () {
   
     function initShinyMaterialDatePicker(callback) {
-        $('.datepicker').pickadate({});
+        $('.datepicker').datepicker({});
         callback();
     }
     
