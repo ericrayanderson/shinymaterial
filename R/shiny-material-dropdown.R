@@ -22,6 +22,10 @@
 #' )
 material_dropdown <- function(input_id, label, choices = NULL, selected = NULL, multiple = NULL, color = NULL){
   
+  if(is.null(choices)){
+    choices <- ""
+  }
+  
   if(!is.null(color)){
     
     dropdown_style <-
