@@ -1,38 +1,57 @@
 library(shiny)
 library(shinymaterial)
 
+# Define UI for application that draws a histogram
 ui <- material_page(
-  title = "Basic Page + Side-Nav with Tabs",
-  nav_bar_fixed = TRUE,
+  title = "Modal Test App",
   
-  material_side_nav(
-    fixed = TRUE,
-    material_side_nav_tabs(
-      side_nav_tabs = c(
-        "Example Side-Nav Tab 1" = "example_side_nav_tab_1",
-        "Example Side-Nav Tab 2" = "example_side_nav_tab_2"
-      ),
-      icons = c("cast", "insert_chart")
+  # regular table
+  tableOutput("table"),
+  
+  h5(" 1. click this button first "),
+  # modal start button
+  material_button(input_id = "open_modal", label = "Open Modal Dialog"),
+  
+  
+  h5(" 2. now click native modal button"),
+  # modal window
+  material_modal(
+    modal_id = "example_modal",
+    button_text = "Modal Native Button",
+    display_button = T,
+    title = "Example Modal Title",
+    button_color = "red",
+    shiny::tags$p(
+      
+      h5("table below"),
+      tableOutput('table_modal')
+      
     )
   ),
+  h5("3. now click first button again")
   
-  material_side_nav_tab_content(
-    side_nav_tab_id = "example_side_nav_tab_1",
-    tags$h1("First Side-Nav Tab Content")
-  ),
-  material_side_nav_tab_content(
-    side_nav_tab_id = "example_side_nav_tab_2",
-    tags$h1("Second Side-Nav Tab Content"),
-    
-    material_number_box(input_id = "ddd", label = "number box", min_value = 5, max_value = 15,initial_value = 10, color = "#ef5350"),
-    textOutput("min_max")
-    
-  )
+  
 )
 
-server <- function(input, output) {
-  output$min_max <- renderText({
-    paste("You have chosen the number", input$ddd)
+# Define server logic required to draw a histogram
+server <- function(session, input, output) {
+  
+  # render table to main page
+  output$table<-renderTable(iris[1:5,])
+  
+  observeEvent(input$open_modal, ignoreInit = TRUE, {
+    open_material_modal(session, "example_modal")
+    
+    # Extra line of code here:
+    #shiny::showNotification('test')
+    
+    
+    # render table to modal dialog
+    output$table_modal<-renderTable({iris[1:5,]})
+    
   })
+  
 }
+
+# Run the application 
 shinyApp(ui = ui, server = server)

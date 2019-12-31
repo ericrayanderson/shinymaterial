@@ -454,9 +454,9 @@ if(interactive()){
   
   server <- function(input, output, session) {
     
-    observeEvent(input$selectTabTest, {
-      select_material_tab(session, "example_tab_22")
-    })
+    # observeEvent(input$selectTabTest, {
+    #   select_material_tab(session, "example_tab_22")
+    # })
     
     observeEvent(input$open_modal2, {
       message('this happened')

@@ -18,11 +18,3 @@ material_checkbox(input_id, label, initial_value = FALSE, color = NULL)
 \description{
 Build a shinymaterial checkbox. The value is a boolean (TRUE if checked, FALSE if not checked).
 }
-\examples{
-material_checkbox(
-  input_id = "example_checkbox",
-  label = "Checkbox",
-  initial_value = TRUE,
-  color = "#ef5350"
-)
-}
