@@ -10,13 +10,13 @@
 #'     "Example Tab 1" = "example_tab_1",
 #'     "Example Tab 2" = "example_tab_2"
 #'   ),
-#'   color = "deep-purple"
+#'   color = "purple"
 #' )
 material_tabs <- function(tabs, color = NULL){
   
   material_tabs <- shiny::tagList()
   
-  this_id <- paste0('tabs-id-', shiny:::createUniqueId(8))
+  this_id <- paste0('tabs-id-', create_id())
   
   for(i in 1:length(tabs)){
     material_tabs[[i]] <-
@@ -56,7 +56,7 @@ material_tabs <- function(tabs, color = NULL){
             }
 
             #", this_id, " .tab a:focus, #", this_id, " .tab a:focus.active {
-            background-color: ", paste0('rgba(', paste0(as.character(col2rgb(color)[,1]), collapse = ', '), ', 0.2)'), ";
+            background-color: ", paste0('rgba(', paste0(as.character(grDevices::col2rgb(color)[,1]), collapse = ', '), ', 0.2)'), ";
             outline: none;
             }
             "

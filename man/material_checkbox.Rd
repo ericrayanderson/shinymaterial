@@ -19,12 +19,14 @@ material_checkbox(input_id, label, initial_value = FALSE, color = NULL)
 Build a shinymaterial checkbox. The value is a boolean (TRUE if checked, FALSE if not checked).
 }
 \examples{
+\dontrun{
 material_checkbox(
   input_id = "example_checkbox",
   label = "Checkbox",
   initial_value = TRUE,
   color = "#ef5350"
 )
+}
 }
 \seealso{
 \code{\link{update_material_checkbox}}

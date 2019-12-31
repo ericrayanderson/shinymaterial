@@ -55,6 +55,11 @@ if(interactive()){
           ),
           color = "green"
         ),
+        material_tab_content(tab_id = "example_tab_11",
+                             "tab 1 stuff"),
+        material_tab_content(tab_id = "example_tab_22",
+                             plotOutput("tab2Plot"),
+                             "tab 2 stuff"),
         material_card(
           title = "Example Card div",
           shiny::tags$h1("Card Content"),
@@ -457,7 +462,9 @@ if(interactive()){
     # observeEvent(input$selectTabTest, {
     #   select_material_tab(session, "example_tab_22")
     # })
-    
+    output$tab2Plot <- renderPlot({
+      plot(1:10)
+    })
     observeEvent(input$open_modal2, {
       message('this happened')
       if(input$open_modal2 > 0){

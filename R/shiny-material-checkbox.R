@@ -7,12 +7,14 @@
 #' @param color String. The color of the check. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors. \emph{This input requires using color hex codes, rather than the word form. E.g., "#ef5350", rather than "red lighten-1".}
 #' @seealso \code{\link{update_material_checkbox}}
 #' @examples
+#' \dontrun{
 #' material_checkbox(
 #'   input_id = "example_checkbox",
 #'   label = "Checkbox",
 #'   initial_value = TRUE,
 #'   color = "#ef5350"
 #' )
+#' }
 material_checkbox <- function(input_id, label, initial_value = FALSE, color = NULL) {
   
   if(!is.null(color)){
@@ -75,7 +77,7 @@ material_checkbox <- function(input_id, label, initial_value = FALSE, color = NU
                   )
                 )
               ),
-              tags$span(id = paste0(input_id, "-span"), label)
+              shiny::tags$span(id = paste0(input_id, "-span"), label)
             )
           )
         ),

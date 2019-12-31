@@ -20,7 +20,7 @@ material_tabs(
     "Example Tab 1" = "example_tab_1",
     "Example Tab 2" = "example_tab_2"
   ),
-  color = "deep-purple"
+  color = "purple"
 )
 }
 \seealso{

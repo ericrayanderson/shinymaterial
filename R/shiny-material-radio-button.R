@@ -76,7 +76,7 @@ material_radio_button <- function(input_id, label, choices, selected = NULL, col
             id = choices[i],
             checked = if(choices[i] %in% selected) "checked"
           ),
-          tags$span(ifelse(has_names, names(choices[i]), choices[i]))
+          shiny::tags$span(ifelse(has_names, names(choices[i]), choices[i]))
         )
       )
   }

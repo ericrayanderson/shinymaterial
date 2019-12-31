@@ -1,6 +1,6 @@
 trigger_deps <- function(session){
   
-  .id <- shiny:::createUniqueId(8)
+  .id <- create_id()
   
   shiny::showNotification(id = .id,
                           ui = '', 
