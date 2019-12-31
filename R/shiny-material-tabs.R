@@ -15,8 +15,7 @@ material_tabs <- function(tabs, color = NULL){
   
   material_tabs <- shiny::tagList()
   
-  this_id <- 
-    paste0('tabs-id-', gsub(".", "", as.numeric(Sys.time()), fixed = TRUE))
+  this_id <- paste0('tabs-id-', shiny:::createUniqueId(8))
   
   for(i in 1:length(tabs)){
     material_tabs[[i]] <-
