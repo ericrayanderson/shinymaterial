@@ -6,6 +6,7 @@
 #' @param icon String. The name of the icon. Leave empty for no icon. Visit \url{http://materializecss.com/icons.html} for a list of available icons.
 #' @param depth Integer. The amount of depth of the button. The value should be between 0 and 5. Leave empty for the default depth. 
 #' @param color String. The color of the button. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
+#' @seealso \code{\link{update_material_button}}
 #' @examples
 #' material_button(
 #'   input_id = "example_button",

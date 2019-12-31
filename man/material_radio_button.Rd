@@ -35,3 +35,6 @@ material_radio_button(
   color = "#ef5350"
 )
 }
+\seealso{
+\code{\link{update_material_radio_button}}
+}

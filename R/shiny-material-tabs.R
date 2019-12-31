@@ -2,7 +2,8 @@
 #'
 #' Use this function to create tabs in your application.
 #' @param tabs Named vector. The tab display names and corresponding tab ids.
-#' @param color String. The accent color of the tabs. Leave blank for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors. \emph{Tab color requires using word forms of colors (e.g. "deep-purple"). Also, lighten or darken effects do not work on tab colors.}
+#' @param color String. The accent color of the tabs. Leave blank for the default color. Must be valid css color.
+#' @seealso \code{\link{material_tab_content}}
 #' @examples
 #' material_tabs(
 #'   tabs = c(
@@ -15,6 +16,8 @@ material_tabs <- function(tabs, color = NULL){
   
   material_tabs <- shiny::tagList()
   
+  this_id <- paste0('tabs-id-', shiny:::createUniqueId(8))
+  
   for(i in 1:length(tabs)){
     material_tabs[[i]] <-
       shiny::tags$li(
@@ -22,11 +25,6 @@ material_tabs <- function(tabs, color = NULL){
         shiny::tags$a(
           class = 
             paste0(
-              # ifelse(
-              #   i == 1,
-              #   "active",
-              #   ""
-              # ),
               ifelse(
                 is.null(color),
                 "",
@@ -39,17 +37,44 @@ material_tabs <- function(tabs, color = NULL){
       )
   }
   
+  
   if(!is.null(color)){
-    material_tabs[[length(tabs) + 1]] <-
-      shiny::tags$div(
-        class = paste0("indicator ", color)
+    
+    
+    tabs_style <-
+      shiny::tagList(
+        shiny::tags$head(
+          shiny::tags$style(
+            paste0(
+            "
+            #", this_id, " .indicator {
+            position: absolute;
+            bottom: 0;
+            height: 2px;
+            background-color: ", color, " !important;
+            will-change: left, right;
+            }
+
+            #", this_id, " .tab a:focus, #", this_id, " .tab a:focus.active {
+            background-color: ", paste0('rgba(', paste0(as.character(col2rgb(color)[,1]), collapse = ', '), ', 0.2)'), ";
+            outline: none;
+            }
+            "
+            )
+          )
+        )
       )
+    
+  } else {
+    tabs_style <- shiny::tags$div()
   }
   
   shiny::tagList(
     shiny::tags$ul(
-      class = "tabs tabs-fixed-width",
+      id = this_id,
+      class = "tabs tabs-fixed-width", 
       material_tabs
-    )
+    ),
+    tabs_style
   )
 }

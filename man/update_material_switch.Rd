@@ -25,3 +25,6 @@ update_material_switch(
 )
 }
 }
+\seealso{
+\code{\link{material_switch}}
+}

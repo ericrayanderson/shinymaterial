@@ -25,3 +25,6 @@ update_material_radio_button(
 )
 }
 }
+\seealso{
+\code{\link{material_radio_button}}
+}

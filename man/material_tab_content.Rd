@@ -20,3 +20,6 @@ material_tab_content(
   shiny::tags$h1("Tab Content")
 )
 }
+\seealso{
+\code{\link{material_tabs}}
+}

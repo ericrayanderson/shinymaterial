@@ -4,6 +4,7 @@
 #' @param session The session object passed to function given to shinyServer.
 #' @param input_id The input_id of the material_radio_button.
 #' @param value The value to set for the material_radio_button.
+#' @seealso \code{\link{material_radio_button}}
 #' @examples
 #' \dontrun{
 #' update_material_radio_button(

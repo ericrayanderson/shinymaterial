@@ -14,7 +14,10 @@ if(interactive()){
       ),
       tags$div(
         class = "container",
-        
+        material_button(
+          input_id = "selectTabTest",
+          "Select Second Green Tab"
+        ),
         material_modal(
           modal_id = "example_modal",
           button_text = "Modal",
@@ -43,15 +46,14 @@ if(interactive()){
           tabs = c(
             "Example Tab 1" = "example_tab_1",
             "Example Tab 2" = "example_tab_2"
-          ),
-          color = "purple"
+          )
         ),
         material_tabs(
           tabs = c(
             "Example Tab 11" = "example_tab_11",
             "Example Tab 22" = "example_tab_22"
           ),
-          color = "deep-purple"
+          color = "green"
         ),
         material_card(
           title = "Example Card div",
@@ -107,8 +109,8 @@ if(interactive()){
         ),
         material_input(
           type = "checkbox",
-          input_id = "input_checkbox2",
-          label = "Icheckbox",
+          input_id = "input_checkboxBLUE2",
+          label = "Icheckbox BLUE",
           initial_value = TRUE,
           color = "blue"
         ),
@@ -116,7 +118,7 @@ if(interactive()){
           input_id = "checkbox2",
           label = "checkbox",
           initial_value = TRUE,
-          color = "#ef5350"
+          color = "red"
         ),
         # Switch ------------------------------------------------------------------
         material_input(
@@ -214,7 +216,7 @@ if(interactive()){
         ),
         material_text_box(
           input_id = "text_box1",
-          label = "text_box1"
+          label = "text_box1", icon = "cloud"
         ),
         
         material_input(
@@ -295,7 +297,8 @@ if(interactive()){
             "Pie" = "p3",
             "Brownie" = "b3"
           ),
-          color = "#bbdefb"
+          color = "blue",
+          with_gap = TRUE
         ),
         # slider ------------------------------------------------------------------
         material_input(
@@ -450,6 +453,11 @@ if(interactive()){
   
   
   server <- function(input, output, session) {
+    
+    # observeEvent(input$selectTabTest, {
+    #   select_material_tab(session, "example_tab_22")
+    # })
+    
     observeEvent(input$open_modal2, {
       message('this happened')
       if(input$open_modal2 > 0){
@@ -482,8 +490,8 @@ if(interactive()){
     observeEvent(input$checkbox1, {
       message(input$checkbox1)
     })
-    observeEvent(input$input_checkbox2, {
-      message(input$input_checkbox2)
+    observeEvent(input$input_checkboxBLUE2, {
+      message(input$input_checkboxBLUE2)
     })
     observeEvent(input$checkbox2, {
       message(input$checkbox2)
@@ -682,6 +690,8 @@ if(interactive()){
     })
     
     output$testSliderPlot <- renderPlot({
+      req(input$update_slider_test)
+      # browser()
       plot(1:input$update_slider_test)
     })
     
@@ -706,7 +716,7 @@ if(interactive()){
 
       update_material_date_picker(session,
                                input_id = "update_date_picker_test",
-                               value = "10 April, 2012")
+                               value = "2010-06-11")
 
     })
     

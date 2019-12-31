@@ -25,3 +25,6 @@ update_material_slider(
 )
 }
 }
+\seealso{
+\code{\link{material_slider}}
+}

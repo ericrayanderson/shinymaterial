@@ -22,7 +22,7 @@ material_side_nav <- function(..., fixed = FALSE, image_source = NULL, backgroun
         shiny::tags$li(
           shiny::tags$div(
             style = "height:160px",
-            class = "userView",
+            class = "user-view",
             shiny::tags$div(
               class = "background",
               shiny::tags$img(
@@ -62,7 +62,7 @@ material_side_nav <- function(..., fixed = FALSE, image_source = NULL, backgroun
     shiny::tags$ul(
       id = "slide-out",
       class = paste0(
-        "side-nav",
+        "sidenav",
         ifelse(
           !is.null(background_color),
           paste0(" ", background_color),
@@ -70,7 +70,7 @@ material_side_nav <- function(..., fixed = FALSE, image_source = NULL, backgroun
         ),
         ifelse(
           fixed,
-          " fixed",
+          " sidenav-fixed",
           ""
         )
       ),

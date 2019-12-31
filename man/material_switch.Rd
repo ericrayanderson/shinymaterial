@@ -33,3 +33,6 @@ material_switch(
   color = "#ef5350"
 )
 }
+\seealso{
+\code{\link{update_material_switch}}
+}

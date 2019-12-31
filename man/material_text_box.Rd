@@ -26,3 +26,6 @@ material_text_box(
   color = "#ef5350"
 )
 }
+\seealso{
+\code{\link{update_material_text_box}}
+}

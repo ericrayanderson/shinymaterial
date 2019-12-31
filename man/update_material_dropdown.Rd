@@ -28,3 +28,6 @@ update_material_dropdown(
 )
 }
 }
+\seealso{
+\code{\link{material_dropdown}}
+}

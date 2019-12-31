@@ -20,7 +20,7 @@
 #' )
 material_page <- function(..., title = "", nav_bar_fixed = FALSE, nav_bar_color = NULL, background_color = "grey lighten-4", font_color = NULL, include_fonts = FALSE, include_nav_bar = TRUE, include_icons = FALSE){
   
-  materialize_version <- "0.99.0"
+  materialize_version <- "1.0.0"
   materialicons_version <- "v42"
   
   if(include_fonts){

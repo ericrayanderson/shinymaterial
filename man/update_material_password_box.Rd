@@ -25,3 +25,6 @@ update_material_password_box(
 )
 }
 }
+\seealso{
+\code{\link{material_password_box}}
+}

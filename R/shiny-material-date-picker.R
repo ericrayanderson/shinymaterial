@@ -4,6 +4,7 @@
 #' @param input_id String. The input identifier used to access the value.
 #' @param label String. The date picker label.
 #' @param color String. The date picker color. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
+#' @seealso \code{\link{update_material_date_picker}}
 #' @examples
 #' material_date_picker(
 #'   input_id = "example_date_picker",
@@ -63,7 +64,7 @@ material_date_picker <- function(input_id, label, color = NULL) {
           label
         ),
         shiny::tags$input(
-          type = "date", 
+          type = "text", 
           class = "datepicker shiny-material-date-picker",
           id = input_id
         ),

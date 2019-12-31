@@ -22,3 +22,6 @@ material_date_picker(
   label = "Date Picker"
 )
 }
+\seealso{
+\code{\link{update_material_date_picker}}
+}
