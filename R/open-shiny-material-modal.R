@@ -9,11 +9,12 @@
 #' }
 open_material_modal <- function(session, modal_id){
   
+  shinymaterial:::trigger_deps(session)
+  
   js_code <- paste0("$('#", modal_id, "').modal('open');")
   
   session$sendCustomMessage(
     type = "shinymaterialJS",
     js_code
   )
-  
 }
