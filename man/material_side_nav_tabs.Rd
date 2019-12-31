@@ -29,3 +29,6 @@ material_side_nav_tabs(
   color = "teal"
 )
 }
+\seealso{
+\code{\link{material_side_nav_tab_content}}
+}

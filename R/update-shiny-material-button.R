@@ -7,6 +7,7 @@
 #' @param label The new label of the material_button.
 #' @param icon The new icon of the material_button. If not set, icon disappear.
 #' @param enable TRUE if the button is enable, FALSE if disable.  
+#' @seealso \code{\link{material_button}}
 #' @examples
 #' \dontrun{
 #' update_material_button(

@@ -5,6 +5,7 @@
 #' @param input_id The input_id of the material_dropdown.
 #' @param value The value to set for the material_dropdown.
 #' @param choices The choices to set for the material_dropdown.
+#' @seealso \code{\link{material_dropdown}}
 #' @examples
 #' \dontrun{
 #' update_material_dropdown(

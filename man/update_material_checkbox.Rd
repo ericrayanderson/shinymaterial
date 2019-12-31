@@ -25,3 +25,6 @@ update_material_checkbox(
 )
 }
 }
+\seealso{
+\code{\link{material_checkbox}}
+}

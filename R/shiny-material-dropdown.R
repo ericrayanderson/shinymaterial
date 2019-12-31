@@ -7,6 +7,7 @@
 #' @param selected String. The initially selected underyling value.
 #' @param multiple Boolean. Can multiple items be selected?
 #' @param color String. The color of the dropdown choices. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors. \emph{This input requires using color hex codes, rather than the word form. E.g., "#ef5350", rather than "red lighten-1".}
+#' @seealso \code{\link{update_material_dropdown}}
 #' @examples
 #' material_dropdown(
 #'   input_id = "example_dropdown",

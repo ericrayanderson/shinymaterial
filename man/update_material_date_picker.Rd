@@ -25,3 +25,6 @@ update_material_date_picker(
 )
 }
 }
+\seealso{
+\code{\link{material_date_picker}}
+}

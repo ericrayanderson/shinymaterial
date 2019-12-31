@@ -19,3 +19,6 @@ Close a material modal programmatically (server side).
 close_material_modal(session, "example_modal")
 }
 }
+\seealso{
+\code{\link{open_material_modal}}
+}

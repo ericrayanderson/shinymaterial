@@ -8,6 +8,7 @@
 #' @param step_size Number. The size of step in the slider.
 #' @param initial_value Number. The initial value of the slider.
 #' @param color String. The slider color. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors. \emph{This input requires using color hex codes, rather than the word form. E.g., "#ef5350", rather than "red lighten-1".}
+#' @seealso \code{\link{update_material_slider}}
 #' @examples
 #' material_slider(
 #'   input_id = "example_slider",

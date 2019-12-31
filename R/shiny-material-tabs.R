@@ -3,6 +3,7 @@
 #' Use this function to create tabs in your application.
 #' @param tabs Named vector. The tab display names and corresponding tab ids.
 #' @param color String. The accent color of the tabs. Leave blank for the default color. Must be valid css color.
+#' @seealso \code{\link{material_tab_content}}
 #' @examples
 #' material_tabs(
 #'   tabs = c(
@@ -45,20 +46,20 @@ material_tabs <- function(tabs, color = NULL){
         shiny::tags$head(
           shiny::tags$style(
             paste0(
-              '
-            #', this_id, ' .indicator {
-    position: absolute;
-    bottom: 0;
-    height: 2px;
-    background-color: ', color, ' !important;
-    will-change: left, right;
+            "
+            #", this_id, " .indicator {
+            position: absolute;
+            bottom: 0;
+            height: 2px;
+            background-color: ", color, " !important;
+            will-change: left, right;
             }
 
-    #', this_id, ' .tab a:focus, #', this_id, ' .tab a:focus.active {
-    background-color: ', paste0("rgba(", paste0(as.character(col2rgb(color)[,1]), collapse = ", "), ", 0.2)"), ';
-    outline: none;
-}
-              '
+            #", this_id, " .tab a:focus, #", this_id, " .tab a:focus.active {
+            background-color: ", paste0('rgba(', paste0(as.character(col2rgb(color)[,1]), collapse = ', '), ', 0.2)'), ";
+            outline: none;
+            }
+            "
             )
           )
         )
@@ -67,13 +68,13 @@ material_tabs <- function(tabs, color = NULL){
   } else {
     tabs_style <- shiny::tags$div()
   }
-
-shiny::tagList(
-  shiny::tags$ul(
-    id = this_id,
-    class = "tabs tabs-fixed-width", 
-    material_tabs
-  ),
-  tabs_style
-)
+  
+  shiny::tagList(
+    shiny::tags$ul(
+      id = this_id,
+      class = "tabs tabs-fixed-width", 
+      material_tabs
+    ),
+    tabs_style
+  )
 }

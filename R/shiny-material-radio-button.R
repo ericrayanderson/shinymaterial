@@ -7,6 +7,7 @@
 #' @param selected The initially selected value (if not specified then defaults to the first value).
 #' @param color String. The color of the radio buttons. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors. \emph{This input requires using color hex codes, rather than the word form. E.g., "#ef5350", rather than "red lighten-1".}
 #' @param with_gap Boolean. To create a radio button with a gap.
+#' @seealso \code{\link{update_material_radio_button}}
 #' @examples
 #' material_radio_button(
 #'   input_id = "example_radio_button",

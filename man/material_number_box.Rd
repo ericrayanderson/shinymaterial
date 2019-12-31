@@ -36,3 +36,6 @@ material_number_box(
   color = "#ef5350"
 )
 }
+\seealso{
+\code{\link{update_material_number_box}}
+}

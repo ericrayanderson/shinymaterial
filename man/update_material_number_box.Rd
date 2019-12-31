@@ -25,3 +25,6 @@ update_material_number_box(
 )
 }
 }
+\seealso{
+\code{\link{material_number_box}}
+}

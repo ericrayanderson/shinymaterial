@@ -36,3 +36,6 @@ material_slider(
   color = "#ef5350"
 )
 }
+\seealso{
+\code{\link{update_material_slider}}
+}

@@ -14,3 +14,15 @@ material_tabs(tabs, color = NULL)
 \description{
 Use this function to create tabs in your application.
 }
+\examples{
+material_tabs(
+  tabs = c(
+    "Example Tab 1" = "example_tab_1",
+    "Example Tab 2" = "example_tab_2"
+  ),
+  color = "deep-purple"
+)
+}
+\seealso{
+\code{\link{material_tab_content}}
+}

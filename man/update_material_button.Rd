@@ -33,3 +33,6 @@ update_material_button(
 )
 }
 }
+\seealso{
+\code{\link{material_button}}
+}

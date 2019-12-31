@@ -25,3 +25,6 @@ update_material_text_box(
 )
 }
 }
+\seealso{
+\code{\link{material_text_box}}
+}
