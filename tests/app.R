@@ -3,7 +3,7 @@ if(interactive()){
   library(shinymaterial)
   
   ui <-
-    material_page(
+    material_page(materialize_in_www = TRUE,
       title = "Testing", nav_bar_fixed = TRUE,
       nav_bar_color = 'red lighten-3',
       background_color = "white",
