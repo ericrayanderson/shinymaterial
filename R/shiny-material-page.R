@@ -10,6 +10,7 @@
 #' @param include_fonts Boolean. Should the material font files be included? (This will place the font sources in a directory 'www', at the same location as the app code.)
 #' @param include_nav_bar Boolean. Should the material nav bar be included?
 #' @param include_icons Boolean. Should the material icon files be included? (This will place the font sources in a directory 'www', at the same location as the app code.)
+#' @param materialize_in_www Boolean. Should the app look for the materialize library in the 'www' folder? E.g. www/css/materialize.min.css & www/js/materialize.min.js (Default to FALSE - which will look in the package library folder)
 #' @examples
 #' material_page(
 #'   title = "Example Title",
@@ -18,10 +19,26 @@
 #'   background_color = "blue lighten-4",
 #'   shiny::tags$h1("Page Content")
 #' )
-material_page <- function(..., title = "", nav_bar_fixed = FALSE, nav_bar_color = NULL, background_color = "grey lighten-4", font_color = NULL, include_fonts = FALSE, include_nav_bar = TRUE, include_icons = FALSE){
+material_page <- function(..., title = "", nav_bar_fixed = FALSE, nav_bar_color = NULL, background_color = "grey lighten-4", font_color = NULL, include_fonts = FALSE, include_nav_bar = TRUE, include_icons = FALSE, materialize_in_www = FALSE){
   
   materialize_version <- "1.0.0"
   materialicons_version <- "v42"
+  
+  if(!materialize_in_www){
+    css_location <- 
+      system.file(
+        paste0("materialize/", materialize_version, "/css/materialize.min.css"),
+        package = "shinymaterial"
+      )
+    js_location <- 
+      system.file(
+        paste0("materialize/", materialize_version, "/js/materialize.min.js"),
+        package = "shinymaterial"
+      )
+  } else {
+    css_location <- "www/css/materialize.min.css"
+    js_location <- "www/js/materialize.min.js"
+  }
   
   if(include_fonts){
     
@@ -45,7 +62,7 @@ material_page <- function(..., title = "", nav_bar_fixed = FALSE, nav_bar_color 
       system.file(paste0("materialize/", materialize_version, "/fonts/roboto"),
                   package = "shinymaterial")
     )
-
+    
     for(font_file.i in font_files){
       file.copy(
         from = system.file(paste0("materialize/", materialize_version, "/fonts/roboto/", font_file.i),
@@ -56,7 +73,7 @@ material_page <- function(..., title = "", nav_bar_fixed = FALSE, nav_bar_color 
     }
   }
   
-
+  
   if(include_icons){
     icons_files <- list.files(
       system.file(file.path("icons", "materialicons", materialicons_version),
@@ -130,8 +147,7 @@ material_page <- function(..., title = "", nav_bar_fixed = FALSE, nav_bar_color 
       ),
       # Source Materialize CSS
       shiny::includeCSS(
-        system.file(paste0("materialize/", materialize_version, "/css/materialize.min.css"),
-                    package = "shinymaterial"),
+        css_location,
         media = "screen,projection"
       ),
       shiny::includeCSS(
@@ -151,8 +167,7 @@ material_page <- function(..., title = "", nav_bar_fixed = FALSE, nav_bar_color 
     ),
     # Source Materialize Javascript
     shiny::includeScript(
-      system.file(paste0("materialize/", materialize_version, "/js/materialize.min.js"),
-                  package = "shinymaterial")
+      js_location
     ),
     shiny::includeScript(
       system.file("js/shiny-material-page.js",
