@@ -4,8 +4,13 @@
 \alias{update_material_button}
 \title{Change the text, icon of a material_button on the client. Allow to disable.}
 \usage{
-update_material_button(session, input_id, label = NULL, icon = NULL,
-  enable = TRUE)
+update_material_button(
+  session,
+  input_id,
+  label = NULL,
+  icon = NULL,
+  disabled = NULL
+)
 }
 \arguments{
 \item{session}{The session object passed to function given to shinyServer.}
@@ -16,7 +21,7 @@ update_material_button(session, input_id, label = NULL, icon = NULL,
 
 \item{icon}{The new icon of the material_button. If not set, icon disappear.}
 
-\item{enable}{TRUE if the button is enable, FALSE if disable.}
+\item{disabled}{NULL by default (do nothing), if TRUE the button is disable and if FALSE, enable.}
 }
 \description{
 Change the value text, icon of a material_button on the client. 
@@ -29,7 +34,7 @@ update_material_button(
   input_id = "example_button",
   value = "New Text",
   icon = "stop",
-  enable = FALSE
+  disabled = FALSE
 )
 }
 }
