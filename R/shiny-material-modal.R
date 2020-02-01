@@ -35,7 +35,7 @@ material_modal <- function(modal_id, button_text, title, ..., button_icon = NULL
   
   button_class <- 
     paste0(
-      "waves-effect waves-light shiny-material-modal-trigger",
+      "waves-effect waves-light shiny-material-modal-trigger modal-trigger",
       ifelse(is.null(button_color),
              "",
              paste0(" ",  button_color)
