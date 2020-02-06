@@ -6,7 +6,7 @@
 #' @param input_id The input_id of the material_button.
 #' @param label The new label of the material_button.
 #' @param icon The new icon of the material_button. If not set, icon disappear.
-#' @param enable TRUE if the button is enable, FALSE if disable.  
+#' @param disabled NULL by default (do nothing), if TRUE the button is disable and if FALSE, enable.
 #' @seealso \code{\link{material_button}}
 #' @examples
 #' \dontrun{
@@ -15,13 +15,15 @@
 #'   input_id = "example_button",
 #'   value = "New Text",
 #'   icon = "stop",
-#'   enable = FALSE
+#'   disabled = FALSE
 #' )
 #' }
-update_material_button <- function (session, input_id, label = NULL, icon = NULL, enable = TRUE) {
+update_material_button <- function (session, input_id, label = NULL, icon = NULL, disabled = NULL) {
   
-  js_code <- paste0("$('#", input_id, "').prop( 'disabled', ", tolower(enable), " )")
-  session$sendCustomMessage(type = "shinymaterialJS", js_code)
+  if(!is.null(disabled)){
+    js_code <- paste0("$('#", input_id, "').prop( 'disabled', ", tolower(disabled), " )")
+    session$sendCustomMessage(type = "shinymaterialJS", js_code)
+  }
   
   if (!is.null(label)){
     if (!is.null(icon))
