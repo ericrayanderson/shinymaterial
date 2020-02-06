@@ -18,10 +18,11 @@
 material_button <- function(input_id, label, icon = NULL, depth = NULL, color = NULL) {
   
   if(!is.null(icon)){
+    empty_label <- label == "" || is.null(label)
     icon_tag <-
       shiny::HTML(
         paste0(
-          '<i class="material-icons left">',
+          '<i class="material-icons ', if(!empty_label) "left", '">',
           icon,
           '</i>')
       )
@@ -36,18 +37,10 @@ material_button <- function(input_id, label, icon = NULL, depth = NULL, color = 
       shiny::tagList(
         shiny::tags$button(
           class = 
-            paste0(
+            paste(
               "waves-effect waves-light btn shiny-material-button",
-              ifelse(
-                is.null(depth),
-                "",
-                paste0(" z-depth-", depth)
-              ),
-              ifelse(
-                is.null(color),
-                "",
-                paste0(" ", color)
-              )
+              if(!is.null(depth)) paste0("z-depth-", depth),
+              if(!is.null(color)) color
             ),
           id = input_id,
           value = 0,
