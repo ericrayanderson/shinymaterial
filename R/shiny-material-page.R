@@ -11,6 +11,8 @@
 #' @param include_nav_bar Boolean. Should the material nav bar be included?
 #' @param include_icons Boolean. Should the material icon files be included? (This will place the font sources in a directory 'www', at the same location as the app code.)
 #' @param materialize_in_www Boolean. Should the app look for the materialize library in the 'www' folder? E.g. www/css/materialize.min.css & www/js/materialize.min.js (Default to FALSE - which will look in the package library folder)
+#' @param primary_color Primary color (use hex code, e.g. '#e57373'). Visit \url{http://materializecss.com/color.html} for a list of available colors.
+#' @param secondary_color Secondary color (use hex code, e.g. '#26a69a'). Visit \url{http://materializecss.com/color.html} for a list of available colors.
 #' @examples
 #' material_page(
 #'   title = "Example Title",
@@ -19,10 +21,69 @@
 #'   background_color = "blue lighten-4",
 #'   shiny::tags$h1("Page Content")
 #' )
-material_page <- function(..., title = "", nav_bar_fixed = FALSE, nav_bar_color = NULL, background_color = "grey lighten-4", font_color = NULL, include_fonts = FALSE, include_nav_bar = TRUE, include_icons = FALSE, materialize_in_www = FALSE){
+material_page <- function(..., title = "", nav_bar_fixed = FALSE, nav_bar_color = NULL, background_color = "grey lighten-4", font_color = NULL, include_fonts = FALSE, include_nav_bar = TRUE, include_icons = FALSE, materialize_in_www = FALSE, primary_color = NULL, secondary_color = NULL){
   
   materialize_version <- "1.0.0"
   materialicons_version <- "v42"
+  
+  if(!is.null(primary_color) | !is.null(secondary_color)){
+    
+    if(!materialize_in_www){
+      stop("The option 'materialize_in_www' must be set to TRUE when setting a 'primary_color' or 'secondary_color'")
+    }
+    
+    dir_recursion("www")
+    dir_recursion("www/src/sass")
+    
+    fs::dir_copy(
+      system.file(
+        paste0("materialize/", materialize_version, "/src/sass"),
+        package = "shinymaterial"
+      ),
+      "www/src/sass", overwrite = TRUE
+    )
+    
+    scss_content <- readLines("www/src/sass/components/_variables.scss")
+    
+    if(!is.null(primary_color)){
+      scss_content[37] <- gsub(
+        'color("materialize-red", "lighten-2")',
+        primary_color,
+        scss_content[37],
+        fixed = TRUE
+      )
+    }
+    
+    if(!is.null(secondary_color)){
+      scss_content[41] <- gsub(
+        'color("teal", "lighten-1")',
+        secondary_color,
+        scss_content[41],
+        fixed = TRUE
+      )
+    }
+    
+    
+    dir_recursion("www/css")
+    dir_recursion("www/js")
+    
+    writeLines(scss_content, "www/src/sass/components/_variables.scss")
+    
+    
+    sass::sass(
+      input = sass::sass_file("www/src/sass/materialize.scss"),
+      output = "www/css/materialize.min.css"
+    )
+    
+    file.copy(
+      system.file(
+        paste0("materialize/", materialize_version, "/js/materialize.min.js"),
+        package = "shinymaterial"
+      ),
+      "www/js/materialize.min.js"
+    )
+    
+  }
   
   if(!materialize_in_www){
     css_location <- 
@@ -42,21 +103,7 @@ material_page <- function(..., title = "", nav_bar_fixed = FALSE, nav_bar_color 
   
   if(include_fonts){
     
-    dir_recursion <- c("www", "www/fonts", "www/fonts/roboto")
-    
-    for(dir.i in dir_recursion){
-      if(!dir.exists(dir.i)){
-        if(dir.i == "www/fonts/roboto"){
-          message(
-            paste0(
-              "[shinymaterial] Creating directory: ",
-              file.path(getwd(), dir.i)
-            )
-          )
-        }
-        dir.create(dir.i)
-      }
-    }
+    dir_recursion("www/fonts/roboto")
     
     font_files <- list.files(
       system.file(paste0("materialize/", materialize_version, "/fonts/roboto"),
