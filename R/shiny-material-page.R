@@ -11,8 +11,8 @@
 #' @param include_nav_bar Boolean. Should the material nav bar be included?
 #' @param include_icons Boolean. Should the material icon files be included? (This will place the font sources in a directory 'www', at the same location as the app code.)
 #' @param materialize_in_www Boolean. Should the app look for the materialize library in the 'www' folder? E.g. www/css/materialize.min.css & www/js/materialize.min.js (Default to FALSE - which will look in the package library folder)
-#' @param primary_color Primary color (use hex code, e.g. '#e57373'). Visit \url{http://materializecss.com/color.html} for a list of available colors.
-#' @param secondary_color Secondary color (use hex code, e.g. '#26a69a'). Visit \url{http://materializecss.com/color.html} for a list of available colors.
+#' @param primary_color Primary theme color (use hex code, e.g. '#e57373'). Visit \url{http://materializecss.com/color.html} for a list of material hex codes.
+#' @param secondary_color Secondary theme color (use hex code, e.g. '#26a69a'). Visit \url{http://materializecss.com/color.html} for a list of material hex codes.
 #' @examples
 #' material_page(
 #'   title = "Example Title",
@@ -74,6 +74,8 @@ material_page <- function(..., title = "", nav_bar_fixed = FALSE, nav_bar_color 
       input = sass::sass_file("www/src/sass/materialize.scss"),
       output = "www/css/materialize.min.css"
     )
+    
+    fs::dir_delete("www/src")
     
     file.copy(
       system.file(

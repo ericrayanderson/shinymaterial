@@ -4,7 +4,9 @@ if(interactive()){
   
   # Wrap shinymaterial apps in material_page
   ui <- material_page(
-    title = "Basic Page",
+    title = "Basic Page", 
+    primary_color = "blue", 
+    secondary_color = "green", materialize_in_www = TRUE,
     include_fonts = TRUE,
     tags$h1("Page Content"),
     material_file_input(input_id = "example_file_input", label = "ok")
