@@ -7,7 +7,8 @@
 material_page(..., title = "", nav_bar_fixed = FALSE,
   nav_bar_color = NULL, background_color = "grey lighten-4",
   font_color = NULL, include_fonts = FALSE, include_nav_bar = TRUE,
-  include_icons = FALSE, materialize_in_www = FALSE)
+  include_icons = FALSE, materialize_in_www = FALSE,
+  primary_theme_color = NULL, secondary_theme_color = NULL)
 }
 \arguments{
 \item{...}{The UI elements to place in the page.}
@@ -29,6 +30,10 @@ material_page(..., title = "", nav_bar_fixed = FALSE,
 \item{include_icons}{Boolean. Should the material icon files be included? (This will place the font sources in a directory 'www', at the same location as the app code.)}
 
 \item{materialize_in_www}{Boolean. Should the app look for the materialize library in the 'www' folder? E.g. www/css/materialize.min.css & www/js/materialize.min.js (Default to FALSE - which will look in the package library folder)}
+
+\item{primary_theme_color}{Primary theme color (use hex code, e.g. '#e57373'). Visit \url{http://materializecss.com/color.html} for a list of material hex codes.}
+
+\item{secondary_theme_color}{Secondary theme color (use hex code, e.g. '#26a69a'). Visit \url{http://materializecss.com/color.html} for a list of material hex codes.}
 }
 \description{
 Build a shinymaterial page.

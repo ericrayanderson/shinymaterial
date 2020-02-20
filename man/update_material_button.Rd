@@ -4,13 +4,8 @@
 \alias{update_material_button}
 \title{Change the text, icon of a material_button on the client. Allow to disable.}
 \usage{
-update_material_button(
-  session,
-  input_id,
-  label = NULL,
-  icon = NULL,
-  disabled = NULL
-)
+update_material_button(session, input_id, label = NULL, icon = NULL,
+  disabled = NULL)
 }
 \arguments{
 \item{session}{The session object passed to function given to shinyServer.}
