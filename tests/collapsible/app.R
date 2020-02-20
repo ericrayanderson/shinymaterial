@@ -10,15 +10,13 @@ if(interactive()){
     secondary_theme_color = "green",
     # plotOutput("plot55"),
     material_collapsible(
-      type = "popout",
       material_collapsible_item(
-        heading = "Plot",
+        label = "Plot",
         icon = "place",
-        material_button("button", "BUTTON"),
         plotOutput("plot3")
       ),
       material_collapsible_item(
-        heading = "Table",
+        label = "Table",
         icon = "place",
         tableOutput("table3")
       )
