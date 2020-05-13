@@ -37,7 +37,10 @@ material_dropdown <- function(input_id, label, choices = NULL, selected = NULL, 
               '
               #shiny-material-dropdown-', input_id, ' ul.dropdown-content.select-dropdown li span {
               color: ', color, ';
-               }
+              }
+               #shiny-material-dropdown-', input_id, ' .select-wrapper input.select-dropdown:focus {
+                border-bottom: 1px solid ', color, ';
+              }
               '
             )
           )
