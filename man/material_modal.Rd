@@ -4,9 +4,18 @@
 \alias{material_modal}
 \title{Place UI content in a modal}
 \usage{
-material_modal(modal_id, button_text, title, ..., button_icon = NULL,
-  floating_button = FALSE, button_depth = NULL, button_color = NULL,
-  close_button_label = "Close", display_button = TRUE)
+material_modal(
+  modal_id,
+  button_text,
+  title,
+  ...,
+  button_icon = NULL,
+  floating_button = FALSE,
+  button_depth = NULL,
+  button_color = NULL,
+  close_button_label = "Close",
+  display_button = TRUE
+)
 }
 \arguments{
 \item{modal_id}{String. The ID for the modal. Must be unique per application.}

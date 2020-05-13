@@ -4,8 +4,14 @@
 \alias{material_dropdown}
 \title{Create a shinymaterial dropdown}
 \usage{
-material_dropdown(input_id, label, choices = NULL, selected = NULL,
-  multiple = NULL, color = NULL)
+material_dropdown(
+  input_id,
+  label,
+  choices = NULL,
+  selected = NULL,
+  multiple = NULL,
+  color = NULL
+)
 }
 \arguments{
 \item{input_id}{String. The input identifier used to access the value.}

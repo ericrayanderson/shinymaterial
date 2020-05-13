@@ -4,11 +4,20 @@
 \alias{material_page}
 \title{Create a shinymaterial page}
 \usage{
-material_page(..., title = "", nav_bar_fixed = FALSE,
-  nav_bar_color = NULL, background_color = "grey lighten-4",
-  font_color = NULL, include_fonts = FALSE, include_nav_bar = TRUE,
-  include_icons = FALSE, materialize_in_www = FALSE,
-  primary_theme_color = NULL, secondary_theme_color = NULL)
+material_page(
+  ...,
+  title = "",
+  nav_bar_fixed = FALSE,
+  nav_bar_color = NULL,
+  background_color = "grey lighten-4",
+  font_color = NULL,
+  include_fonts = FALSE,
+  include_nav_bar = TRUE,
+  include_icons = FALSE,
+  materialize_in_www = FALSE,
+  primary_theme_color = NULL,
+  secondary_theme_color = NULL
+)
 }
 \arguments{
 \item{...}{The UI elements to place in the page.}

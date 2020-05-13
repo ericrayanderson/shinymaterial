@@ -4,8 +4,12 @@
 \alias{material_side_nav}
 \title{Create a side-nav that contains UI content}
 \usage{
-material_side_nav(..., fixed = FALSE, image_source = NULL,
-  background_color = NULL)
+material_side_nav(
+  ...,
+  fixed = FALSE,
+  image_source = NULL,
+  background_color = NULL
+)
 }
 \arguments{
 \item{...}{The UI elements to place in the side-nav.}

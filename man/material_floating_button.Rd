@@ -4,8 +4,13 @@
 \alias{material_floating_button}
 \title{Create a shinymaterial floating button}
 \usage{
-material_floating_button(input_id, icon = NULL, pulse = FALSE,
-  depth = NULL, color = NULL)
+material_floating_button(
+  input_id,
+  icon = NULL,
+  pulse = FALSE,
+  depth = NULL,
+  color = NULL
+)
 }
 \arguments{
 \item{input_id}{String. The input identifier used to access the value.}

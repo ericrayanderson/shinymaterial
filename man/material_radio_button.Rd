@@ -4,8 +4,14 @@
 \alias{material_radio_button}
 \title{Create a shinymaterial radio button}
 \usage{
-material_radio_button(input_id, label, choices, selected = NULL,
-  color = NULL, with_gap = FALSE)
+material_radio_button(
+  input_id,
+  label,
+  choices,
+  selected = NULL,
+  color = NULL,
+  with_gap = FALSE
+)
 }
 \arguments{
 \item{input_id}{String. The input identifier used to access the value.}

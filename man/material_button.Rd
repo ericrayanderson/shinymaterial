@@ -4,8 +4,7 @@
 \alias{material_button}
 \title{Create a shinymaterial button}
 \usage{
-material_button(input_id, label, icon = NULL, depth = NULL,
-  color = NULL)
+material_button(input_id, label, icon = NULL, depth = NULL, color = NULL)
 }
 \arguments{
 \item{input_id}{String. The input identifier used to access the value.}

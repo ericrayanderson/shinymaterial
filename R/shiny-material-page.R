@@ -44,18 +44,19 @@ material_page <- function(..., title = "", nav_bar_fixed = FALSE, nav_bar_color 
       stop("The option 'materialize_in_www' cannot be used when setting a 'primary_theme_color' or 'secondary_theme_color'")
     }
     
-    .temp_build_dir <- fs::path_temp()
+    .temp_build_dir <- tempdir()
     
-    fs::dir_copy(
-      system.file(
+    file.copy(
+      from =  system.file(
         paste0("materialize/", materialize_version, "/src/sass"),
         package = "shinymaterial"
       ),
-      .temp_build_dir, 
-      overwrite = TRUE
+      to = .temp_build_dir,
+      overwrite = TRUE,
+      recursive = TRUE
     )
     
-    scss_content <- readLines(file.path(.temp_build_dir, "components/_variables.scss"))
+    scss_content <- readLines(file.path(.temp_build_dir, "/sass/components/_variables.scss"))
     
     if(!is.null(primary_theme_color)){
       scss_content[37] <- gsub(
@@ -77,15 +78,15 @@ material_page <- function(..., title = "", nav_bar_fixed = FALSE, nav_bar_color 
     
     
     writeLines(scss_content,
-               file.path(.temp_build_dir, "components/_variables.scss"))
+               file.path(.temp_build_dir, "/sass/components/_variables.scss"))
     
     
     sass::sass(
-      input = sass::sass_file(file.path(.temp_build_dir,"materialize.scss")),
-      output = file.path(.temp_build_dir, "materialize.min.css")
+      input = sass::sass_file(file.path(.temp_build_dir, "/sass/materialize.scss")),
+      output = file.path(.temp_build_dir, "/sass/materialize.min.css")
     )
     
-    css_location <- file.path(.temp_build_dir, "materialize.min.css")
+    css_location <- file.path(.temp_build_dir, "/sass/materialize.min.css")
   }
   
   if(materialize_in_www){

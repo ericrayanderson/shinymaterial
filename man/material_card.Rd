@@ -4,8 +4,7 @@
 \alias{material_card}
 \title{Create a card that will contain UI content}
 \usage{
-material_card(title, ..., depth = NULL, color = NULL,
-  divider = FALSE)
+material_card(title, ..., depth = NULL, color = NULL, divider = FALSE)
 }
 \arguments{
 \item{title}{String. The title of the card}
