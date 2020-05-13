@@ -15,7 +15,7 @@ ui <- material_page(
       material_slider("slider", "Slider", min_value = 0, max_value = 2, initial_value = 1),
       material_checkbox(input_id = "checkbox", label = "Checkbox", initial_value = TRUE),
       material_radio_button("radio", "Radio", choices = c("a", "b")),
-      material_dropdown("dropdown", "Dropdown", choices = c("a", "b")),
+      material_dropdown("dropdown", "Dropdown", choices = c("a", "b"), color = "blue"),
       material_date_picker("date", "Date"),
       material_file_input("file", "File"),
       material_floating_button("floating", color = "blue"),
