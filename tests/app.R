@@ -4,8 +4,10 @@ if(interactive()){
   
   ui <-
     material_page(materialize_in_www = FALSE,
+                  primary_theme_color = "black",
+                  secondary_theme_color = "black",
       title = "Testing", nav_bar_fixed = TRUE,
-      nav_bar_color = 'red lighten-3',
+     # nav_bar_color = 'red lighten-3',
       background_color = "white",
       include_icons = TRUE, include_fonts = TRUE,
       material_side_nav(
@@ -86,7 +88,7 @@ if(interactive()){
           input_id = "button1",
           label = "Button"
         ),
-        
+      shinymaterial::material_floating_button(input_id = "float", icon="cloud", pulse = TRUE),
         material_input(
           type = "button",
           input_id = "input_button2",

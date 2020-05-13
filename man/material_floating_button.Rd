@@ -4,13 +4,15 @@
 \alias{material_floating_button}
 \title{Create a shinymaterial floating button}
 \usage{
-material_floating_button(input_id, icon = NULL, depth = NULL,
-  color = NULL)
+material_floating_button(input_id, icon = NULL, pulse = FALSE,
+  depth = NULL, color = NULL)
 }
 \arguments{
 \item{input_id}{String. The input identifier used to access the value.}
 
 \item{icon}{String. The name of the icon. Leave empty for no icon. Visit \url{http://materializecss.com/icons.html} for a list of available icons.}
+
+\item{pulse}{Boolean. Include pulse effect.}
 
 \item{depth}{Integer. The amount of depth of the floating button. The value should be between 0 and 5. Leave empty for the default depth.}
 
