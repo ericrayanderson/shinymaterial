@@ -4,7 +4,7 @@ if(interactive()){
   
   ui <-
     material_page(materialize_in_www = FALSE,
-                  primary_theme_color = "black",
+                  primary_theme_color = "yellow",
                   secondary_theme_color = "black",
       title = "Testing", nav_bar_fixed = TRUE,
      # nav_bar_color = 'red lighten-3',
