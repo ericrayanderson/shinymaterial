@@ -44,9 +44,9 @@ material_floating_button <- function(input_id, icon = NULL, pulse = FALSE, depth
               ),
             style =
               ifelse(
-                !is.null(color),
+                is.null(color),
                 "",
-                "background-color:#F06C71"
+                paste0("background-color:", color)
               ),
             id = input_id,
             value = 0,
