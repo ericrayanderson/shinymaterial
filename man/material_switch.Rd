@@ -6,7 +6,6 @@
 \usage{
 material_switch(
   input_id,
-  label,
   off_label = "",
   on_label = "",
   initial_value = FALSE,
@@ -15,8 +14,6 @@ material_switch(
 }
 \arguments{
 \item{input_id}{String. The input identifier used to access the value.}
-
-\item{label}{String. The switch label.}
 
 \item{off_label}{String. The label for the 'off' position of the switch.}
 
@@ -32,7 +29,6 @@ Build a shinymaterial switch. The value is a boolean (TRUE if 'on', FALSE if 'of
 \examples{
 material_switch(
   input_id = "example_switch",
-  label = "Switch",
   off_label = "Off",
   on_label = "On",
   initial_value = TRUE,

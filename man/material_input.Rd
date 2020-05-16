@@ -19,7 +19,6 @@ Build a shinymaterial input.
 material_input(
   type = "switch",
   input_id = "example_switch",
-  label = "Switch",
   off_label = "Off",
   on_label = "On",
   initial_value = TRUE

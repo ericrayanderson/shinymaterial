@@ -2,7 +2,6 @@
 #'
 #' Build a shinymaterial switch. The value is a boolean (TRUE if 'on', FALSE if 'off').
 #' @param input_id String. The input identifier used to access the value.
-#' @param label String. The switch label.
 #' @param off_label String. The label for the 'off' position of the switch.
 #' @param on_label String. The label for the 'on' position of the switch.
 #' @param initial_value Boolean. Is the switch initially on?
@@ -11,13 +10,16 @@
 #' @examples
 #' material_switch(
 #'   input_id = "example_switch",
-#'   label = "Switch",
 #'   off_label = "Off",
 #'   on_label = "On",
 #'   initial_value = TRUE,
 #'   color = "#ef5350"
 #' )
-material_switch <- function(input_id, label, off_label = "", on_label = "", initial_value = FALSE, color = NULL){
+material_switch <- function(input_id, off_label = "", on_label = "", initial_value = FALSE, color = NULL){
+  
+  if(!is.logical(initial_value)){
+    stop("'initial_value' must be a logical (TRUE or FALSE)")
+  }
   
   if(!is.null(color)){
     
@@ -47,10 +49,6 @@ material_switch <- function(input_id, label, off_label = "", on_label = "", init
       "shiny-material-switch.js",
     material_tag_list =
       shiny::tagList(
-        shiny::tags$label(
-          `for` = input_id,
-          label
-        ),
         shiny::tags$div(
           class = "switch shiny-material-switch",
           id = paste0(input_id, "_switch"),
