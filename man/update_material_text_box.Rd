@@ -4,7 +4,7 @@
 \alias{update_material_text_box}
 \title{Change the value of a material_text_box on the client}
 \usage{
-update_material_text_box(session, input_id, value = NULL)
+update_material_text_box(session, input_id, value = NULL, disabled = NULL)
 }
 \arguments{
 \item{session}{The session object passed to function given to shinyServer.}
@@ -12,6 +12,8 @@ update_material_text_box(session, input_id, value = NULL)
 \item{input_id}{The input_id of the material_text_box.}
 
 \item{value}{The value to set for the material_text_box.}
+
+\item{disabled}{NULL by default (do nothing), if TRUE the text box is disable and if FALSE, enable.}
 }
 \description{
 Change the value of a material_text_box on the client.
@@ -21,7 +23,8 @@ Change the value of a material_text_box on the client.
 update_material_text_box(
   session,
   input_id = "example_text_box",
-  value = "New Text"
+  value = "New Text",
+  disabled = FALSE
 )
 }
 }

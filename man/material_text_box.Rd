@@ -4,16 +4,27 @@
 \alias{material_text_box}
 \title{Create a shinymaterial text box}
 \usage{
-material_text_box(input_id, label, color = NULL, icon = NULL)
+material_text_box(
+  input_id,
+  label,
+  value = "",
+  color = NULL,
+  icon = NULL,
+  disable = FALSE
+)
 }
 \arguments{
 \item{input_id}{String. The input identifier used to access the value.}
 
 \item{label}{String. The text box label.}
 
+\item{value}{String. Initial value.}
+
 \item{color}{String. The accent color of the text box. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors. \emph{This input requires using color hex codes, rather than the word form. E.g., "#ef5350", rather than "red lighten-1".}}
 
 \item{icon}{String. The name of the icon. Leave empty for no icon. Visit \url{http://materializecss.com/icons.html} for a list of available icons.}
+
+\item{disabled}{FALSE by default, if TRUE the text box is disable.}
 }
 \description{
 Build a shinymaterial text box.
@@ -23,7 +34,8 @@ material_text_box(
   input_id = "example_text_box",
   label = "text box",
   icon = "search",
-  color = "#ef5350"
+  color = "#ef5350",
+  disabled = FALSE
 )
 }
 \seealso{
