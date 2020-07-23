@@ -7,7 +7,7 @@
 material_ui_output(material_output_id)
 }
 \arguments{
-\item{material_output_id}{An expression that returns shinymaterial UI elements.}
+\item{material_output_id}{Output id from rendered material UI.}
 }
 \description{
 This function is used on the UI side to display an element rendered using render_material_ui().
