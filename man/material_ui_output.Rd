@@ -4,10 +4,10 @@
 \alias{material_ui_output}
 \title{Display a shinymaterial output element}
 \usage{
-material_ui_output(material_output_id)
+material_ui_output(output_id)
 }
 \arguments{
-\item{material_output_id}{Output id from rendered material UI.}
+\item{output_id}{Output id from rendered material UI.}
 }
 \description{
 This function is used on the UI side to display an element rendered using render_material_ui().
@@ -16,7 +16,24 @@ This function is used on the UI side to display an element rendered using render
 material_ui_output() is intended to be used with render_material_ui() on the server side.
 }
 \examples{
-material_ui_output("renderedDropdown")
+## Only run examples in interactive R sessions
+if (interactive()) {
+
+ui <- material_page(
+  material_ui_output("renderedDropdown")
+)
+
+server <- function(input, output) {
+  output$renderedDropdown <- render_material_ui({
+  material_dropdown(
+                    input_id = "renderedDropdown",
+                    label = "Selection",
+                    choices = c(1,2)
+                    )
+})
+}
+shinyApp(ui, server)
+}
 }
 \seealso{
 \code{\link{render_material_ui}}

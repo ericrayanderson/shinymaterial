@@ -12,13 +12,24 @@
 #' 
 #' 
 #' @examples
-#' render_material_ui({
+#' ## Only run examples in interactive R sessions
+#' if (interactive()) {
+#'
+#' ui <- material_page(
+#'   material_ui_output("renderedDropdown")
+#' )
+#'
+#' server <- function(input, output) {
+#'   output$renderedDropdown <- render_material_ui({
 #'   material_dropdown(
-#'   input_id = "renderedDropdown",
+#'                     input_id = "renderedDropdown",
 #'                     label = "Selection",
 #'                     choices = c(1,2)
 #'                     )
 #' })
+#' }
+#' shinyApp(ui, server)
+#' }
 render_material_ui <- function(material_ui){
   shiny::renderUI({
     shiny::tagList(

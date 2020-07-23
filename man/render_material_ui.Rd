@@ -16,13 +16,24 @@ This function is used on the server side to render an element that is to be disp
 render_material_ui() is intended to be used with material_ui_output() on the UI side.
 }
 \examples{
-render_material_ui({
+## Only run examples in interactive R sessions
+if (interactive()) {
+
+ui <- material_page(
+  material_ui_output("renderedDropdown")
+)
+
+server <- function(input, output) {
+  output$renderedDropdown <- render_material_ui({
   material_dropdown(
-  input_id = "renderedDropdown",
+                    input_id = "renderedDropdown",
                     label = "Selection",
                     choices = c(1,2)
                     )
 })
+}
+shinyApp(ui, server)
+}
 }
 \seealso{
 \code{\link{material_ui_output}}
