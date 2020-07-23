@@ -59,7 +59,7 @@ update_material_dropdown <- function(session, input_id, value = NULL, choices = 
       
       choices_label_js_code <- paste0(
         choices_label_js_code,
-        ".append('<li><span>&nbsp;", names(choices)[i], "</span></li>"
+        ".append('<li><span>&nbsp;", names(choices)[i], "</span></li>')"
       )
       
     }
