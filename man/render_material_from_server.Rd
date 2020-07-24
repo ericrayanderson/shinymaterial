@@ -10,7 +10,7 @@ render_material_from_server(material_ui)
 \item{material_ui}{shinymaterial UI element(s)}
 }
 \description{
-This function is used within a shiny::renderUI. The corresponding output is still referenced using shiny::uiOtuput.
+This function is used within a shiny::renderUI(). The corresponding output is referenced using shiny::uiOutput().
 }
 \examples{
 ## Only run examples in interactive R sessions

@@ -1,6 +1,6 @@
 #' Render reactive UI shinymaterial elements
 #'
-#' This function is used within a shiny::renderUI. The corresponding output is still referenced using shiny::uiOtuput.
+#' This function is used within a shiny::renderUI(). The corresponding output is referenced using shiny::uiOutput().
 #'
 #' @param material_ui shinymaterial UI element(s)
 #' 
