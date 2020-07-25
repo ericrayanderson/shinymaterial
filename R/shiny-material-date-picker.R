@@ -3,14 +3,16 @@
 #' Build a shinymaterial date picker.
 #' @param input_id String. The input identifier used to access the value.
 #' @param label String. The date picker label.
+#' @param value String. The starting date (format 'mmm dd, yyyy').
 #' @param color String. The date picker color. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
 #' @seealso \code{\link{update_material_date_picker}}
 #' @examples
 #' material_date_picker(
 #'   input_id = "example_date_picker",
-#'   label = "Date Picker"
+#'   label = "Date Picker",
+#'   value = "Jun 02, 2006"
 #' )
-material_date_picker <- function(input_id, label, color = NULL) {
+material_date_picker <- function(input_id, label, value = "", color = NULL) {
   
   if(!is.null(color)){
     
@@ -66,6 +68,7 @@ material_date_picker <- function(input_id, label, color = NULL) {
         shiny::tags$input(
           type = "text", 
           class = "datepicker shiny-material-date-picker",
+          value = value,
           id = input_id
         ),
         date_picker_style

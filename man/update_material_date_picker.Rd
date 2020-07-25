@@ -11,7 +11,7 @@ update_material_date_picker(session, input_id, value = NULL)
 
 \item{input_id}{The input_id of the material_date_picker.}
 
-\item{value}{The value to set for the material_date_picker.}
+\item{value}{The value to set for the material_date_picker (format 'mmm dd, yyyy').}
 }
 \description{
 Change the value of a material_date_picker on the client.
@@ -21,7 +21,7 @@ Change the value of a material_date_picker on the client.
 update_material_date_picker(
   session,
   input_id = "example_date_picker",
-  value = "10 April, 2012"
+  value = "Apr 10, 2012"
 )
 }
 }
