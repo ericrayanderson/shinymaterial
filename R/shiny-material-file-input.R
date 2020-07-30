@@ -108,6 +108,7 @@ material_file_input <- function(input_id,
           shiny::tags$div(
             id = paste0(input_id,"_progress"),
             class="progress shiny-file-input-progress",
+            style="height:20px",
             shiny::tags$div(
               class="progress-bar determinate"
             )
