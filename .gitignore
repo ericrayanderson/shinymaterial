@@ -4,3 +4,5 @@
 .Ruserdata
 .DS_Store
 www
+R/app_config.R
+inst/golem-config.yml
