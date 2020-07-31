@@ -40,4 +40,4 @@ export(update_material_radio_button)
 export(update_material_slider)
 export(update_material_switch)
 export(update_material_text_box)
-
+export(activate_material_side_nav_tab)
