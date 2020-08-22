@@ -219,7 +219,9 @@ if(interactive()){
         ),
         material_text_box(
           input_id = "text_box1",
-          label = "text_box1", icon = "cloud"
+          label = "text_box1", 
+          value = "STUFF23232",
+          icon = "cloud"
         ),
         
         material_input(
@@ -366,6 +368,10 @@ if(interactive()){
           label = "Date picker",
           color = 'purple'
         ),
+      material_date_picker(
+        input_id = "example_date_picker2",
+        label = "Date picker 2", value = "Jun 11, 1986"
+      ),
         # file input --------------------------------------------------------------
         material_file_input(
           input_id = "example_file_input",
@@ -386,7 +392,8 @@ if(interactive()){
         material_button(input_id = "update_text_test_button",
                         label = "update text"),
         material_text_box(input_id = "update_text_test",
-                          label = "text"),
+                          label = "text",
+                          value = "ok"),
         plotOutput('testPlot'),
         material_button(input_id = "update_dropdown_test_button",
                         label = "update dropdown"),
@@ -595,7 +602,15 @@ if(interactive()){
       message(input$example_dropdown1)
     })
     observeEvent(input$example_date_picker, {
+      message("Date picker 1 class")
+      message(class(input$example_date_picker))
       message(input$example_date_picker)
+      
+    })
+    observeEvent(input$example_date_picker2, {
+      message("Date picker 2 class")
+      message(class(input$example_date_picker2))
+      message(input$example_date_picker2)
     })
     observe({
       if (input$update_button_test_switch)
@@ -607,7 +622,7 @@ if(interactive()){
       
       update_material_text_box(session,
                                input_id = "update_text_test",
-                               value = "ok")
+                               value = Sys.time())
       
     })
     
@@ -695,7 +710,7 @@ if(interactive()){
     
     output$testSliderPlot <- renderPlot({
       req(input$update_slider_test)
-      # browser()
+      
       plot(1:input$update_slider_test)
     })
     
@@ -720,9 +735,11 @@ if(interactive()){
 
       update_material_date_picker(session,
                                input_id = "update_date_picker_test",
-                               value = "2010-06-11")
-
+                               value = "not a date")
+      message(input$update_date_picker_test)
     })
+    
+  
     
     output$testDatePickerPlot <- renderPlot({
       message(input$update_date_picker_test)
