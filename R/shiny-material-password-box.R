@@ -3,7 +3,7 @@
 #' Build a shinymaterial password box.
 #' @param input_id String. The input identifier used to access the value.
 #' @param label String. The password box label.
-#' @param color String. The accent color of the password box. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors. \emph{This input requires using color hex codes, rather than the word form. E.g., "#ef5350", rather than "red lighten-1".}
+#' @param color String. The accent color of the password box. Leave empty for the default color. Visit \url{https://materializecss.com/color.html} for a list of available colors. \emph{This input requires using color hex codes, rather than the word form. E.g., "#ef5350", rather than "red lighten-1".}
 #' @seealso \code{\link{update_material_password_box}}
 #' @examples
 #' material_password_box(

@@ -13,7 +13,7 @@ material_date_picker(input_id, label, value = "", color = NULL)
 
 \item{value}{String. The starting date (format 'mmm dd, yyyy').}
 
-\item{color}{String. The date picker color. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
+\item{color}{String. The date picker color. Leave empty for the default color. Visit \url{https://materializecss.com/color.html} for a list of available colors.}
 }
 \description{
 Build a shinymaterial date picker.

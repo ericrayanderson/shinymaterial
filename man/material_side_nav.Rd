@@ -18,7 +18,7 @@ material_side_nav(
 
 \item{image_source}{String. The background image file name. Place the image in a folder labeled 'www' at the same level as the application (server.R & ui.R).}
 
-\item{background_color}{Side-nav background color. Leave blank for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
+\item{background_color}{Side-nav background color. Leave blank for the default color. Visit \url{https://materializecss.com/color.html} for a list of available colors.}
 }
 \description{
 UI content can be placed in side-nav.

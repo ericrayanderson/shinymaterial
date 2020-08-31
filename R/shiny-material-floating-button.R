@@ -2,10 +2,10 @@
 #'
 #' Build a shinymaterial floating button. The initial value is zero, and increases by one on each press.
 #' @param input_id String. The input identifier used to access the value.
-#' @param icon String. The name of the icon. Leave empty for no icon. Visit \url{http://materializecss.com/icons.html} for a list of available icons.
+#' @param icon String. The name of the icon. Leave empty for no icon. Visit \url{https://materializecss.com/icons.html} for a list of available icons.
 #' @param pulse Boolean. Include pulse effect.
 #' @param depth Integer. The amount of depth of the floating button. The value should be between 0 and 5. Leave empty for the default depth.
-#' @param color String. The color of the floating button. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
+#' @param color String. The color of the floating button. Leave empty for the default color. Visit \url{https://materializecss.com/color.html} for a list of available colors.
 #' @examples
 #' material_floating_button(
 #'   input_id = "example_floating_button",

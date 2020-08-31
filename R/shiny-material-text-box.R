@@ -4,8 +4,8 @@
 #' @param input_id String. The input identifier used to access the value.
 #' @param label String. The text box label.
 #' @param value String. Initial value.
-#' @param color String. The accent color of the text box. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors. \emph{This input requires using color hex codes, rather than the word form. E.g., "#ef5350", rather than "red lighten-1".}
-#' @param icon String. The name of the icon. Leave empty for no icon. Visit \url{http://materializecss.com/icons.html} for a list of available icons.
+#' @param color String. The accent color of the text box. Leave empty for the default color. Visit \url{https://materializecss.com/color.html} for a list of available colors. \emph{This input requires using color hex codes, rather than the word form. E.g., "#ef5350", rather than "red lighten-1".}
+#' @param icon String. The name of the icon. Leave empty for no icon. Visit \url{https://materializecss.com/icons.html} for a list of available icons.
 #' @seealso \code{\link{update_material_text_box}}
 #' @examples
 #' material_text_box(

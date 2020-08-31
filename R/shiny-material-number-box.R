@@ -7,7 +7,7 @@
 #' @param max_value Number. The maximum allowable value.
 #' @param initial_value Number. The initial value.
 #' @param step_size Number. The step size of the arrow clicks.
-#' @param color String. The accent color of the number box. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors. \emph{This input requires using color hex codes, rather than the word form. E.g., "#ef5350", rather than "red lighten-1".}
+#' @param color String. The accent color of the number box. Leave empty for the default color. Visit \url{https://materializecss.com/color.html} for a list of available colors. \emph{This input requires using color hex codes, rather than the word form. E.g., "#ef5350", rather than "red lighten-1".}
 #' @seealso \code{\link{update_material_number_box}}
 #' @examples
 #' material_number_box(

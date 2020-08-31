@@ -4,7 +4,7 @@
 #' @param title String. The title of the card
 #' @param ... The UI elements to place in the card
 #' @param depth Integer. The amount of depth of the card. The value should be between 0 and 5. Leave empty for the default depth.
-#' @param color String. The color of the card background. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
+#' @param color String. The color of the card background. Leave empty for the default color. Visit \url{https://materializecss.com/color.html} for a list of available colors.
 #' @param divider logical. Should there be a divider element between card title and card content?
 #' @examples
 #' material_card(

@@ -26,11 +26,11 @@ material_page(
 
 \item{nav_bar_fixed}{Boolean. Should the nav bar remain fixed on the screen?}
 
-\item{nav_bar_color}{Color of the nav bar. Leave blank for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
+\item{nav_bar_color}{Color of the nav bar. Leave blank for the default color. Visit \url{https://materializecss.com/color.html} for a list of available colors.}
 
-\item{background_color}{Page background color. Leave blank for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
+\item{background_color}{Page background color. Leave blank for the default color. Visit \url{https://materializecss.com/color.html} for a list of available colors.}
 
-\item{font_color}{String. The title font color. Leave blank for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors. \emph{Title color requires using word forms of colors (e.g. "deep-purple"). Also, lighten or darken effects do not work on title colors.}}
+\item{font_color}{String. The title font color. Leave blank for the default color. Visit \url{https://materializecss.com/color.html} for a list of available colors. \emph{Title color requires using word forms of colors (e.g. "deep-purple"). Also, lighten or darken effects do not work on title colors.}}
 
 \item{include_fonts}{Boolean. Should the material font files be included? (This will place the font sources in a directory 'www', at the same location as the app code.)}
 
@@ -40,9 +40,9 @@ material_page(
 
 \item{materialize_in_www}{Boolean. Should the app look for the materialize library in the 'www' folder? E.g. www/css/materialize.min.css & www/js/materialize.min.js (Default to FALSE - which will look in the package library folder)}
 
-\item{primary_theme_color}{Primary theme color (use hex code, e.g. '#e57373'). Visit \url{http://materializecss.com/color.html} for a list of material hex codes.}
+\item{primary_theme_color}{Primary theme color (use hex code, e.g. '#e57373'). Visit \url{https://materializecss.com/color.html} for a list of material hex codes.}
 
-\item{secondary_theme_color}{Secondary theme color (use hex code, e.g. '#26a69a'). Visit \url{http://materializecss.com/color.html} for a list of material hex codes.}
+\item{secondary_theme_color}{Secondary theme color (use hex code, e.g. '#26a69a'). Visit \url{https://materializecss.com/color.html} for a list of material hex codes.}
 }
 \description{
 Build a shinymaterial page.

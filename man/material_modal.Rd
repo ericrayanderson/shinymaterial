@@ -26,13 +26,13 @@ material_modal(
 
 \item{...}{The UI elements to place in the modal}
 
-\item{button_icon}{String. The name of the icon. Visit \url{http://materializecss.com/icons.html} for a list of available icons.}
+\item{button_icon}{String. The name of the icon. Visit \url{https://materializecss.com/icons.html} for a list of available icons.}
 
 \item{floating_button}{Boolean. Should the modal trigger button be a floating button?}
 
 \item{button_depth}{Integer. The amount of depth of the button. The value should be between 0 and 5. Leave empty for the default depth.}
 
-\item{button_color}{String. The color of the button. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
+\item{button_color}{String. The color of the button. Leave empty for the default color. Visit \url{https://materializecss.com/color.html} for a list of available colors.}
 
 \item{close_button_label}{String. The label of the modal close button.}
 

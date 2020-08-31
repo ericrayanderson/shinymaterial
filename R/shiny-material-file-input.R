@@ -3,7 +3,7 @@
 #' Build a shinymaterial file input.
 #' @param input_id String. The input identifier used to access the value.
 #' @param label String. The file input button text.
-#' @param color String. The color of the file input. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.  \emph{This input requires using color hex codes, rather than the word form. E.g., "#ef5350", rather than "red lighten-1".}
+#' @param color String. The color of the file input. Leave empty for the default color. Visit \url{https://materializecss.com/color.html} for a list of available colors.  \emph{This input requires using color hex codes, rather than the word form. E.g., "#ef5350", rather than "red lighten-1".}
 #' @examples
 #' if (interactive()) {
 #'   

@@ -4,7 +4,7 @@
 #' @param input_id String. The input identifier used to access the value.
 #' @param label String. The date picker label.
 #' @param value String. The starting date (format 'mmm dd, yyyy').
-#' @param color String. The date picker color. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
+#' @param color String. The date picker color. Leave empty for the default color. Visit \url{https://materializecss.com/color.html} for a list of available colors.
 #' @seealso \code{\link{update_material_date_picker}}
 #' @examples
 #' material_date_picker(

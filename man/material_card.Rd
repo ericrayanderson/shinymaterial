@@ -13,7 +13,7 @@ material_card(title, ..., depth = NULL, color = NULL, divider = FALSE)
 
 \item{depth}{Integer. The amount of depth of the card. The value should be between 0 and 5. Leave empty for the default depth.}
 
-\item{color}{String. The color of the card background. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
+\item{color}{String. The color of the card background. Leave empty for the default color. Visit \url{https://materializecss.com/color.html} for a list of available colors.}
 
 \item{divider}{logical. Should there be a divider element between card title and card content?}
 }

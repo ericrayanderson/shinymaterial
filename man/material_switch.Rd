@@ -21,7 +21,7 @@ material_switch(
 
 \item{initial_value}{Boolean. Is the switch initially on?}
 
-\item{color}{String. The color of the switch. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors. \emph{This input requires using color hex codes, rather than the word form. E.g., "#ef5350", rather than "red lighten-1".}}
+\item{color}{String. The color of the switch. Leave empty for the default color. Visit \url{https://materializecss.com/color.html} for a list of available colors. \emph{This input requires using color hex codes, rather than the word form. E.g., "#ef5350", rather than "red lighten-1".}}
 }
 \description{
 Build a shinymaterial switch. The value is a boolean (TRUE if 'on', FALSE if 'off').
