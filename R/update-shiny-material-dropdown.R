@@ -17,10 +17,10 @@
 #' }
 update_material_dropdown <- function(session, input_id, value = NULL, choices = NULL, multiple = NULL){
   
-  if(is.null(value)) {
-    message("ERROR: Must include 'value' with update_material_dropdown")
-    return(NULL)
-  }
+  # if(is.null(value)) {
+  #   message("ERROR: Must include 'value' with update_material_dropdown")
+  #   return(NULL)
+  # }
   
   if(is.null(multiple)) {
     message("ERROR: Must include value for 'multiple'")
@@ -35,7 +35,7 @@ update_material_dropdown <- function(session, input_id, value = NULL, choices = 
     }
     
     
-    if(!all(value %in% choices)) {
+    if(!all(value %in% choices) | !is.null(value)) {
       message("ERROR: value '", value, "' not found in choices")
       return(NULL)
     }
@@ -80,20 +80,22 @@ update_material_dropdown <- function(session, input_id, value = NULL, choices = 
         ".append('<li><span>&nbsp;", names(choices)[i], "</span></li>')"
       )
       
-      if(names(choices)[i] %in% value){
-        
-        valueShow <- gsub(pattern = " ", replacement = "_shinymaterialdropdownspace_", x = value[i], fixed = TRUE)
-        
-        value_js_code <- paste0(
-          "$(", paste0("'#", input_id, "'"), ").find('option[value=", paste0("DOUBLEQUOTE", valueShow, "DOUBLEQUOTE"), "]').prop('selected', true);$(", paste0("'#", input_id, "'"), ").formSelect();Shiny.onInputChange('", input_id, "', '", value[i], "');"
-        )
-        
-        value_js_code <- gsub(pattern = "DOUBLEQUOTE", replacement = '"', x = value_js_code)
-        
-        session$sendCustomMessage(
-          type = "shinymaterialJS",
-          value_js_code
-        )
+      if(!is.null(value)){
+        if(names(choices)[i] %in% value){
+          
+          valueShow <- gsub(pattern = " ", replacement = "_shinymaterialdropdownspace_", x = value[i], fixed = TRUE)
+          
+          value_js_code <- paste0(
+            "$(", paste0("'#", input_id, "'"), ").find('option[value=", paste0("DOUBLEQUOTE", valueShow, "DOUBLEQUOTE"), "]').prop('selected', true);$(", paste0("'#", input_id, "'"), ").formSelect();Shiny.onInputChange('", input_id, "', '", value[i], "');"
+          )
+          
+          value_js_code <- gsub(pattern = "DOUBLEQUOTE", replacement = '"', x = value_js_code)
+          
+          session$sendCustomMessage(
+            type = "shinymaterialJS",
+            value_js_code
+          )
+        }
       }
 
     }
