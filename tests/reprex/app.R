@@ -32,7 +32,13 @@ if(interactive()){
       
       
       
-      
+      message(length(input$dropdown2))
+      message((input$dropdown2))
+      if(!is.null(reactives$val$values)){
+        if(length(input$dropdown2) ==2){
+          #browser()
+        }
+      }
       update_material_dropdown(session, 
                                input_id = "dropdown2", 
                                choices = reactives$val$choices, 
