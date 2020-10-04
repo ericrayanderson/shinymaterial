@@ -352,7 +352,7 @@ if(interactive()){
         ),
         material_dropdown(
           input_id = "input_example_dropdown_mult",
-          label = "Drop down",
+          label = "Drop down CHECK THIS",
           choices = c(
             "Chick en" = "c 2",
             "Ste ak" = "s 2",
