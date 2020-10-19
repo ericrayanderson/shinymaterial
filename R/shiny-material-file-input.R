@@ -78,28 +78,39 @@ material_file_input <- function(input_id,
     material_tag_list =
       shiny::tagList(
         shiny::tags$div(
-          class = "file-field input-field",
+          class = "form-group",
           shiny::tags$div(
-            class = "btn",
-            style = 
-              ifelse(
-                is.null(color),
-                "",
-                paste0("background-color:", color)
-              ),
-            shiny::tags$span(label),
-            shiny::tags$input(
-              id = input_id,
-              class = "shiny-material-file-input",
-              type = "file"
+            class = "file-field input-field input-group",
+            shiny::tags$div(
+              class = "btn",
+              style = 
+                ifelse(
+                  is.null(color),
+                  "",
+                  paste0("background-color:", color)
+                ),
+              shiny::tags$span(label),
+              shiny::tags$input(
+                id = input_id,
+                class = "shiny-material-file-input",
+                type = "file"
+              )
+            ),
+            shiny::tags$div(
+              class = "file-path-wrapper",
+              shiny::tags$input(
+                class = "file-path validate",
+                type="text",
+                name = paste0("shiny-material-file-path-wrapper-", input_id)
+              )
             )
           ),
           shiny::tags$div(
-            class = "file-path-wrapper",
-            shiny::tags$input(
-              class = "file-path validate",
-              type="text",
-              name = paste0("shiny-material-file-path-wrapper-", input_id)
+            id = paste0(input_id,"_progress"),
+            class="progress shiny-file-input-progress",
+            style="height:20px",
+            shiny::tags$div(
+              class="progress-bar determinate"
             )
           )
         ),
