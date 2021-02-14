@@ -22,10 +22,11 @@
 material_modal <- function(modal_id, button_text, title, ..., button_icon = NULL, floating_button = FALSE, button_depth = NULL, button_color = NULL, close_button_label = "Close", display_button = TRUE){
   
   if(!is.null(button_icon)){
+    empty_button_text <- button_text == "" || is.null(button_text)
     icon_tag <-
       shiny::HTML(
         paste0(
-          '<i class="material-icons left">',
+          '<i class="material-icons ', if (!empty_button_text) "left", '">',
           button_icon,
           '</i>')
       )
@@ -33,33 +34,13 @@ material_modal <- function(modal_id, button_text, title, ..., button_icon = NULL
     icon_tag <- NULL
   }
   
-  button_class <- 
-    paste0(
-      "waves-effect waves-light shiny-material-modal-trigger modal-trigger",
-      ifelse(is.null(button_color),
-             "",
-             paste0(" ",  button_color)
-      ),
-      ifelse(
-        is.null(button_depth),
-        "",
-        paste0(" z-depth-", button_depth)
-      )
-    )
-  
-  if(!floating_button){
-    button_class <- 
-      paste0(
-        button_class,
-        " btn"
-      )
-  } else {
-    button_class <- 
-      paste0(
-        button_class,
-        " btn-floating btn-large waves-effect waves-light z-depth-3"
-      )
-  }
+  button_class <- paste(
+    "waves-effect waves-light shiny-material-modal-trigger modal-trigger",
+    if (!is.null(button_color)) button_color,
+    if (!is.null(button_depth)) paste0("z-depth-", button_depth),
+    if (floating_button) "btn-floating btn-large waves-effect waves-light z-depth-3"
+    else "btn shiny-material-button"
+  )
   
   create_material_object(
     js_file =
@@ -68,32 +49,18 @@ material_modal <- function(modal_id, button_text, title, ..., button_icon = NULL
       shiny::tagList(
         shiny::tags$div(
           class = 
-            ifelse(
-              floating_button,
-              "fixed-action-btn",
-              ""
-            ),
+            if(floating_button) "fixed-action-btn",
           shiny::tags$button(
             `data-target` = modal_id,
             display = ifelse(display_button, "inline-block", "none"),
             class = button_class,
             style = 
-              paste0(
-                ifelse(
-                  floating_button,
-                  "background-color:#F06C71;",
-                  ""
-                ),
-                ifelse(display_button,
-                       "",
-                       " display:none;")
+              paste(
+                if(floating_button) "background-color:#F06C71;",
+                if(!display_button) "display:none;"
               ),
             icon_tag,
-            ifelse(
-              floating_button,
-              "",
-              button_text
-            )
+            if(!floating_button) button_text
           )
         ),
         shiny::tags$div(
