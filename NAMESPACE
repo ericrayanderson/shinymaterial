@@ -1,4 +1,6 @@
 importFrom("utils", "capture.output")
+importFrom("cli", "cli_abort", "cli_alert_info")
+importFrom("rlang", "abort")
 export(open_material_modal)
 export(close_material_modal)
 export(material_button)

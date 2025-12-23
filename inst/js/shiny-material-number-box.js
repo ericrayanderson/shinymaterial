@@ -1,22 +1,27 @@
-$(document).ready(function () {
+/**
+ * Material Design Number Box Input Binding for Shiny
+ * @description Handles numeric input changes
+ */
+'use strict';
 
-    var shinyMaterialNumberBox = new Shiny.InputBinding();
-    $.extend(shinyMaterialNumberBox, {
-        find: function (scope) {
-            return $(scope).find(".shiny-material-number-box");
-        },
-        getValue: function (el) {
-            return $(el).val();
-        },
-        subscribe: function (el, callback) {
-            $(el).on("change.shiny-material-number-box", function (e) {
-                callback();
-            });
-        },
-        unsubscribe: function (el) {
-            $(el).off(".shiny-material-number-box");
-        }
-    });
+document.addEventListener('DOMContentLoaded', () => {
+  class ShinyMaterialNumberBox extends Shiny.InputBinding {
+    find(scope) {
+      return $(scope).find('.shiny-material-number-box');
+    }
 
-    Shiny.inputBindings.register(shinyMaterialNumberBox);
+    getValue(el) {
+      return $(el).val();
+    }
+
+    subscribe(el, callback) {
+      $(el).on('change.shiny-material-number-box', () => callback());
+    }
+
+    unsubscribe(el) {
+      $(el).off('.shiny-material-number-box');
+    }
+  }
+
+  Shiny.inputBindings.register(new ShinyMaterialNumberBox());
 });
