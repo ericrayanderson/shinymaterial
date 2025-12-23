@@ -1,28 +1,37 @@
-$(document).ready(function () {
-    $(".shiny-material-button").on("click", function () {
-        var el = $(this);
-        var curVal = parseInt(el.val());
-        el.val(curVal + 1);
-        el.trigger("change");
-    });
+/**
+ * Material Design Button Input Binding for Shiny
+ * @description Handles button click events and value updates
+ */
+'use strict';
 
-    var shinyMaterialButton = new Shiny.InputBinding();
-    $.extend(shinyMaterialButton, {
-        find: function (scope) {
-            return $(scope).find(".shiny-material-button");
-        },
-        getValue: function (el) {
-            return parseInt($(el).val());
-        },
-        subscribe: function (el, callback) {
-            $(el).on("change.shiny-material-button", function (e) {
-                callback();
-            });
-        },
-        unsubscribe: function (el) {
-            $(el).off(".shiny-material-button");
-        }
+document.addEventListener('DOMContentLoaded', () => {
+  // Handle button click events
+  document.querySelectorAll('.shiny-material-button').forEach((button) => {
+    button.addEventListener('click', function() {
+      const currentValue = parseInt(this.value, 10) || 0;
+      this.value = currentValue + 1;
+      this.dispatchEvent(new Event('change', { bubbles: true }));
     });
+  });
 
-    Shiny.inputBindings.register(shinyMaterialButton);
+  // Define the Shiny input binding using ES6 class syntax
+  class ShinyMaterialButton extends Shiny.InputBinding {
+    find(scope) {
+      return $(scope).find('.shiny-material-button');
+    }
+
+    getValue(el) {
+      return parseInt(el.value, 10) || 0;
+    }
+
+    subscribe(el, callback) {
+      $(el).on('change.shiny-material-button', () => callback());
+    }
+
+    unsubscribe(el) {
+      $(el).off('.shiny-material-button');
+    }
+  }
+
+  Shiny.inputBindings.register(new ShinyMaterialButton());
 });

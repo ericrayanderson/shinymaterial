@@ -95,8 +95,11 @@ material_page <- function(..., title = "", nav_bar_fixed = FALSE, nav_bar_color 
   }
   
   if(include_fonts){
-    
-    dir_recursion("www/fonts/roboto")
+
+    if (!dir.exists("www/fonts/roboto")) {
+      cli::cli_alert_info("Creating directory: {.path www/fonts/roboto}")
+      dir.create("www/fonts/roboto", recursive = TRUE)
+    }
     
     font_files <- list.files(
       system.file(paste0("materialize/", materialize_version, "/fonts/roboto"),
@@ -123,7 +126,7 @@ material_page <- function(..., title = "", nav_bar_fixed = FALSE, nav_bar_color 
     
     
     if (!dir.exists("www/icons/materialicons/")) {
-      message("[shinymaterial] Creating directory: www/icons/materialicons/")
+      cli::cli_alert_info("Creating directory: {.path www/icons/materialicons/}")
       dir.create("www/icons/materialicons/", recursive = TRUE)
     }
     
@@ -214,11 +217,16 @@ material_page <- function(..., title = "", nav_bar_fixed = FALSE, nav_bar_color 
                   package = "shinymaterial")
     ),
     shiny::tags$script("
-                       Shiny.addCustomMessageHandler('shinymaterialJS',
-                       function(code) {
-                       //console.log(code.split('\\\\').join('').trim());
-                       eval(code.split('\\\\').join('').trim());
-                       });
-                       ")
+      Shiny.addCustomMessageHandler('shinymaterialJS', function(code) {
+        // Use Function constructor instead of eval for improved security
+        // Function() doesn't have access to local scope, reducing attack surface
+        try {
+          var cleanCode = code.split('\\\\').join('').trim();
+          new Function(cleanCode)();
+        } catch (e) {
+          console.error('shinymaterial: Error executing code:', e.message);
+        }
+      });
+    ")
   )
 }

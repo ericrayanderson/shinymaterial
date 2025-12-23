@@ -1,31 +1,34 @@
-$(document).ready(function () {
-  
-    function initShinyMaterialDatePicker(callback) {
-        $('.datepicker').datepicker({});
-        callback();
-    }
-    
-    initShinyMaterialDatePicker(function () {
-      
-        var shinyMaterialDatePicker = new Shiny.InputBinding();
-        
-        $.extend(shinyMaterialDatePicker, {
-            find: function (scope) {
-                return $(scope).find(".shiny-material-date-picker");
-            },
-            getValue: function (el) {
-                return $(el).val();
-            },
-            subscribe: function (el, callback) {
-                $(el).on("change.shiny-material-date-picker", function (e) {
-                    callback();
-                });
-            },
-            unsubscribe: function (el) {
-                $(el).off(".shiny-material-date-picker");
-            }
-        });
+/**
+ * Material Design Date Picker Input Binding for Shiny
+ * @description Handles date picker initialization and value changes
+ */
+'use strict';
 
-        Shiny.inputBindings.register(shinyMaterialDatePicker);
-    });
+document.addEventListener('DOMContentLoaded', () => {
+  // Initialize Material date pickers
+  const initDatePickers = () => {
+    $('.datepicker').datepicker({});
+  };
+
+  initDatePickers();
+
+  class ShinyMaterialDatePicker extends Shiny.InputBinding {
+    find(scope) {
+      return $(scope).find('.shiny-material-date-picker');
+    }
+
+    getValue(el) {
+      return $(el).val();
+    }
+
+    subscribe(el, callback) {
+      $(el).on('change.shiny-material-date-picker', () => callback());
+    }
+
+    unsubscribe(el) {
+      $(el).off('.shiny-material-date-picker');
+    }
+  }
+
+  Shiny.inputBindings.register(new ShinyMaterialDatePicker());
 });

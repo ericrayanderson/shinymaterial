@@ -1,34 +1,35 @@
-$(document).ready(function () {
+/**
+ * Material Design Slider Input Binding for Shiny
+ * @description Handles slider value changes
+ */
+'use strict';
 
-    var shinyMaterialSlider = new Shiny.InputBinding();
+document.addEventListener('DOMContentLoaded', () => {
+  class ShinyMaterialSlider extends Shiny.InputBinding {
+    find(scope) {
+      return $(scope).find('.shiny-material-slider');
+    }
 
-    $.extend(shinyMaterialSlider, {
-        find: function (scope) {
-            return $(scope).find(".shiny-material-slider");
-        },
-        getValue: function (el) {
-            var classValue = $(el).find(".value").html();
-            if (classValue) {
-                if (classValue.length === 0) {
-                    var inputValue = $(el).find('input').val();
-                    return Number(inputValue);
-                } else {
-                    return Number(classValue);
-                }
-            } else {
-                 var inputValue = $(el).find('input').val();
-                 return Number(inputValue);
-            }
-        },
-        subscribe: function (el, callback) {
-            $(el).on("change", function (e) {
-                callback();
-            });
-        },
-        unsubscribe: function (el) {
-            $(el).off(".shiny-material-slider");
-        }
-    });
+    getValue(el) {
+      const $el = $(el);
+      const classValue = $el.find('.value').html();
 
-    Shiny.inputBindings.register(shinyMaterialSlider);
+      if (classValue && classValue.length > 0) {
+        return Number(classValue);
+      }
+
+      const inputValue = $el.find('input').val();
+      return Number(inputValue);
+    }
+
+    subscribe(el, callback) {
+      $(el).on('change.shiny-material-slider', () => callback());
+    }
+
+    unsubscribe(el) {
+      $(el).off('.shiny-material-slider');
+    }
+  }
+
+  Shiny.inputBindings.register(new ShinyMaterialSlider());
 });

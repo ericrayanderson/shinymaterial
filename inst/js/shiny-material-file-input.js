@@ -1,30 +1,35 @@
-$(document).ready(function () {
+/**
+ * Material Design File Input Binding for Shiny
+ * @description Handles file input changes with FileReader support
+ */
+'use strict';
 
-    var shinyMaterialFileInput = new Shiny.InputBinding();
-    $.extend(shinyMaterialFileInput, {
-        find: function (scope) {
-            return $(scope).find(".shiny-material-file-input");
-        },
-        getValue: function (el) {
-         function () {
-                var file = el.files[0];
-                if (file) {
-                    read = new FileReader();
-                    read.readAsDataURL(file);
-                 
-                }
-                   return read.result;
-        }
-        },
-        subscribe: function (el, callback) {
-            $(el).on("change.shiny-material-file-input", function (e) {
-                callback();
-            });
-        },
-        unsubscribe: function (el) {
-            $(el).off(".shiny-material-file-input");
-        }
-    });
+document.addEventListener('DOMContentLoaded', () => {
+  class ShinyMaterialFileInput extends Shiny.InputBinding {
+    find(scope) {
+      return $(scope).find('.shiny-material-file-input');
+    }
 
-    Shiny.inputBindings.register(shinyMaterialFileInput);
+    getValue(el) {
+      const file = el.files[0];
+      if (!file) return null;
+
+      // Return file metadata for Shiny to process
+      return {
+        name: file.name,
+        size: file.size,
+        type: file.type
+      };
+    }
+
+    subscribe(el, callback) {
+      $(el).on('change.shiny-material-file-input', () => callback());
+    }
+
+    unsubscribe(el) {
+      $(el).off('.shiny-material-file-input');
+    }
+  }
+
+  Shiny.inputBindings.register(new ShinyMaterialFileInput());
 });

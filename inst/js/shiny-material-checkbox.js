@@ -1,22 +1,27 @@
-$(document).ready(function () {
- 
-     var shinyMaterialCheckbox = new Shiny.InputBinding();
-     $.extend(shinyMaterialCheckbox, {
-         find: function (scope) {
-             return $(scope).find(".shiny-material-checkbox");
-         },
-         getValue: function (el) {
-             return $(el).val();
-         },
-         subscribe: function (el, callback) {
-             $(el).on("change.shiny-material-checkbox", function (e) {
-                 callback();
-             });
-         },
-         unsubscribe: function (el) {
-             $(el).off(".shiny-material-checkbox");
-         }
-     });
- 
-     Shiny.inputBindings.register(shinyMaterialCheckbox);
- });
+/**
+ * Material Design Checkbox Input Binding for Shiny
+ * @description Handles checkbox state changes
+ */
+'use strict';
+
+document.addEventListener('DOMContentLoaded', () => {
+  class ShinyMaterialCheckbox extends Shiny.InputBinding {
+    find(scope) {
+      return $(scope).find('.shiny-material-checkbox');
+    }
+
+    getValue(el) {
+      return $(el).val();
+    }
+
+    subscribe(el, callback) {
+      $(el).on('change.shiny-material-checkbox', () => callback());
+    }
+
+    unsubscribe(el) {
+      $(el).off('.shiny-material-checkbox');
+    }
+  }
+
+  Shiny.inputBindings.register(new ShinyMaterialCheckbox());
+});

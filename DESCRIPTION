@@ -10,10 +10,21 @@ Authors@R: c(
     person("Kevin", "Louie", role = c("ctb", "cph"), comment = "Materialize CSS library")
     )
 Maintainer: Eric Anderson <eric.ray.anderson@gmail.com>
-Description: Allows shiny developers to incorporate UI elements based on Google's Material design. See <https://material.io/guidelines/> for more information.
+Description: Allows shiny developers to incorporate UI elements based on Google's
+    Material design. See <https://m3.material.io/> for more information about
+    Material Design.
 URL: https://ericrayanderson.github.io/shinymaterial/
+BugReports: https://github.com/ericrayanderson/shinymaterial/issues
 License: GPL-3 | file LICENSE
-Imports: shiny (>= 0.7.0), jsonlite, sass
+Imports:
+    shiny (>= 1.7.0),
+    jsonlite,
+    sass,
+    rlang (>= 1.0.0),
+    cli
+Suggests:
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
 Encoding: UTF-8
-LazyData: true
-RoxygenNote: 7.1.0
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2

@@ -1,14 +1,9 @@
-$(document).ready(function(){
-  
- //   $(document).on("click", "li.tab a", function () {
-//    $(this).trigger("shown");
-//});
- // $(".shiny-material-tab-content").css("visibility", "visible");
-  
- // $(".card-title").remove();
-  
-  //$(".card-tabs").each(function (){
-  //  $(this).insertBefore($(this).parent());
-//});
+/**
+ * Material Design Tabs in Card for Shiny
+ * @description Placeholder for tabs within card components
+ */
+'use strict';
 
-})
+document.addEventListener('DOMContentLoaded', () => {
+  // Reserved for future tabs-in-card functionality
+});

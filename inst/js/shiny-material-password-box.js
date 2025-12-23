@@ -1,22 +1,27 @@
-$(document).ready(function () {
+/**
+ * Material Design Password Box Input Binding for Shiny
+ * @description Handles password input changes
+ */
+'use strict';
 
-    var shinyMaterialPasswordBox = new Shiny.InputBinding();
-    $.extend(shinyMaterialPasswordBox, {
-        find: function (scope) {
-            return $(scope).find(".shiny-material-password-box");
-        },
-        getValue: function (el) {
-            return $(el).val();
-        },
-        subscribe: function (el, callback) {
-            $(el).on("change.shiny-material-password-box", function (e) {
-                callback();
-            });
-        },
-        unsubscribe: function (el) {
-            $(el).off(".shiny-material-password-box");
-        }
-    });
+document.addEventListener('DOMContentLoaded', () => {
+  class ShinyMaterialPasswordBox extends Shiny.InputBinding {
+    find(scope) {
+      return $(scope).find('.shiny-material-password-box');
+    }
 
-    Shiny.inputBindings.register(shinyMaterialPasswordBox);
+    getValue(el) {
+      return $(el).val();
+    }
+
+    subscribe(el, callback) {
+      $(el).on('change.shiny-material-password-box', () => callback());
+    }
+
+    unsubscribe(el) {
+      $(el).off('.shiny-material-password-box');
+    }
+  }
+
+  Shiny.inputBindings.register(new ShinyMaterialPasswordBox());
 });

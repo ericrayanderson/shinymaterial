@@ -16,21 +16,27 @@
 #' }
 update_material_dropdown <- function(session, input_id, value = NULL, choices = NULL){
   if(is.null(value)) {
-    message("ERROR: Must include 'value' with update_material_dropdown")
-    return(NULL)
+    cli::cli_abort(
+      "Must include {.arg value} with {.fn update_material_dropdown}",
+      class = "shinymaterial_error_missing_value"
+    )
   }
-  
-  
+
+
   if(!is.null(choices)){
-    
+
     if ( is.null(names(choices)) ){
       names(choices) <- choices
     }
-    
-    
+
+
     if(!(value %in% choices)) {
-      message("ERROR: value '", value, "' not found in choices")
-      return(NULL)
+      cli::cli_abort(
+        c("Value not found in choices.",
+          "x" = "Value {.val {value}} is not in the provided choices.",
+          "i" = "Available choices: {.val {choices}}"),
+        class = "shinymaterial_error_invalid_value"
+      )
     }
     
     choices_value_js_code <- paste0("$('#", input_id, "').empty(); $('#", input_id, "')")
